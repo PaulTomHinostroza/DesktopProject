@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A6919089-3E0D-40F9-AD58-8118908F656A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ElAmigo</RootNamespace>
+    <AssemblyName>ElAmigo</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clsCliente.cs" />
+    <Compile Include="clsMedida.cs" />
+    <Compile Include="clsPrecio.cs" />
+    <Compile Include="clsProducto.cs" />
+    <Compile Include="frmActualizarEliminarAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmActualizarEliminarAlmacen.Designer.cs">
+      <DependentUpon>frmActualizarEliminarAlmacen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmActualizarEliminarCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmActualizarEliminarCargo.Designer.cs">
+      <DependentUpon>frmActualizarEliminarCargo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmActualizarEliminarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmActualizarEliminarProveedor.Designer.cs">
+      <DependentUpon>frmActualizarEliminarProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmActualizarEliminarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmActualizarEliminarEmpleado.Designer.cs">
+      <DependentUpon>frmActualizarEliminarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmActualizarEliminarMedida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmActualizarEliminarMedida.Designer.cs">
+      <DependentUpon>frmActualizarEliminarMedida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmActualizarEliminarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmActualizarEliminarProducto.Designer.cs">
+      <DependentUpon>frmActualizarEliminarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmActualizarEliminarPrecio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmActualizarEliminarPrecio.Designer.cs">
+      <DependentUpon>frmActualizarEliminarPrecio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmActualizarEliminarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmActualizarEliminarCliente.Designer.cs">
+      <DependentUpon>frmActualizarEliminarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmActualizarStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmActualizarStock.Designer.cs">
+      <DependentUpon>frmActualizarStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInsertarAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInsertarAlmacen.Designer.cs">
+      <DependentUpon>frmInsertarAlmacen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInsertarCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInsertarCargo.Designer.cs">
+      <DependentUpon>frmInsertarCargo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInsertarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInsertarCliente.Designer.cs">
+      <DependentUpon>frmInsertarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInsertarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInsertarEmpleado.Designer.cs">
+      <DependentUpon>frmInsertarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInsertarMedida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInsertarMedida.Designer.cs">
+      <DependentUpon>frmInsertarMedida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInsertarPrecio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInsertarPrecio.Designer.cs">
+      <DependentUpon>frmInsertarPrecio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInsertarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInsertarProducto.Designer.cs">
+      <DependentUpon>frmInsertarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInsertarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInsertarProveedor.Designer.cs">
+      <DependentUpon>frmInsertarProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInsertarStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInsertarStock.Designer.cs">
+      <DependentUpon>frmInsertarStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInsertarVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInsertarVenta.Designer.cs">
+      <DependentUpon>frmInsertarVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListaAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListaAlmacen.Designer.cs">
+      <DependentUpon>frmListaAlmacen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListarCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListarCargo.Designer.cs">
+      <DependentUpon>frmListarCargo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListarCliente.Designer.cs">
+      <DependentUpon>frmListarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListarEmpleado.Designer.cs">
+      <DependentUpon>frmListarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListarMedida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListarMedida.Designer.cs">
+      <DependentUpon>frmListarMedida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListarPrecio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListarPrecio.Designer.cs">
+      <DependentUpon>frmListarPrecio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListarProducto.Designer.cs">
+      <DependentUpon>frmListarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListarProveedor.Designer.cs">
+      <DependentUpon>frmListarProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListarStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListarStock.Designer.cs">
+      <DependentUpon>frmListarStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVentanaAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVentanaAdministrador.Designer.cs">
+      <DependentUpon>frmVentanaAdministrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mdlVariables.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmActualizarEliminarAlmacen.resx">
+      <DependentUpon>frmActualizarEliminarAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmActualizarEliminarCargo.resx">
+      <DependentUpon>frmActualizarEliminarCargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmActualizarEliminarProveedor.resx">
+      <DependentUpon>frmActualizarEliminarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmActualizarEliminarEmpleado.resx">
+      <DependentUpon>frmActualizarEliminarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmActualizarEliminarMedida.resx">
+      <DependentUpon>frmActualizarEliminarMedida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmActualizarEliminarProducto.resx">
+      <DependentUpon>frmActualizarEliminarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmActualizarEliminarPrecio.resx">
+      <DependentUpon>frmActualizarEliminarPrecio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmActualizarEliminarCliente.resx">
+      <DependentUpon>frmActualizarEliminarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmActualizarStock.resx">
+      <DependentUpon>frmActualizarStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInsertarAlmacen.resx">
+      <DependentUpon>frmInsertarAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInsertarCargo.resx">
+      <DependentUpon>frmInsertarCargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInsertarCliente.resx">
+      <DependentUpon>frmInsertarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInsertarEmpleado.resx">
+      <DependentUpon>frmInsertarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInsertarMedida.resx">
+      <DependentUpon>frmInsertarMedida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInsertarPrecio.resx">
+      <DependentUpon>frmInsertarPrecio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInsertarProducto.resx">
+      <DependentUpon>frmInsertarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInsertarProveedor.resx">
+      <DependentUpon>frmInsertarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInsertarStock.resx">
+      <DependentUpon>frmInsertarStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInsertarVenta.resx">
+      <DependentUpon>frmInsertarVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListaAlmacen.resx">
+      <DependentUpon>frmListaAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListarCargo.resx">
+      <DependentUpon>frmListarCargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListarCliente.resx">
+      <DependentUpon>frmListarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListarEmpleado.resx">
+      <DependentUpon>frmListarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListarMedida.resx">
+      <DependentUpon>frmListarMedida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListarPrecio.resx">
+      <DependentUpon>frmListarPrecio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListarProducto.resx">
+      <DependentUpon>frmListarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListarProveedor.resx">
+      <DependentUpon>frmListarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListarStock.resx">
+      <DependentUpon>frmListarStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVentanaAdministrador.resx">
+      <DependentUpon>frmVentanaAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
