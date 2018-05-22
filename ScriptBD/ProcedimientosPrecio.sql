@@ -28,3 +28,12 @@ else
 
 --/////////////////////////////////////////////////////////
 
+create proc usp_Precio_Actualizar
+	@parIdProducto_P int,
+	@parIdMedida_P int,
+	@parNUEVO_Precio	decimal(20,2)
+as
+UPDATE tblPrecio
+set
+Precio = @parNUEVO_Precio
+where IdProducto_P=@parIdProducto_P and IdMedida_P=@parIdMedida_P

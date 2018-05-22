@@ -56,7 +56,7 @@ select IdProducto,Descripcion_Prod
 create proc usp_Producto_Listar_MedidaPrecio
 @parIdProducto	int
 as
-select IdProducto_P,Precio,Descripcion_Med
+select IdProducto_P,Precio,Descripcion_Med,IdMedida_P
 from tblPrecio inner join tblMedida
 on tblPrecio.IdMedida_P=tblMedida.IdMedida
 where IdProducto_P=@parIdProducto

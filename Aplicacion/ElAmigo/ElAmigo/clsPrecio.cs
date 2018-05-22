@@ -70,20 +70,21 @@ namespace ElAmigo
         }
 
         //CONSTRUCTOR PARA listar el producto con la medida y precio
-        public clsPrecio(int parIdProductoInt, string parDescripcionMed, decimal parPrecio)
+        public clsPrecio(int parIdProductoInt, string parDescripcionMed, decimal parPrecio,int parIdMedidaInt)
         {
             IdProductoInt = parIdProductoInt;
             DescripcionMed = parDescripcionMed;
             Precio = parPrecio;
+            IdMedidaInt = parIdMedidaInt;
         }
 
-
-        //public clsPrecio(int parIdProductoInt, int parIdMedidaInt, decimal parPrecio)
-        //{
-        //    IdProductoInt = parIdProductoInt;
-        //    IdMedidaInt = parIdMedidaInt;
-        //    Precio = parPrecio;
-        //}
+        //constructor para actualizar el precio
+        public clsPrecio(int parIdProductoInt, int parIdMedidaInt, decimal parPrecio)
+        {
+            IdProductoInt = parIdProductoInt;
+            IdMedidaInt = parIdMedidaInt;
+            Precio = parPrecio;
+        }
 
         //public clsPrecio(int parIdProductoInt, string parNombreMed)
         //{
@@ -120,11 +121,24 @@ namespace ElAmigo
             while (cont.Read() == true)
             {
                 clsPrecio MiObjeto;
-                MiObjeto = new clsPrecio(Convert.ToInt32(cont["IdProducto_P"]), cont["Descripcion_Med"].ToString(), Convert.ToDecimal(cont["Precio"]));
+                MiObjeto = new clsPrecio(Convert.ToInt32(cont["IdProducto_P"]), cont["Descripcion_Med"].ToString(), Convert.ToDecimal(cont["Precio"]), Convert.ToInt32(cont["IdMedida_P"]));
                 x.Add(MiObjeto);
             }
             conexion.Close();
             return x;
+        }
+
+        public void Actualizar(clsPrecio NuevosDatos)
+        {
+            SqlConnection conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
+            SqlCommand comando = new SqlCommand("usp_Precio_Actualizar", conexion);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@parIdProducto_P", IdProductoInt);
+            comando.Parameters.AddWithValue("@parIdMedida_P", IdMedidaInt);
+            comando.Parameters.AddWithValue("@parNUEVO_Precio", NuevosDatos.Precio);
+            conexion.Open();
+            comando.ExecuteNonQuery();
+            conexion.Close();
         }
 
         //public static List<clsPrecio> ListarPreciosProductoMedida(int parIdProducto, string parNombreMed)
