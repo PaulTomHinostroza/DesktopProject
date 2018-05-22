@@ -28,29 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.lstvDatos = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnRegistrarProducto = new System.Windows.Forms.Button();
+            this.btnRegistrarCargo = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button2
+            // btnLimpiar
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(371, 260);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 35);
-            this.button2.TabIndex = 115;
-            this.button2.Text = "Limpiar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.Location = new System.Drawing.Point(371, 260);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(97, 35);
+            this.btnLimpiar.TabIndex = 115;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -62,13 +62,13 @@
             this.label2.TabIndex = 114;
             this.label2.Text = "Nombre:";
             // 
-            // textBox2
+            // txtNombre
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(371, 89);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(348, 24);
-            this.textBox2.TabIndex = 113;
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(371, 89);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(348, 24);
+            this.txtNombre.TabIndex = 113;
             // 
             // label1
             // 
@@ -80,25 +80,25 @@
             this.label1.TabIndex = 112;
             this.label1.Text = "Descripción:";
             // 
-            // textBox1
+            // txtDescripcion
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(371, 159);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(349, 77);
-            this.textBox1.TabIndex = 107;
+            this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripcion.Location = new System.Drawing.Point(371, 159);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(349, 77);
+            this.txtDescripcion.TabIndex = 107;
             // 
-            // button1
+            // btnCancelar
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(622, 261);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 35);
-            this.button1.TabIndex = 111;
-            this.button1.Text = "Cancelar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(622, 261);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(97, 35);
+            this.btnCancelar.TabIndex = 111;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.button1_Click);
             // 
             // lstvDatos
             // 
@@ -132,15 +132,15 @@
             this.columnHeader3.Text = "Descripción";
             this.columnHeader3.Width = 128;
             // 
-            // btnRegistrarProducto
+            // btnRegistrarCargo
             // 
-            this.btnRegistrarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarProducto.Location = new System.Drawing.Point(480, 260);
-            this.btnRegistrarProducto.Name = "btnRegistrarProducto";
-            this.btnRegistrarProducto.Size = new System.Drawing.Size(130, 35);
-            this.btnRegistrarProducto.TabIndex = 109;
-            this.btnRegistrarProducto.Text = "Registrar Cargo";
-            this.btnRegistrarProducto.UseVisualStyleBackColor = true;
+            this.btnRegistrarCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarCargo.Location = new System.Drawing.Point(480, 260);
+            this.btnRegistrarCargo.Name = "btnRegistrarCargo";
+            this.btnRegistrarCargo.Size = new System.Drawing.Size(130, 35);
+            this.btnRegistrarCargo.TabIndex = 109;
+            this.btnRegistrarCargo.Text = "Registrar Cargo";
+            this.btnRegistrarCargo.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -157,14 +157,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(736, 312);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lstvDatos);
-            this.Controls.Add(this.btnRegistrarProducto);
+            this.Controls.Add(this.btnRegistrarCargo);
             this.Controls.Add(this.label3);
             this.Name = "frmInsertarCargo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -176,17 +176,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ListView lstvDatos;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.Button btnRegistrarProducto;
+        private System.Windows.Forms.Button btnRegistrarCargo;
         private System.Windows.Forms.Label label3;
     }
 }

@@ -36,14 +36,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.rbnId = new System.Windows.Forms.RadioButton();
+            this.rbnDescripcion = new System.Windows.Forms.RadioButton();
+            this.txtTexto = new System.Windows.Forms.TextBox();
             this.lstvDatos = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label4 = new System.Windows.Forms.Label();
-            this.lstvPrecio = new System.Windows.Forms.ListView();
+            this.lstvCantidad = new System.Windows.Forms.ListView();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button2 = new System.Windows.Forms.Button();
@@ -129,9 +129,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.rbnId);
+            this.groupBox1.Controls.Add(this.rbnDescripcion);
+            this.groupBox1.Controls.Add(this.txtTexto);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(16, 36);
             this.groupBox1.Name = "groupBox1";
@@ -140,35 +140,35 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar Producto Por:";
             // 
-            // radioButton2
+            // rbnId
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(139, 23);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(37, 22);
-            this.radioButton2.TabIndex = 2;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Id";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbnId.AutoSize = true;
+            this.rbnId.Location = new System.Drawing.Point(139, 23);
+            this.rbnId.Name = "rbnId";
+            this.rbnId.Size = new System.Drawing.Size(37, 22);
+            this.rbnId.TabIndex = 2;
+            this.rbnId.TabStop = true;
+            this.rbnId.Text = "Id";
+            this.rbnId.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbnDescripcion
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(17, 23);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(105, 22);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Descripción";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbnDescripcion.AutoSize = true;
+            this.rbnDescripcion.Location = new System.Drawing.Point(17, 23);
+            this.rbnDescripcion.Name = "rbnDescripcion";
+            this.rbnDescripcion.Size = new System.Drawing.Size(105, 22);
+            this.rbnDescripcion.TabIndex = 1;
+            this.rbnDescripcion.TabStop = true;
+            this.rbnDescripcion.Text = "Descripción";
+            this.rbnDescripcion.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtTexto
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(17, 53);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(666, 24);
-            this.textBox1.TabIndex = 0;
+            this.txtTexto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTexto.Location = new System.Drawing.Point(17, 53);
+            this.txtTexto.Name = "txtTexto";
+            this.txtTexto.Size = new System.Drawing.Size(666, 24);
+            this.txtTexto.TabIndex = 0;
             // 
             // lstvDatos
             // 
@@ -202,26 +202,26 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(15, 399);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 20);
+            this.label4.Size = new System.Drawing.Size(249, 20);
             this.label4.TabIndex = 114;
-            this.label4.Text = "Precio";
+            this.label4.Text = "----------------------------------------";
             // 
-            // lstvPrecio
+            // lstvCantidad
             // 
-            this.lstvPrecio.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lstvCantidad.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader5,
             this.columnHeader6});
-            this.lstvPrecio.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.lstvPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstvPrecio.FullRowSelect = true;
-            this.lstvPrecio.GridLines = true;
-            this.lstvPrecio.Location = new System.Drawing.Point(16, 425);
-            this.lstvPrecio.MultiSelect = false;
-            this.lstvPrecio.Name = "lstvPrecio";
-            this.lstvPrecio.Size = new System.Drawing.Size(250, 165);
-            this.lstvPrecio.TabIndex = 113;
-            this.lstvPrecio.UseCompatibleStateImageBehavior = false;
-            this.lstvPrecio.View = System.Windows.Forms.View.Details;
+            this.lstvCantidad.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.lstvCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstvCantidad.FullRowSelect = true;
+            this.lstvCantidad.GridLines = true;
+            this.lstvCantidad.Location = new System.Drawing.Point(16, 425);
+            this.lstvCantidad.MultiSelect = false;
+            this.lstvCantidad.Name = "lstvCantidad";
+            this.lstvCantidad.Size = new System.Drawing.Size(250, 165);
+            this.lstvCantidad.TabIndex = 113;
+            this.lstvCantidad.UseCompatibleStateImageBehavior = false;
+            this.lstvCantidad.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader5
             // 
@@ -279,7 +279,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lstvDatos);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.lstvPrecio);
+            this.Controls.Add(this.lstvCantidad);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
@@ -304,14 +304,14 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.RadioButton rbnId;
+        private System.Windows.Forms.RadioButton rbnDescripcion;
+        private System.Windows.Forms.TextBox txtTexto;
         private System.Windows.Forms.ListView lstvDatos;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ListView lstvPrecio;
+        private System.Windows.Forms.ListView lstvCantidad;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.Button button2;
