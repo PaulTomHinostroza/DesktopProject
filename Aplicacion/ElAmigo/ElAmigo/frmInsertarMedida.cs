@@ -73,5 +73,11 @@ namespace ElAmigo
                 lstvDatos.Items.Clear();
             }
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtDescripcionMedida.Clear();
+            txtAbreviaturaDescripcion.Clear();
+        }
     }
 }

@@ -37,7 +37,7 @@ create proc usp_Producto_ListarPorDescripcion
 as
 select IdProducto,Descripcion_Prod
  from tblProducto
- where Descripcion_Prod like @parDescripcion_Prod + '%' 
+ where Descripcion_Prod like '%' + @parDescripcion_Prod + '%' 
  order by Descripcion_Prod
 
  --/////////////////////////////////////////////////////
@@ -82,4 +82,13 @@ else
 		Descripcion_Prod = @parNUEVO_Descripcion_Prod
 		where IdProducto=@parIdProducto
 	end
+
+--///////////////////////////////////////////////////////////
+
+create proc usp_Producto_Eliminar
+@parIdProducto int
+as
+delete
+from tblProducto
+where IdProducto=@parIdProducto
 

@@ -35,7 +35,7 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnRegistrarProducto = new System.Windows.Forms.Button();
+            this.btnRegistrarMedida = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtAbreviaturaDescripcion = new System.Windows.Forms.TextBox();
@@ -104,16 +104,16 @@
             this.columnHeader3.Text = "Abrev";
             this.columnHeader3.Width = 86;
             // 
-            // btnRegistrarProducto
+            // btnRegistrarMedida
             // 
-            this.btnRegistrarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarProducto.Location = new System.Drawing.Point(480, 260);
-            this.btnRegistrarProducto.Name = "btnRegistrarProducto";
-            this.btnRegistrarProducto.Size = new System.Drawing.Size(130, 35);
-            this.btnRegistrarProducto.TabIndex = 97;
-            this.btnRegistrarProducto.Text = "Registrar Medida";
-            this.btnRegistrarProducto.UseVisualStyleBackColor = true;
-            this.btnRegistrarProducto.Click += new System.EventHandler(this.btnRegistrarProducto_Click);
+            this.btnRegistrarMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarMedida.Location = new System.Drawing.Point(480, 260);
+            this.btnRegistrarMedida.Name = "btnRegistrarMedida";
+            this.btnRegistrarMedida.Size = new System.Drawing.Size(130, 35);
+            this.btnRegistrarMedida.TabIndex = 97;
+            this.btnRegistrarMedida.Text = "Registrar Medida";
+            this.btnRegistrarMedida.UseVisualStyleBackColor = true;
+            this.btnRegistrarMedida.Click += new System.EventHandler(this.btnRegistrarProducto_Click);
             // 
             // label1
             // 
@@ -152,6 +152,7 @@
             this.btnLimpiar.TabIndex = 106;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // frmInsertarMedida
             // 
@@ -165,7 +166,7 @@
             this.Controls.Add(this.txtDescripcionMedida);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lstvDatos);
-            this.Controls.Add(this.btnRegistrarProducto);
+            this.Controls.Add(this.btnRegistrarMedida);
             this.Controls.Add(this.label3);
             this.Name = "frmInsertarMedida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -184,7 +185,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.Button btnRegistrarProducto;
+        private System.Windows.Forms.Button btnRegistrarMedida;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtAbreviaturaDescripcion;
