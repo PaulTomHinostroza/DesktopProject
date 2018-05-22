@@ -104,5 +104,39 @@ namespace ElAmigo
             conexion.Close();
             return x;
         }
+
+        public static List<clsMedida> ListarMedidaPorId(int parametroId)
+        {
+            List<clsMedida> x = new List<clsMedida>();
+            SqlConnection conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
+            SqlCommand comando = new SqlCommand("usp_Medida_ListarPorId", conexion);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@parIdMedida", parametroId);
+            conexion.Open();
+            SqlDataReader contenedor;
+            contenedor = comando.ExecuteReader();
+            while (contenedor.Read() == true)
+            {
+                clsMedida MiObjeto;
+                MiObjeto = new clsMedida(Convert.ToInt32(contenedor["IdMedida"]), contenedor["Descripcion_Med"].ToString(),
+                                            contenedor["Abreviatura_Med"].ToString());
+                x.Add(MiObjeto);
+            }
+            conexion.Close();
+            return x;
+        }
+
+        public void Actualizar(clsMedida NuevosDatos)
+        {
+            SqlConnection conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
+            SqlCommand comando = new SqlCommand("usp_Medida_Actualizar", conexion);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@parIdMedida", IdMedida);
+            comando.Parameters.AddWithValue("@parNUEVO_Descripcion_Med", NuevosDatos.DescripcionMed);
+            comando.Parameters.AddWithValue("@parNUEVO_Abreviatura_Med", NuevosDatos.AbreviaturaMed);
+            conexion.Open();
+            comando.ExecuteNonQuery();
+            conexion.Close();
+        }
     }
 }

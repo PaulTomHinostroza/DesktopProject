@@ -40,7 +40,16 @@ namespace ElAmigo
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            txtDescripcion2.Enabled = true;
+            if (txtDescripcion2.TextLength == 0)
+            {
+                MessageBox.Show("Selecciona un dato.");
+            }
+            else 
+            {
+                txtDescripcion2.Enabled = true;
+                btnGuardar.Enabled = true;
+            }
+            
             
         }
 
@@ -55,6 +64,9 @@ namespace ElAmigo
 
             //Bloquear todo
             txtDescripcion2.Enabled = false;
+            txtDescripcion2.Clear();
+            txtId.Clear();
+            btnGuardar.Enabled = false;
             txtTexto.Clear();
 
         }

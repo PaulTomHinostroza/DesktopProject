@@ -25,10 +25,6 @@ namespace ElAmigo
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
 
         private void btnMostrarTodos_Click(object sender, EventArgs e)
         {
@@ -47,6 +43,67 @@ namespace ElAmigo
                     lstvDatos.Items[contador - 1].BackColor = Color.Khaki;
                 }
                 contador = contador + 1;
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void txtTexto_TextChanged(object sender, EventArgs e)
+        {
+            if (rbnDescripcion.Checked == true)
+            {
+                if (txtTexto.Text.Length >= 3)
+                {
+                    MedidaEncontrado.Clear();
+                    lstvDatos.Items.Clear();
+                    int contador = 1;
+                    foreach (clsMedida ELEMENTO in clsMedida.ListarMedidaPorDescripcion(txtTexto.Text))
+                    {
+                        MedidaEncontrado.Add(ELEMENTO);
+                        lstvDatos.Items.Add(ELEMENTO.IdMedida.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DescripcionMed);
+
+                        if (contador % 2 == 0)
+                        {
+                            lstvDatos.Items[contador - 1].BackColor = Color.Khaki;
+                        }
+                        contador = contador + 1;
+                    }
+
+                }
+                else
+                {
+                    lstvDatos.Items.Clear();
+                }
+            }
+            if (rbnId.Checked == true)
+            {
+                if (txtTexto.Text.Length >= 3)
+                {
+                    MedidaEncontrado.Clear();
+                    lstvDatos.Items.Clear();
+                    int contador = 1;
+                    foreach (clsMedida ELEMENTO in clsMedida.ListarMedidaPorId(Convert.ToInt32(txtTexto.Text)))
+                    {
+                        MedidaEncontrado.Add(ELEMENTO);
+                        lstvDatos.Items.Add(ELEMENTO.IdMedida.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DescripcionMed);
+
+                        if (contador % 2 == 0)
+                        {
+                            lstvDatos.Items[contador - 1].BackColor = Color.Khaki;
+                        }
+                        contador = contador + 1;
+                    }
+
+                }
+                else
+                {
+                    lstvDatos.Items.Clear();
+                }
             }
         }
 
