@@ -50,3 +50,25 @@ as
 select IdCargo,Nombre_Car,Descripcion_Car
 from tblCargo
 order by Nombre_Car
+
+--////////////////////////////////////////////////////
+create proc usp_Cargo_Actualizar
+@parIdCargo	int,
+@parNUEVO_Nombre_Car varchar(60),
+@parNUEVO_Descripcion_Car varchar(500)
+as
+if exists 
+	(
+		select Nombre_Car,IdCargo from tblCargo where Nombre_Car=@parNUEVO_Nombre_Car and IdCargo<>@parIdCargo
+	)
+	begin
+		raiserror('El cargo ya está registrado.',16,1)
+	end
+else
+	begin
+		UPDATE tblCargo
+		set
+		Nombre_Car=@parNUEVO_Nombre_Car,
+		Descripcion_Car=@parNUEVO_Descripcion_Car
+		where IdCargo=@parIdCargo
+	end

@@ -140,5 +140,25 @@ namespace ElAmigo
 
             return x;
         }
+
+        public void Actualizar(clsCargo NuevosDatos)
+        {
+            SqlConnection conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
+            SqlCommand comando = new SqlCommand("usp_Cargo_Actualizar", conexion);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@parIdCargo", IdCargo);
+            comando.Parameters.AddWithValue("@parNUEVO_Nombre_Car", NuevosDatos.NombreCargo);
+            if (string.IsNullOrEmpty(NuevosDatos.DescripcionCargo))
+            {
+                comando.Parameters.AddWithValue("@parNUEVO_Descripcion_Car", DBNull.Value);
+            }
+            else
+            {
+                comando.Parameters.AddWithValue("@parNUEVO_Descripcion_Car", NuevosDatos.DescripcionCargo);
+            }
+            conexion.Open();
+            comando.ExecuteNonQuery();
+            conexion.Close();
+        }
     }
 }
