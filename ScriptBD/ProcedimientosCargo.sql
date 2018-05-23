@@ -22,3 +22,31 @@ else
 			@parDescripcion_Car
 		)
 	end
+
+--////////////////////////////////////////////////
+create proc usp_Cargo_ListarPorNombre
+@parNombre_Car	varchar(60)
+as
+select IdCargo,Nombre_Car,Descripcion_Car
+ from tblCargo
+ where Nombre_Car like '%' + @parNombre_Car + '%' 
+ order by Nombre_Car
+
+--////////////////////////////////////////////////////
+
+create proc usp_Cargo_ListarPorId
+@parIdCargo int
+as
+select IdCargo,Nombre_Car,Descripcion_Car
+ from tblCargo
+ where IdCargo>=@parIdCargo
+ order by IdCargo
+
+
+ --///////////////////////////////////////////////////
+
+create proc usp_Cargo_Listar_Todos
+as
+select IdCargo,Nombre_Car,Descripcion_Car
+from tblCargo
+order by Nombre_Car

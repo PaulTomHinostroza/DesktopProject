@@ -19,8 +19,15 @@ namespace ElAmigo
             NombreCargo = parNombreCargo;
         }
 
+        //constructor para listar
+        public clsCargo(int parIdCargo, string parNombreCargo, string parDescripcionCargo)
+        {
+            IdCargo = parIdCargo;
+            NombreCargo = parNombreCargo;
+            DescripcionCargo=parDescripcionCargo;
+        }
 
-
+        
         public int IdCargo
         {
             get { return _IdCargo; }
@@ -61,6 +68,77 @@ namespace ElAmigo
             cmd.ExecuteNonQuery();
             conexion.Close();
 
+        }
+
+        public static List<clsCargo> ListarCargoTodos()
+        {
+            List<clsCargo> x = new List<clsCargo>();
+            SqlConnection conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
+            SqlCommand cmd = new SqlCommand("usp_Cargo_Listar_Todos", conexion);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            conexion.Open();
+            SqlDataReader contenedor;
+            contenedor = cmd.ExecuteReader();
+
+            while (contenedor.Read() == true)
+            {
+                clsCargo MiObjeto;
+                MiObjeto = new clsCargo(Convert.ToInt32(contenedor["IdCargo"]), contenedor["Nombre_Car"].ToString(), contenedor["Descripcion_Car"].ToString());
+
+                x.Add(MiObjeto);
+            }
+            conexion.Close();
+            return x;
+        }
+
+        public static List<clsCargo> ListarCargoPorNombre(string parametroNombre)
+        {
+            List<clsCargo> x = new List<clsCargo>();
+
+            SqlConnection conexion;
+            conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
+
+            SqlCommand comando;
+            comando = new SqlCommand("usp_Cargo_ListarPorNombre", conexion);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@parNombre_Car", parametroNombre);
+            conexion.Open();
+            SqlDataReader contenedor;
+            contenedor = comando.ExecuteReader();
+            while (contenedor.Read() == true)
+            {
+                clsCargo MiObjeto;
+                MiObjeto = new clsCargo(Convert.ToInt32(contenedor["IdCargo"]), contenedor["Nombre_Car"].ToString(), contenedor["Descripcion_Car"].ToString());
+                x.Add(MiObjeto);
+            }
+            conexion.Close();
+
+            return x;
+        }
+
+        public static List<clsCargo> ListarCargoPorId(int parametroId)
+        {
+            List<clsCargo> x = new List<clsCargo>();
+
+            SqlConnection conexion;
+            conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
+
+            SqlCommand comando;
+            comando = new SqlCommand("usp_Cargo_ListarPorId", conexion);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@parIdCargo", parametroId);
+            conexion.Open();
+            SqlDataReader contenedor;
+            contenedor = comando.ExecuteReader();
+            while (contenedor.Read() == true)
+            {
+                clsCargo MiObjeto;
+                MiObjeto = new clsCargo(Convert.ToInt32(contenedor["IdCargo"]), contenedor["Nombre_Car"].ToString(), contenedor["Descripcion_Car"].ToString());
+                x.Add(MiObjeto);
+            }
+            conexion.Close();
+
+            return x;
         }
     }
 }

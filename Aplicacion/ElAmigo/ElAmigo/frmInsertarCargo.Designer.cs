@@ -51,6 +51,7 @@
             this.btnLimpiar.TabIndex = 115;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // label2
             // 
@@ -69,6 +70,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(348, 24);
             this.txtNombre.TabIndex = 113;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // label1
             // 
@@ -98,7 +100,7 @@
             this.btnCancelar.TabIndex = 111;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.button1_Click);
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lstvDatos
             // 
@@ -141,6 +143,7 @@
             this.btnRegistrarCargo.TabIndex = 109;
             this.btnRegistrarCargo.Text = "Registrar Cargo";
             this.btnRegistrarCargo.UseVisualStyleBackColor = true;
+            this.btnRegistrarCargo.Click += new System.EventHandler(this.btnRegistrarCargo_Click);
             // 
             // label3
             // 

@@ -8,6 +8,7 @@ namespace ElAmigo
 {
     class mdlVariables
     {
-        public static string CadenaDeConexion = "Server=USER-PC\\SQLEXPRESS;Database=ElAmigo;USER=sa;PWD=continental";
+        //USER-PC\\SQLEXPRESS
+        public static string CadenaDeConexion = "Server=.;Database=ElAmigo;USER=sa;PWD=continental";
     }
 }
