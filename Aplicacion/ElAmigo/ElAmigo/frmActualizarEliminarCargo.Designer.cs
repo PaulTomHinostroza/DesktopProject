@@ -152,6 +152,7 @@
             this.btnLimpiar.TabIndex = 117;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnActualizar
             // 
@@ -202,6 +203,7 @@
             // rbnNombre
             // 
             this.rbnNombre.AutoSize = true;
+            this.rbnNombre.Checked = true;
             this.rbnNombre.Location = new System.Drawing.Point(17, 23);
             this.rbnNombre.Name = "rbnNombre";
             this.rbnNombre.Size = new System.Drawing.Size(80, 22);

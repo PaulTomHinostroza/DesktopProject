@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="clsCargo.cs" />
     <Compile Include="clsCliente.cs" />
+    <Compile Include="clsEmpleado.cs" />
     <Compile Include="clsMedida.cs" />
     <Compile Include="clsPrecio.cs" />
     <Compile Include="clsProducto.cs" />

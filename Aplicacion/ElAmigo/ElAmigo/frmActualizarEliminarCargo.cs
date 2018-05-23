@@ -135,6 +135,7 @@ namespace ElAmigo
                 txtDescripcion.Enabled = true;
                 btnGuardar.Visible = true;
                 btnActualizar.Visible = false;
+                btnLimpiar.Enabled = false;
             }
         }
 
@@ -146,7 +147,7 @@ namespace ElAmigo
             CargoSeleccionado.Actualizar(nuevoCargo);
             MessageBox.Show("Datos actualizados satisfactoriamente.");
 
-            //Bloquear todo
+           
             txtNombre.Enabled = false;
             txtDescripcion.Enabled = false;
             txtNombre.Clear();
@@ -155,12 +156,22 @@ namespace ElAmigo
             lstvDatos.Items.Clear();
             btnGuardar.Visible = false;
             btnActualizar.Visible = true;
+            btnLimpiar.Enabled = true;
             txtTexto.Clear();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtTexto.Clear();
+            txtId.Clear();
+            txtNombre.Clear();
+            txtDescripcion.Clear();
+            lstvDatos.Items.Clear();
         }
 
     }

@@ -31,8 +31,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cmbCargo = new System.Windows.Forms.ComboBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.rbFemenino = new System.Windows.Forms.RadioButton();
-            this.rbMasculino = new System.Windows.Forms.RadioButton();
+            this.rbnFemenino = new System.Windows.Forms.RadioButton();
+            this.rbnMasculino = new System.Windows.Forms.RadioButton();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.txtApellidos = new System.Windows.Forms.TextBox();
@@ -49,6 +49,8 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label3
@@ -66,7 +68,7 @@
             this.cmbCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCargo.FormattingEnabled = true;
-            this.cmbCargo.Location = new System.Drawing.Point(93, 346);
+            this.cmbCargo.Location = new System.Drawing.Point(93, 395);
             this.cmbCargo.Name = "cmbCargo";
             this.cmbCargo.Size = new System.Drawing.Size(204, 26);
             this.cmbCargo.TabIndex = 79;
@@ -74,39 +76,39 @@
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(93, 297);
+            this.txtEmail.Location = new System.Drawing.Point(93, 346);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(242, 24);
             this.txtEmail.TabIndex = 78;
             // 
-            // rbFemenino
+            // rbnFemenino
             // 
-            this.rbFemenino.AutoSize = true;
-            this.rbFemenino.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbFemenino.Location = new System.Drawing.Point(186, 249);
-            this.rbFemenino.Name = "rbFemenino";
-            this.rbFemenino.Size = new System.Drawing.Size(92, 22);
-            this.rbFemenino.TabIndex = 77;
-            this.rbFemenino.TabStop = true;
-            this.rbFemenino.Text = "Femenino";
-            this.rbFemenino.UseVisualStyleBackColor = true;
+            this.rbnFemenino.AutoSize = true;
+            this.rbnFemenino.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbnFemenino.Location = new System.Drawing.Point(186, 298);
+            this.rbnFemenino.Name = "rbnFemenino";
+            this.rbnFemenino.Size = new System.Drawing.Size(92, 22);
+            this.rbnFemenino.TabIndex = 77;
+            this.rbnFemenino.TabStop = true;
+            this.rbnFemenino.Text = "Femenino";
+            this.rbnFemenino.UseVisualStyleBackColor = true;
             // 
-            // rbMasculino
+            // rbnMasculino
             // 
-            this.rbMasculino.AutoSize = true;
-            this.rbMasculino.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbMasculino.Location = new System.Drawing.Point(95, 249);
-            this.rbMasculino.Name = "rbMasculino";
-            this.rbMasculino.Size = new System.Drawing.Size(94, 22);
-            this.rbMasculino.TabIndex = 76;
-            this.rbMasculino.TabStop = true;
-            this.rbMasculino.Text = "Masculino";
-            this.rbMasculino.UseVisualStyleBackColor = true;
+            this.rbnMasculino.AutoSize = true;
+            this.rbnMasculino.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbnMasculino.Location = new System.Drawing.Point(95, 298);
+            this.rbnMasculino.Name = "rbnMasculino";
+            this.rbnMasculino.Size = new System.Drawing.Size(94, 22);
+            this.rbnMasculino.TabIndex = 76;
+            this.rbnMasculino.TabStop = true;
+            this.rbnMasculino.Text = "Masculino";
+            this.rbnMasculino.UseVisualStyleBackColor = true;
             // 
             // txtTelefono
             // 
             this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(93, 199);
+            this.txtTelefono.Location = new System.Drawing.Point(93, 248);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(146, 24);
             this.txtTelefono.TabIndex = 75;
@@ -140,7 +142,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(34, 349);
+            this.label9.Location = new System.Drawing.Point(34, 398);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 18);
             this.label9.TabIndex = 70;
@@ -160,7 +162,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(38, 300);
+            this.label7.Location = new System.Drawing.Point(38, 349);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 18);
             this.label7.TabIndex = 68;
@@ -170,7 +172,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(25, 251);
+            this.label6.Location = new System.Drawing.Point(25, 300);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 18);
             this.label6.TabIndex = 67;
@@ -180,7 +182,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(17, 202);
+            this.label5.Location = new System.Drawing.Point(17, 251);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 18);
             this.label5.TabIndex = 66;
@@ -228,7 +230,7 @@
             // btnLimpiar
             // 
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(111, 417);
+            this.btnLimpiar.Location = new System.Drawing.Point(111, 466);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(76, 26);
             this.btnLimpiar.TabIndex = 105;
@@ -238,7 +240,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(293, 417);
+            this.btnCancelar.Location = new System.Drawing.Point(293, 466);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(76, 26);
             this.btnCancelar.TabIndex = 104;
@@ -249,26 +251,47 @@
             // btnGuardar
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(202, 417);
+            this.btnGuardar.Location = new System.Drawing.Point(202, 466);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(76, 26);
             this.btnGuardar.TabIndex = 103;
             this.btnGuardar.Text = "&Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDireccion.Location = new System.Drawing.Point(93, 199);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(146, 24);
+            this.txtDireccion.TabIndex = 107;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(12, 202);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(75, 18);
+            this.label10.TabIndex = 106;
+            this.label10.Text = "Dirección:";
             // 
             // frmInsertarEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 475);
+            this.ClientSize = new System.Drawing.Size(482, 534);
+            this.Controls.Add(this.txtDireccion);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtDNI);
             this.Controls.Add(this.cmbCargo);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.rbFemenino);
-            this.Controls.Add(this.rbMasculino);
+            this.Controls.Add(this.rbnFemenino);
+            this.Controls.Add(this.rbnMasculino);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.dtpFechaNacimiento);
             this.Controls.Add(this.txtApellidos);
@@ -285,6 +308,7 @@
             this.Name = "frmInsertarEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmInsertarEmpleados";
+            this.Load += new System.EventHandler(this.frmInsertarEmpleado_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,8 +319,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbCargo;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.RadioButton rbFemenino;
-        private System.Windows.Forms.RadioButton rbMasculino;
+        private System.Windows.Forms.RadioButton rbnFemenino;
+        private System.Windows.Forms.RadioButton rbnMasculino;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
         private System.Windows.Forms.TextBox txtApellidos;
@@ -313,5 +337,7 @@
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.Label label10;
     }
 }
