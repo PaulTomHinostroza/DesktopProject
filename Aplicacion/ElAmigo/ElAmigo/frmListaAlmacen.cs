@@ -12,12 +12,106 @@ namespace ElAmigo
 {
     public partial class frmListaAlmacen : Form
     {
+        private List<clsAlmacen> _AlmacenesEncontrados = new List<clsAlmacen>();
+
+        public List<clsAlmacen> AlmacenesEncontrados
+        {
+            get { return _AlmacenesEncontrados; }
+            set { _AlmacenesEncontrados = value; }
+        }
+
         public frmListaAlmacen()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnMostrarTodos_Click(object sender, EventArgs e)
+        {
+
+            AlmacenesEncontrados.Clear();
+            lstvDatos.Items.Clear();
+            int contador = 1;
+            foreach (clsAlmacen ELEMENTO in clsAlmacen.ListarAlmacenTodos())
+            {
+                AlmacenesEncontrados.Add(ELEMENTO);
+                lstvDatos.Items.Add(ELEMENTO.IdAlmacen.ToString());
+                lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DireccionAlm.ToString());
+                lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TelefonoAlm.ToString());
+                lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DescripcionAlm.ToString());
+
+                if (contador % 2 == 0)
+                {
+                    lstvDatos.Items[contador - 1].BackColor = Color.Khaki;
+                }
+                contador = contador + 1;
+
+            }
+
+        }
+
+        private void txtTexto_TextChanged(object sender, EventArgs e)
+        {
+            if (rbnDireccion.Checked == true)
+            {
+                if (txtTexto.Text.Length >= 3)
+                {
+                    AlmacenesEncontrados.Clear();
+                    lstvDatos.Items.Clear();
+                    int contador = 1;
+                    foreach (clsAlmacen ELEMENTO in clsAlmacen.ListarAlmacenPorDireccion(txtTexto.Text))
+                    {
+                        AlmacenesEncontrados.Add(ELEMENTO);
+                        lstvDatos.Items.Add(ELEMENTO.IdAlmacen.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DireccionAlm.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TelefonoAlm.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DescripcionAlm.ToString());
+
+                        if (contador % 2 == 0)
+                        {
+                            lstvDatos.Items[contador - 1].BackColor = Color.Khaki;
+                        }
+                        contador = contador + 1;
+
+                    }
+
+                }
+                else
+                {
+                    lstvDatos.Items.Clear();
+                }
+            }
+            if (rbnId.Checked == true)
+            {
+                if (txtTexto.Text.Length >= 3)
+                {
+                    AlmacenesEncontrados.Clear();
+                    lstvDatos.Items.Clear();
+                    int contador = 1;
+                    foreach (clsAlmacen ELEMENTO in clsAlmacen.ListarAlmacenPorId(Convert.ToInt32(txtTexto.Text)))
+                    {
+                        AlmacenesEncontrados.Add(ELEMENTO);
+                        lstvDatos.Items.Add(ELEMENTO.IdAlmacen.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DireccionAlm.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TelefonoAlm.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DescripcionAlm.ToString());
+
+                        if (contador % 2 == 0)
+                        {
+                            lstvDatos.Items[contador - 1].BackColor = Color.Khaki;
+                        }
+                        contador = contador + 1;
+
+                    }
+
+                }
+                else
+                {
+                    lstvDatos.Items.Clear();
+                }
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
         }

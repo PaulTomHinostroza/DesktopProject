@@ -49,7 +49,8 @@ create table tblAlmacen
 (
 IdAlmacen	int Identity (100,1) NOT NULL,
 Direccion_Alm	varchar(100) NOT NULL,
-Telefono_Alm	varchar(20) NOT NULL
+Telefono_Alm	varchar(20) NOT NULL,
+Descripcion_Alm	varchar(500)	NULL
 
 constraint pk_IdAlmacen primary key(IdAlmacen)
 )

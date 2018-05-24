@@ -17,9 +17,36 @@ namespace ElAmigo
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnInsertar_Click(object sender, EventArgs e)
+        {
+            
+            try
+            {
+                clsAlmacen nuevoAlmacen;
+                nuevoAlmacen = new clsAlmacen(txtDireccion.Text, txtTelefono.Text);
+                nuevoAlmacen.DescripcionAlm = txtDescripcion.Text;
+                nuevoAlmacen.InsertarAlmacen();
+                MessageBox.Show("Almacen Registrado");
+            }
+            catch (Exception ErrorRegCli)
+            {
+                MessageBox.Show(ErrorRegCli.Message);
+
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtDescripcion.Clear();
+            txtDireccion.Clear();
+            txtTelefono.Clear();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
         }
+
+
     }
 }
