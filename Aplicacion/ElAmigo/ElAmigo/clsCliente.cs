@@ -188,47 +188,45 @@ namespace ElAmigo
 
         public void InsertarCliente()
         {
-            SqlConnection conexion;
-            conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
-            SqlCommand comando1;
-            comando1 = new SqlCommand("usp_Cliente_Insertar", conexion);
-            comando1.CommandType = System.Data.CommandType.StoredProcedure;
+            SqlConnection conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
+            SqlCommand cmd = new SqlCommand("usp_Cliente_Insertar", conexion);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-            comando1.Parameters.AddWithValue("@parNombres_Cli", NombresCli);
-            comando1.Parameters.AddWithValue("@parApellidos_Cli", ApellidosCli);
-            comando1.Parameters.AddWithValue("@parDNI_Cli", DNICli);
-            comando1.Parameters.AddWithValue("@parDireccion_Cli", DireccionCli);
-            comando1.Parameters.AddWithValue("@parGenero_Cli", GeneroCli);
+            cmd.Parameters.AddWithValue("@parNombres_Cli", NombresCli);
+            cmd.Parameters.AddWithValue("@parApellidos_Cli", ApellidosCli);
+            cmd.Parameters.AddWithValue("@parDNI_Cli", DNICli);
+            cmd.Parameters.AddWithValue("@parDireccion_Cli", DireccionCli);
+            cmd.Parameters.AddWithValue("@parGenero_Cli", GeneroCli);
 
             if (string.IsNullOrEmpty(RUCCli))
             {
-                comando1.Parameters.AddWithValue("@parRUC_Cli", DBNull.Value);
+                cmd.Parameters.AddWithValue("@parRUC_Cli", DBNull.Value);
             }
             else
             {
-                comando1.Parameters.AddWithValue("@parRUC_Cli", TelefonoCli);
+                cmd.Parameters.AddWithValue("@parRUC_Cli", TelefonoCli);
             }
 
             if (string.IsNullOrEmpty(TelefonoCli))
             {
-                comando1.Parameters.AddWithValue("@partelefono_Cli", DBNull.Value);
+                cmd.Parameters.AddWithValue("@partelefono_Cli", DBNull.Value);
             }
             else
             {
-                comando1.Parameters.AddWithValue("@partelefono_Cli", TelefonoCli);
+                cmd.Parameters.AddWithValue("@partelefono_Cli", TelefonoCli);
             }
 
             if (string.IsNullOrEmpty(EmailCli))
             {
-                comando1.Parameters.AddWithValue("@parEmail_Cli", DBNull.Value);
+                cmd.Parameters.AddWithValue("@parEmail_Cli", DBNull.Value);
             }
             else
             {
-                comando1.Parameters.AddWithValue("@parEmail_Cli", EmailCli);
+                cmd.Parameters.AddWithValue("@parEmail_Cli", EmailCli);
             }
 
             conexion.Open();
-            comando1.ExecuteNonQuery();
+            cmd.ExecuteNonQuery();
             conexion.Close();
 
         }
@@ -267,130 +265,180 @@ namespace ElAmigo
             return x;
         }
 
-        //public static List<clsCliente> Buscar_PorApellido(string parametroApellido)
-        //{
-        //    List<clsCliente> x = new List<clsCliente>();
+        public static List<clsCliente> ListarClientePorNombres(string parametroNombres)
+        {
 
-        //    SqlConnection conexion;
-        //    conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
+            List<clsCliente> x = new List<clsCliente>();
+            SqlConnection conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
+            SqlCommand cmd = new SqlCommand("usp_Cliente_ListarPorNombre", conexion);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-        //    SqlCommand comando;
-        //    comando = new SqlCommand("usp_Cliente_Buscar_PorApellidos", conexion);
-        //    comando.CommandType = System.Data.CommandType.StoredProcedure;
-        //    comando.Parameters.AddWithValue("@parApellidosCliente", parametroApellido);
-        //    conexion.Open();
-        //    SqlDataReader contenedor;
-        //    contenedor = comando.ExecuteReader();
-        //    while (contenedor.Read() == true)
-        //    {
-        //        clsCliente MiObjeto;
-        //        MiObjeto = new clsCliente(contenedor["Nombres_Cli"].ToString(),
-        //                                    contenedor["Apellidos_Cli"].ToString(),
-        //                                    contenedor["DNI_Cli"].ToString(), contenedor["Direccion_Cli"].ToString(),
-        //                                    Convert.ToChar(contenedor["Genero_Cli"]), Convert.ToDateTime(contenedor["FechaInscripcion_Cli"]));
+            cmd.Parameters.AddWithValue("@parNombres_Cli", parametroNombres);
 
-        //        if (contenedor["telefono_Cli"] != DBNull.Value)
-        //        {
-        //            MiObjeto.TelefonoCli = contenedor["telefono_Cli"].ToString();
-        //        }
-        //        if (contenedor["RUC_Cli"] != DBNull.Value)
-        //        {
-        //            MiObjeto.RUCCli = contenedor["RUC_Cli"].ToString();
-        //        }
-        //        if (contenedor["Email_Cli"] != DBNull.Value)
-        //        {
-        //            MiObjeto.EmailCli = contenedor["Email_Cli"].ToString();
-        //        }
+            conexion.Open();
+            SqlDataReader contenedor;
+            contenedor = cmd.ExecuteReader();
+            while (contenedor.Read() == true)
+            {
+                clsCliente MiObjeto;
+                MiObjeto = new clsCliente(Convert.ToInt32(contenedor["IdCliente"]),
+                                            contenedor["Nombres_Cli"].ToString(),
+                                            contenedor["Apellidos_Cli"].ToString(),
+                                            contenedor["DNI_Cli"].ToString(),
+                                            contenedor["Direccion_Cli"].ToString(),
+                                            contenedor["Telefono_Cli"].ToString(),
+                                            Convert.ToChar(contenedor["Genero_Cli"]),
+                                            contenedor["RUC_Cli"].ToString(),
+                                            Convert.ToDateTime(contenedor["FechaInscrip_Cli"]),
+                                            contenedor["Email_Cli"].ToString());
 
-        //        x.Add(MiObjeto);
-        //    }
-        //    conexion.Close();
+                x.Add(MiObjeto);
+            }
+            conexion.Close();
+            return x;
+        }
 
-        //    return x;
-        //}
+        public static List<clsCliente> ListarClientePorApellidos(string parametroApellidos)
+        {
 
-        //public static List<clsCliente> Buscar_PorNombres(string parametroNombres)
-        //{
-        //    List<clsCliente> x = new List<clsCliente>();
+            List<clsCliente> x = new List<clsCliente>();
+            SqlConnection conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
+            SqlCommand cmd = new SqlCommand("usp_Cliente_ListarPorApellido", conexion);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-        //    SqlConnection conexion;
-        //    conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
+            cmd.Parameters.AddWithValue("@parApellidos_Cli", parametroApellidos);
 
-        //    SqlCommand comando;
-        //    comando = new SqlCommand("usp_Cliente_Buscar_PorNombres", conexion);
-        //    comando.CommandType = System.Data.CommandType.StoredProcedure;
-        //    comando.Parameters.AddWithValue("@parNombresCliente", parametroNombres);
-        //    conexion.Open();
-        //    SqlDataReader contenedor;
-        //    contenedor = comando.ExecuteReader();
-        //    while (contenedor.Read() == true)
-        //    {
-        //        clsCliente MiObjeto;
-        //        MiObjeto = new clsCliente(contenedor["Nombres_Cli"].ToString(),
-        //                                    contenedor["Apellidos_Cli"].ToString(),
-        //                                    contenedor["DNI_Cli"].ToString(), contenedor["Direccion_Cli"].ToString(),
-        //                                    Convert.ToChar(contenedor["Genero_Cli"]), Convert.ToDateTime(contenedor["FechaInscripcion_Cli"]));
+            conexion.Open();
+            SqlDataReader contenedor;
+            contenedor = cmd.ExecuteReader();
+            while (contenedor.Read() == true)
+            {
+                clsCliente MiObjeto;
+                MiObjeto = new clsCliente(Convert.ToInt32(contenedor["IdCliente"]),
+                                            contenedor["Nombres_Cli"].ToString(),
+                                            contenedor["Apellidos_Cli"].ToString(),
+                                            contenedor["DNI_Cli"].ToString(),
+                                            contenedor["Direccion_Cli"].ToString(),
+                                            contenedor["Telefono_Cli"].ToString(),
+                                            Convert.ToChar(contenedor["Genero_Cli"]),
+                                            contenedor["RUC_Cli"].ToString(),
+                                            Convert.ToDateTime(contenedor["FechaInscrip_Cli"]),
+                                            contenedor["Email_Cli"].ToString());
 
-        //        if (contenedor["telefono_Cli"] != DBNull.Value)
-        //        {
-        //            MiObjeto.TelefonoCli = contenedor["telefono_Cli"].ToString();
-        //        }
-        //        if (contenedor["RUC_Cli"] != DBNull.Value)
-        //        {
-        //            MiObjeto.RUCCli = contenedor["RUC_Cli"].ToString();
-        //        }
-        //        if (contenedor["Email_Cli"] != DBNull.Value)
-        //        {
-        //            MiObjeto.EmailCli = contenedor["Email_Cli"].ToString();
-        //        }
+                x.Add(MiObjeto);
+            }
+            conexion.Close();
+            return x;
+        }
 
-        //        x.Add(MiObjeto);
-        //    }
-        //    conexion.Close();
+        public static List<clsCliente> ListarClientePorId(int parametroId)
+        {
 
-        //    return x;
-        //}
+            List<clsCliente> x = new List<clsCliente>();
+            SqlConnection conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
+            SqlCommand cmd = new SqlCommand("usp_Cliente_ListarPorId", conexion);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-        //public static List<clsCliente> Buscar_PorDNI(string parametroDNI)
-        //{
-        //    List<clsCliente> x = new List<clsCliente>();
+            cmd.Parameters.AddWithValue("@parIdCliente", parametroId);
 
-        //    SqlConnection conexion;
-        //    conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
+            conexion.Open();
+            SqlDataReader contenedor;
+            contenedor = cmd.ExecuteReader();
+            while (contenedor.Read() == true)
+            {
+                clsCliente MiObjeto;
+                MiObjeto = new clsCliente(Convert.ToInt32(contenedor["IdCliente"]),
+                                            contenedor["Nombres_Cli"].ToString(),
+                                            contenedor["Apellidos_Cli"].ToString(),
+                                            contenedor["DNI_Cli"].ToString(),
+                                            contenedor["Direccion_Cli"].ToString(),
+                                            contenedor["Telefono_Cli"].ToString(),
+                                            Convert.ToChar(contenedor["Genero_Cli"]),
+                                            contenedor["RUC_Cli"].ToString(),
+                                            Convert.ToDateTime(contenedor["FechaInscrip_Cli"]),
+                                            contenedor["Email_Cli"].ToString());
 
-        //    SqlCommand comando;
-        //    comando = new SqlCommand("usp_Cliente_Buscar_PorDNI", conexion);
-        //    comando.CommandType = System.Data.CommandType.StoredProcedure;
-        //    comando.Parameters.AddWithValue("@parDNICliente", parametroDNI);
-        //    conexion.Open();
-        //    SqlDataReader contenedor;
-        //    contenedor = comando.ExecuteReader();
-        //    while (contenedor.Read() == true)
-        //    {
-        //        clsCliente MiObjeto;
-        //        MiObjeto = new clsCliente(contenedor["Nombres_Cli"].ToString(),
-        //                                    contenedor["Apellidos_Cli"].ToString(),
-        //                                    contenedor["DNI_Cli"].ToString(), contenedor["Direccion_Cli"].ToString(),
-        //                                    Convert.ToChar(contenedor["Genero_Cli"]), Convert.ToDateTime(contenedor["FechaInscripcion_Cli"]));
+                x.Add(MiObjeto);
+            }
+            conexion.Close();
+            return x;
+        }
 
-        //        if (contenedor["telefono_Cli"] != DBNull.Value)
-        //        {
-        //            MiObjeto.TelefonoCli = contenedor["telefono_Cli"].ToString();
-        //        }
-        //        if (contenedor["RUC_Cli"] != DBNull.Value)
-        //        {
-        //            MiObjeto.RUCCli = contenedor["RUC_Cli"].ToString();
-        //        }
-        //        if (contenedor["Email_Cli"] != DBNull.Value)
-        //        {
-        //            MiObjeto.EmailCli = contenedor["Email_Cli"].ToString();
-        //        }
+        public static List<clsCliente> ListarClientePorDNI(string parametroDNI)
+        {
 
-        //        x.Add(MiObjeto);
-        //    }
-        //    conexion.Close();
+            List<clsCliente> x = new List<clsCliente>();
+            SqlConnection conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
+            SqlCommand cmd = new SqlCommand("usp_Cliente_ListarPorDNI", conexion);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-        //    return x;
-        //}
+            cmd.Parameters.AddWithValue("@parDNI_Cli", parametroDNI);
+
+            conexion.Open();
+            SqlDataReader contenedor;
+            contenedor = cmd.ExecuteReader();
+            while (contenedor.Read() == true)
+            {
+                clsCliente MiObjeto;
+                MiObjeto = new clsCliente(Convert.ToInt32(contenedor["IdCliente"]),
+                                            contenedor["Nombres_Cli"].ToString(),
+                                            contenedor["Apellidos_Cli"].ToString(),
+                                            contenedor["DNI_Cli"].ToString(),
+                                            contenedor["Direccion_Cli"].ToString(),
+                                            contenedor["Telefono_Cli"].ToString(),
+                                            Convert.ToChar(contenedor["Genero_Cli"]),
+                                            contenedor["RUC_Cli"].ToString(),
+                                            Convert.ToDateTime(contenedor["FechaInscrip_Cli"]),
+                                            contenedor["Email_Cli"].ToString());
+
+                x.Add(MiObjeto);
+            }
+            conexion.Close();
+            return x;
+        }
+
+        public void Actualizar(clsCliente NuevosDatos)
+        {
+            SqlConnection conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
+
+            SqlCommand cmd = new SqlCommand("usp_Cliente_Actualizar", conexion);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@parIdCliente", IdCliente);
+            cmd.Parameters.AddWithValue("@parNUEVO_Nombres_Cli", NuevosDatos.NombresCli);
+            cmd.Parameters.AddWithValue("@parNUEVO_Apellidos_Cli", NuevosDatos.ApellidosCli);
+            cmd.Parameters.AddWithValue("@parNUEVO_DNI_Cli", NuevosDatos.DNICli);
+            cmd.Parameters.AddWithValue("@parNUEVO_Direccion_Cli", NuevosDatos.DireccionCli);
+            cmd.Parameters.AddWithValue("@parNUEVO_Genero_Cli", NuevosDatos.GeneroCli);
+
+            if (string.IsNullOrEmpty(NuevosDatos.RUCCli))
+            {
+                cmd.Parameters.AddWithValue("@parNUEVO_RUC_Cli", DBNull.Value);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@parNUEVO_RUC_Cli", NuevosDatos.RUCCli);
+            }
+
+            if (string.IsNullOrEmpty(NuevosDatos.TelefonoCli))
+            {
+                cmd.Parameters.AddWithValue("@parNUEVO_Telefono_Cli", DBNull.Value);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@parNUEVO_Telefono_Cli", NuevosDatos.TelefonoCli);
+            }
+
+            if (string.IsNullOrEmpty(NuevosDatos.EmailCli))
+            {
+                cmd.Parameters.AddWithValue("@parNUEVO_Email_Cli", DBNull.Value);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@parNUEVO_Email_Cli", NuevosDatos.EmailCli);
+            }
+            conexion.Open();
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+        }
     }
 }

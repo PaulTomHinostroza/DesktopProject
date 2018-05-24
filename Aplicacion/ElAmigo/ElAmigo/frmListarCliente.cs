@@ -12,13 +12,13 @@ namespace ElAmigo
 {
     public partial class frmListarCliente : Form
     {
-        
-        private List<clsCliente> _ClienteEncontrado = new List<clsCliente>();
 
-        public List<clsCliente> ClienteEncontrado
+        private List<clsCliente> _ClientesEncontrados = new List<clsCliente>();
+
+        public List<clsCliente> ClientesEncontrados
         {
-            get { return _ClienteEncontrado; }
-            set { _ClienteEncontrado = value; }
+            get { return _ClientesEncontrados; }
+            set { _ClientesEncontrados = value; }
         }
 
         public frmListarCliente()
@@ -33,13 +33,13 @@ namespace ElAmigo
 
         private void btnMostrarTodos_Click(object sender, EventArgs e)
         {
-            ClienteEncontrado.Clear();
+            ClientesEncontrados.Clear();
             lstvDatos.Items.Clear();
             int contador = 1;
             foreach (clsCliente ELEMENTO in clsCliente.ListarClienteTodos())
             {
 
-                ClienteEncontrado.Add(ELEMENTO);
+                ClientesEncontrados.Add(ELEMENTO);
                 lstvDatos.Items.Add(ELEMENTO.IdCliente.ToString());
                 lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.NombresCli);
                 lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.ApellidosCli);
@@ -59,5 +59,153 @@ namespace ElAmigo
             }
         }
 
+        private void txtTexto_TextChanged(object sender, EventArgs e)
+        {
+            if (rbnNombres.Checked == true)
+            {
+                if (txtTexto.Text.Length >= 3)
+                {
+                    ClientesEncontrados.Clear();
+                    lstvDatos.Items.Clear();
+                    int contador = 1;
+                    foreach (clsCliente ELEMENTO in clsCliente.ListarClientePorNombres(txtTexto.Text))
+                    {
+
+                        ClientesEncontrados.Add(ELEMENTO);
+                        lstvDatos.Items.Add(ELEMENTO.IdCliente.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.NombresCli);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.ApellidosCli);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DNICli);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TelefonoCli);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.GeneroCli.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.EmailCli);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DireccionCli);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.RUCCli);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaInscripcion.ToString());
+                        if (contador % 2 == 0)
+                        {
+                            lstvDatos.Items[contador - 1].BackColor = Color.Khaki;
+                        }
+
+                        contador = contador + 1;
+                    }
+
+                }
+                else
+                {
+                    lstvDatos.Items.Clear();
+                }       
+            }
+
+            if (rbnApellidos.Checked == true)
+            {
+                if (txtTexto.Text.Length >= 3)
+                {
+                    ClientesEncontrados.Clear();
+                    lstvDatos.Items.Clear();
+                    int contador = 1;
+                    foreach (clsCliente ELEMENTO in clsCliente.ListarClientePorApellidos(txtTexto.Text))
+                    {
+
+                        ClientesEncontrados.Add(ELEMENTO);
+                        lstvDatos.Items.Add(ELEMENTO.IdCliente.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.NombresCli);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.ApellidosCli);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DNICli);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TelefonoCli);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.GeneroCli.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.EmailCli);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DireccionCli);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.RUCCli);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaInscripcion.ToString());
+                        if (contador % 2 == 0)
+                        {
+                            lstvDatos.Items[contador - 1].BackColor = Color.Khaki;
+                        }
+
+                        contador = contador + 1;
+                    }
+
+                }
+                else
+                {
+                    lstvDatos.Items.Clear();
+                }
+
+            }
+
+            if (rbnId.Checked == true)
+            {
+                if (txtTexto.Text.Length >= 3)
+                {
+                    ClientesEncontrados.Clear();
+                    lstvDatos.Items.Clear();
+                    int contador = 1;
+                    foreach (clsCliente ELEMENTO in clsCliente.ListarClientePorId(Convert.ToInt32(txtTexto.Text)))
+                    {
+
+                        ClientesEncontrados.Add(ELEMENTO);
+                        lstvDatos.Items.Add(ELEMENTO.IdCliente.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.NombresCli);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.ApellidosCli);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DNICli);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TelefonoCli);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.GeneroCli.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.EmailCli);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DireccionCli);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.RUCCli);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaInscripcion.ToString());
+                        if (contador % 2 == 0)
+                        {
+                            lstvDatos.Items[contador - 1].BackColor = Color.Khaki;
+                        }
+
+                        contador = contador + 1;
+                    }
+
+                }
+                else
+                {
+                    lstvDatos.Items.Clear();
+                }
+            }
+
+            if (rbnDNI.Checked == true)
+            {
+                if (txtTexto.Text.Length >= 3)
+                {
+                    ClientesEncontrados.Clear();
+                    lstvDatos.Items.Clear();
+                    int contador = 1;
+                    foreach (clsCliente ELEMENTO in clsCliente.ListarClientePorDNI(txtTexto.Text))
+                    {
+
+                        ClientesEncontrados.Add(ELEMENTO);
+                        lstvDatos.Items.Add(ELEMENTO.IdCliente.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.NombresCli);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.ApellidosCli);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DNICli);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TelefonoCli);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.GeneroCli.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.EmailCli);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DireccionCli);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.RUCCli);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaInscripcion.ToString());
+                        if (contador % 2 == 0)
+                        {
+                            lstvDatos.Items[contador - 1].BackColor = Color.Khaki;
+                        }
+
+                        contador = contador + 1;
+                    }
+
+                }
+                else
+                {
+                    lstvDatos.Items.Clear();
+                }
+            }
+
+        }
     }
 }

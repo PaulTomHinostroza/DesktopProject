@@ -32,11 +32,79 @@ values
 	GETDATE()				,
 	@parEmail_Cli 
 )
---///////////////////////////////////////////////////////////////////////////////////////////
+--///////////////////////////////////////////////////////////////////
 
 create proc usp_Cliente_Listar_Todos
 as
-select IdCliente,Nombres_Cli,Apellidos_Cli,DNI_Cli,Direccion_Cli,Telefono_Cli,Genero_Cli,RUC_Cli,FechaInscrip_Cli,Email_Cli
+select IdCliente,Nombres_Cli,Apellidos_Cli,DNI_Cli,Direccion_Cli,
+		Telefono_Cli,Genero_Cli,RUC_Cli,FechaInscrip_Cli,Email_Cli
 from tblCliente
 
---///////////////////////////////////////////////////////////////////////////////////////////
+--///////////////////////////////////////////////////////////////////
+
+create proc usp_Cliente_ListarPorNombre
+@parNombres_Cli	varchar(200)
+as
+select IdCliente,Nombres_Cli,Apellidos_Cli,DNI_Cli,Direccion_Cli,
+		Telefono_Cli,Genero_Cli,RUC_Cli,FechaInscrip_Cli,Email_Cli
+from tblCliente
+where Nombres_Cli like '%' + @parNombres_Cli + '%'
+order by Nombres_Cli
+
+--////////////////////////////////////////////////////////
+
+create proc usp_Cliente_ListarPorApellido
+@parApellidos_Cli	varchar(200)
+as
+select IdCliente,Nombres_Cli,Apellidos_Cli,DNI_Cli,Direccion_Cli,
+		Telefono_Cli,Genero_Cli,RUC_Cli,FechaInscrip_Cli,Email_Cli
+from tblCliente
+where Apellidos_Cli like '%' + @parApellidos_Cli + '%'
+order by Nombres_Cli
+
+--//////////////////////////////////////////////////////////
+
+create proc usp_Cliente_ListarPorId
+@parIdCliente int
+as
+select IdCliente,Nombres_Cli,Apellidos_Cli,DNI_Cli,Direccion_Cli,
+		Telefono_Cli,Genero_Cli,RUC_Cli,FechaInscrip_Cli,Email_Cli
+from tblCliente
+where IdCliente>=@parIdCliente
+order by Nombres_Cli
+
+--///////////////////////////////////////////////////////////
+
+create proc usp_Cliente_ListarPorDNI
+@parDNI_Cli	varchar(200)
+as
+select IdCliente,Nombres_Cli,Apellidos_Cli,DNI_Cli,Direccion_Cli,
+		Telefono_Cli,Genero_Cli,RUC_Cli,FechaInscrip_Cli,Email_Cli
+from tblCliente
+where DNI_Cli like '%' + @parDNI_Cli + '%'
+order by Nombres_Cli
+
+--//////////////////////////////////////////////////////////////////
+
+create proc usp_Cliente_Actualizar
+@parIdCliente			int,
+@parNUEVO_Nombres_Cli          varchar(60),
+@parNUEVO_Apellidos_Cli        varchar(100),
+@parNUEVO_DNI_Cli              varchar(20),
+@parNUEVO_Direccion_Cli        varchar(100),
+@parNUEVO_Telefono_Cli         varchar(20),
+@parNUEVO_Genero_Cli           char(1) ,
+@parNUEVO_RUC_Cli              varchar(30),
+@parNUEVO_Email_Cli            varchar(50)
+as
+UPDATE tblCliente
+set
+Nombres_Cli		=@parNUEVO_Nombres_Cli,
+Apellidos_Cli	=@parNUEVO_Apellidos_Cli      ,
+DNI_Cli			=@parNUEVO_DNI_Cli     ,
+Direccion_Cli	=@parNUEVO_Direccion_Cli    ,
+Telefono_Cli	=@parNUEVO_Telefono_Cli   ,
+Genero_Cli		=@parNUEVO_Genero_Cli   ,
+RUC_Cli		=@parNUEVO_RUC_Cli   ,
+Email_Cli	=@parNUEVO_Email_Cli
+where IdCliente=@parIdCliente
