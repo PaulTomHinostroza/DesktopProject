@@ -151,14 +151,22 @@ namespace ElAmigo
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            txtNombres.Enabled = true;
-            txtDireccion.Enabled = true;
-            txtEmail.Enabled = true;
-            txtTelefono.Enabled = true;
-            txtNroCuenta.Enabled = true;
-            btnGuardar.Visible = true;
-            btnActualizar.Visible = false;
-            btnLimpiar.Enabled = false;
+            if (txtId.TextLength == 0)
+            {
+                MessageBox.Show("Selecciona un Dato.");
+            }
+            else
+            {
+                txtNombres.Enabled = true;
+                txtDireccion.Enabled = true;
+                txtEmail.Enabled = true;
+                txtTelefono.Enabled = true;
+                txtNroCuenta.Enabled = true;
+                btnGuardar.Visible = true;
+                btnActualizar.Visible = false;
+                btnLimpiar.Enabled = false;
+            }
+            
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

@@ -159,9 +159,9 @@ namespace ElAmigo
             SqlConnection conexion;
             conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
 
-            SqlCommand cmd = new SqlCommand("usp_Producto_Actualizar", conexion);
+            SqlCommand cmd = new SqlCommand("usp_Almacen_Actualizar", conexion);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@parIdProducto", IdAlmacen);
+            cmd.Parameters.AddWithValue("@parIdAlmacen", IdAlmacen);
 
             cmd.Parameters.AddWithValue("@parNUEVO_Direccion_Alm", NuevosDatos.DireccionAlm);
             cmd.Parameters.AddWithValue("@parNUEVO_Telefono_Alm", NuevosDatos.TelefonoAlm);

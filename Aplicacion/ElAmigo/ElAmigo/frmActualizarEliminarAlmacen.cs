@@ -139,6 +139,58 @@ namespace ElAmigo
             btnLimpiar.Enabled = true;
         }
 
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            if (txtId.TextLength==0)
+            {
+                MessageBox.Show("Selecciona un Dato.");
+            }
+            else
+            {
+                txtDireccion.Enabled = true;
+                txtTelefono.Enabled = true;
+                txtDescripcion.Enabled = true;
+                btnGuardar.Visible = true;
+                btnActualizar.Visible = false;
+                btnLimpiar.Enabled = false;
+            }
+ 
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            clsAlmacen nuevosDatosAlmacen;
+            nuevosDatosAlmacen = new clsAlmacen(txtDireccion.Text, txtTelefono.Text);
+            nuevosDatosAlmacen.DescripcionAlm = txtDescripcion.Text;
+            AlmacenSeleccionado.Actualizar(nuevosDatosAlmacen);
+            MessageBox.Show("Datos actualizados satisfactoriamente.");
+
+            txtDireccion.Enabled = false;
+            txtTelefono.Enabled = false;
+            txtDescripcion.Enabled = false;
+            btnGuardar.Visible = false;
+            btnActualizar.Visible = true;
+            btnLimpiar.Enabled = true;
+            lstvDatos.Items.Clear();
+            txtTexto.Clear();
+
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtId.Clear();
+            txtDescripcion.Clear();
+            txtDireccion.Clear();
+            txtTelefono.Clear();
+            txtTexto.Clear();
+            lstvDatos.Items.Clear();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
 
 
     }

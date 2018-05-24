@@ -254,17 +254,26 @@ namespace ElAmigo
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            txtNombres.Enabled = true;
-            txtApellidos.Enabled = true;
-            txtDNI.Enabled = true;
-            txtDireccion.Enabled = true;
-            txtRUC.Enabled = true;
-            txtTelefono.Enabled = true;
-            rbnMasculino.Enabled = true;
-            rbnFemenino.Enabled = true;
-            txtEmail.Enabled = true;
-            btnGuardar.Visible = true;
-            btnLimpiar.Enabled = false;
+
+            if (txtId.TextLength == 0)
+            {
+                MessageBox.Show("Selecciona un Dato.");
+            }
+            else
+            {
+                txtNombres.Enabled = true;
+                txtApellidos.Enabled = true;
+                txtDNI.Enabled = true;
+                txtDireccion.Enabled = true;
+                txtRUC.Enabled = true;
+                txtTelefono.Enabled = true;
+                rbnMasculino.Enabled = true;
+                rbnFemenino.Enabled = true;
+                txtEmail.Enabled = true;
+                btnGuardar.Visible = true;
+                btnLimpiar.Enabled = false;
+            }
+            
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
