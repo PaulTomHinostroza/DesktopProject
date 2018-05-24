@@ -39,7 +39,7 @@
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.txtRUC = new System.Windows.Forms.TextBox();
+            this.txtNroCuenta = new System.Windows.Forms.TextBox();
             this.txtNombres = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -53,6 +53,7 @@
             this.btnLimpiar.TabIndex = 123;
             this.btnLimpiar.Text = "&Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnCancelar
             // 
@@ -74,6 +75,7 @@
             this.btnGuardar.TabIndex = 121;
             this.btnGuardar.Text = "&Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label10
             // 
@@ -157,14 +159,14 @@
             this.txtTelefono.Size = new System.Drawing.Size(213, 24);
             this.txtTelefono.TabIndex = 107;
             // 
-            // txtRUC
+            // txtNroCuenta
             // 
-            this.txtRUC.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRUC.Location = new System.Drawing.Point(97, 263);
-            this.txtRUC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtRUC.Name = "txtRUC";
-            this.txtRUC.Size = new System.Drawing.Size(369, 24);
-            this.txtRUC.TabIndex = 105;
+            this.txtNroCuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNroCuenta.Location = new System.Drawing.Point(97, 263);
+            this.txtNroCuenta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNroCuenta.Name = "txtNroCuenta";
+            this.txtNroCuenta.Size = new System.Drawing.Size(369, 24);
+            this.txtNroCuenta.TabIndex = 105;
             // 
             // txtNombres
             // 
@@ -201,7 +203,7 @@
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtTelefono);
-            this.Controls.Add(this.txtRUC);
+            this.Controls.Add(this.txtNroCuenta);
             this.Controls.Add(this.txtNombres);
             this.Controls.Add(this.label3);
             this.Name = "frmInsertarProveedor";
@@ -225,7 +227,7 @@
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.TextBox txtRUC;
+        private System.Windows.Forms.TextBox txtNroCuenta;
         private System.Windows.Forms.TextBox txtNombres;
         private System.Windows.Forms.Label label3;
     }

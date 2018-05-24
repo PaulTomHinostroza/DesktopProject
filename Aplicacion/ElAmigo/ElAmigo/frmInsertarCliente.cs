@@ -50,5 +50,18 @@ namespace ElAmigo
 
             }
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtNombres.Clear();
+            txtApellidos.Clear();
+            txtDireccion.Clear();
+            txtDNI.Clear();
+            txtEmail.Clear();
+            txtRUC.Clear();
+            txtTelefono.Clear();
+            rbnFemenino.Checked = false;
+            rbnMasculino.Checked = false;
+        }
     }
 }

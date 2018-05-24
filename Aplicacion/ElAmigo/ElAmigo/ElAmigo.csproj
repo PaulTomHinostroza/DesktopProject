@@ -50,6 +50,7 @@
     <Compile Include="clsMedida.cs" />
     <Compile Include="clsPrecio.cs" />
     <Compile Include="clsProducto.cs" />
+    <Compile Include="clsProveedor.cs" />
     <Compile Include="frmActualizarEliminarAlmacen.cs">
       <SubType>Form</SubType>
     </Compile>

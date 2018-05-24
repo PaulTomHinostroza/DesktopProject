@@ -21,5 +21,33 @@ namespace ElAmigo
         {
             Close();
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                clsProveedor nuevoProveedor;
+                nuevoProveedor = new clsProveedor(txtNombres.Text, txtTelefono.Text);
+                nuevoProveedor.DireccionProv = txtDireccion.Text;
+                nuevoProveedor.EmailProv = txtEmail.Text;
+                nuevoProveedor.NroCuentaProv = txtNroCuenta.Text;
+                nuevoProveedor.InsertarProveedor();
+                MessageBox.Show("Proveedor Registrado");
+            }
+            catch (Exception ErrorRegProd)
+            {
+
+                MessageBox.Show(ErrorRegProd.Message);
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtNombres.Clear();
+            txtDireccion.Clear();
+            txtEmail.Clear();
+            txtTelefono.Clear();
+            txtNroCuenta.Clear();
+        }
     }
 }
