@@ -86,6 +86,14 @@ namespace ElAmigo
             Precio = parPrecio;
         }
 
+        //constructor para la venta
+        public clsPrecio(int parIdProductoInt, string parDescripcionMed, decimal parPrecio)
+        {
+            IdProductoInt = parIdProductoInt;
+            DescripcionMed = parDescripcionMed;
+            Precio = parPrecio;
+        }
+
         //public clsPrecio(int parIdProductoInt, string parNombreMed)
         //{
         //    IdProductoInt = parIdProductoInt;
@@ -141,26 +149,26 @@ namespace ElAmigo
             conexion.Close();
         }
 
-        //public static List<clsPrecio> ListarPreciosProductoMedida(int parIdProducto, string parNombreMed)
-        //{
-        //    List<clsPrecio> x = new List<clsPrecio>();
-        //    SqlConnection conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
-        //    SqlCommand cmd = new SqlCommand("usp_Producto_Listar_PrecioMedida", conexion);
-        //    cmd.CommandType = System.Data.CommandType.StoredProcedure;
-        //    cmd.Parameters.AddWithValue("@parIdProducto", parIdProducto);
-        //    cmd.Parameters.AddWithValue("@parNombre", parNombreMed);
-        //    conexion.Open();
-        //    SqlDataReader cont;
-        //    cont = cmd.ExecuteReader();
+        public static List<clsPrecio> ListarPreciosProductoMedida(int parIdProducto, string parNombreMed)
+        {
+            List<clsPrecio> x = new List<clsPrecio>();
+            SqlConnection conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
+            SqlCommand cmd = new SqlCommand("usp_Precio_Listar_ProductoMedida", conexion);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@parIdProducto_P", parIdProducto);
+            cmd.Parameters.AddWithValue("@parDescripcion_Med", parNombreMed);
+            conexion.Open();
+            SqlDataReader cont;
+            cont = cmd.ExecuteReader();
 
-        //    while (cont.Read() == true)
-        //    {
-        //        clsPrecio MiObjeto;
-        //        MiObjeto = new clsPrecio(Convert.ToInt32(cont["IdProducto"]), cont["Nombre"].ToString(), Convert.ToDecimal(cont["Precio"]));
-        //        x.Add(MiObjeto);
-        //    }
-        //    conexion.Close();
-        //    return x;
-        //}
+            while (cont.Read() == true)
+            {
+                clsPrecio MiObjeto;
+                MiObjeto = new clsPrecio(Convert.ToInt32(cont["IdProducto_P"]), cont["Descripcion_Med"].ToString(), Convert.ToDecimal(cont["Precio"]));
+                x.Add(MiObjeto);
+            }
+            conexion.Close();
+            return x;
+        }
     }
 }

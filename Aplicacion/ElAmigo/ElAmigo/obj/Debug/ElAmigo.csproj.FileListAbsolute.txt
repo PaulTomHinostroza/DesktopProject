@@ -241,3 +241,5 @@ F:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.frmListarStock.re
 F:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.frmVentanaAdministrador.resources
 F:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.Properties.Resources.resources
 F:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.csproj.GenerateResource.Cache
+E:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.frmListarClienteVenta.resources
+E:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.frmListarProductoMedidaPrecioVenta.resources

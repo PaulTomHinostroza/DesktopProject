@@ -184,6 +184,12 @@
     <Compile Include="frmListarCliente.Designer.cs">
       <DependentUpon>frmListarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListarClienteVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListarClienteVenta.Designer.cs">
+      <DependentUpon>frmListarClienteVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmListarEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,6 +213,12 @@
     </Compile>
     <Compile Include="frmListarProducto.Designer.cs">
       <DependentUpon>frmListarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListarProductoMedidaPrecioVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListarProductoMedidaPrecioVenta.Designer.cs">
+      <DependentUpon>frmListarProductoMedidaPrecioVenta.cs</DependentUpon>
     </Compile>
     <Compile Include="frmListarProveedor.cs">
       <SubType>Form</SubType>
@@ -295,6 +307,9 @@
     <EmbeddedResource Include="frmListarCliente.resx">
       <DependentUpon>frmListarCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmListarClienteVenta.resx">
+      <DependentUpon>frmListarClienteVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmListarEmpleado.resx">
       <DependentUpon>frmListarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
@@ -306,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmListarProducto.resx">
       <DependentUpon>frmListarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListarProductoMedidaPrecioVenta.resx">
+      <DependentUpon>frmListarProductoMedidaPrecioVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListarProveedor.resx">
       <DependentUpon>frmListarProveedor.cs</DependentUpon>

@@ -61,9 +61,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtMarca = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnBusquedaCliente = new System.Windows.Forms.Button();
@@ -292,9 +290,7 @@
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Controls.Add(this.label8);
-            this.groupBox4.Controls.Add(this.txtMarca);
             this.groupBox4.Controls.Add(this.txtDescripcion);
-            this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(12, 158);
@@ -320,6 +316,7 @@
             this.cmbMedida.Name = "cmbMedida";
             this.cmbMedida.Size = new System.Drawing.Size(79, 23);
             this.cmbMedida.TabIndex = 15;
+            this.cmbMedida.SelectedValueChanged += new System.EventHandler(this.cmbMedida_SelectedValueChanged);
             // 
             // txtIgv
             // 
@@ -367,6 +364,7 @@
             this.btnBusquedaProducto.TabIndex = 11;
             this.btnBusquedaProducto.Text = "Buscar";
             this.btnBusquedaProducto.UseVisualStyleBackColor = true;
+            this.btnBusquedaProducto.Click += new System.EventHandler(this.btnBusquedaProducto_Click);
             // 
             // btnAgregar
             // 
@@ -404,34 +402,15 @@
             this.label8.TabIndex = 4;
             this.label8.Text = "Medida:";
             // 
-            // txtMarca
-            // 
-            this.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMarca.Location = new System.Drawing.Point(385, 24);
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.ReadOnly = true;
-            this.txtMarca.Size = new System.Drawing.Size(203, 21);
-            this.txtMarca.TabIndex = 3;
-            this.txtMarca.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // txtDescripcion
             // 
             this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDescripcion.Location = new System.Drawing.Point(93, 24);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.ReadOnly = true;
-            this.txtDescripcion.Size = new System.Drawing.Size(205, 21);
+            this.txtDescripcion.Size = new System.Drawing.Size(509, 21);
             this.txtDescripcion.TabIndex = 2;
             this.txtDescripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(334, 25);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 16);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Marca:";
             // 
             // label6
             // 
@@ -465,6 +444,7 @@
             this.btnBusquedaCliente.TabIndex = 4;
             this.btnBusquedaCliente.Text = "Buscar";
             this.btnBusquedaCliente.UseVisualStyleBackColor = true;
+            this.btnBusquedaCliente.Click += new System.EventHandler(this.btnBusquedaCliente_Click);
             // 
             // txtDocIdentidad
             // 
@@ -524,6 +504,7 @@
             this.rbnGuia.TabIndex = 4;
             this.rbnGuia.Text = "Guia de Remisión";
             this.rbnGuia.UseVisualStyleBackColor = true;
+            this.rbnGuia.CheckedChanged += new System.EventHandler(this.rbnGuia_CheckedChanged);
             // 
             // rbnFactura
             // 
@@ -546,6 +527,7 @@
             this.rbnBoleta.TabStop = true;
             this.rbnBoleta.Text = "Boleta";
             this.rbnBoleta.UseVisualStyleBackColor = true;
+            this.rbnBoleta.CheckedChanged += new System.EventHandler(this.rbnBoleta_CheckedChanged);
             // 
             // frmInsertarVenta
             // 
@@ -619,9 +601,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnBusquedaCliente;
