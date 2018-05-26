@@ -30,17 +30,10 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.txtIGV2 = new System.Windows.Forms.TextBox();
+            this.txtSubtotal = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblCodigoProducto = new System.Windows.Forms.Label();
-            this.lstvDatos = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -73,11 +66,25 @@
             this.rbnGuia = new System.Windows.Forms.RadioButton();
             this.rbnFactura = new System.Windows.Forms.RadioButton();
             this.rbnBoleta = new System.Windows.Forms.RadioButton();
+            this.lblIdCliente = new System.Windows.Forms.Label();
+            this.lblIdMedida = new System.Windows.Forms.Label();
+            this.lblCodigoProducto = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblIdEmpleado = new System.Windows.Forms.Label();
+            this.lstvDatos = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -100,29 +107,29 @@
             this.label2.TabIndex = 77;
             this.label2.Text = "I.G.V";
             // 
-            // textBox1
+            // txtTotal
             // 
-            this.textBox1.Location = new System.Drawing.Point(590, 563);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(126, 20);
-            this.textBox1.TabIndex = 76;
+            this.txtTotal.Location = new System.Drawing.Point(590, 563);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
+            this.txtTotal.Size = new System.Drawing.Size(126, 20);
+            this.txtTotal.TabIndex = 76;
             // 
-            // textBox2
+            // txtIGV2
             // 
-            this.textBox2.Location = new System.Drawing.Point(590, 537);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(126, 20);
-            this.textBox2.TabIndex = 75;
+            this.txtIGV2.Location = new System.Drawing.Point(590, 537);
+            this.txtIGV2.Name = "txtIGV2";
+            this.txtIGV2.ReadOnly = true;
+            this.txtIGV2.Size = new System.Drawing.Size(126, 20);
+            this.txtIGV2.TabIndex = 75;
             // 
-            // textBox3
+            // txtSubtotal
             // 
-            this.textBox3.Location = new System.Drawing.Point(590, 511);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(126, 20);
-            this.textBox3.TabIndex = 74;
+            this.txtSubtotal.Location = new System.Drawing.Point(590, 511);
+            this.txtSubtotal.Name = "txtSubtotal";
+            this.txtSubtotal.ReadOnly = true;
+            this.txtSubtotal.Size = new System.Drawing.Size(126, 20);
+            this.txtSubtotal.TabIndex = 74;
             // 
             // label3
             // 
@@ -133,57 +140,6 @@
             this.label3.Size = new System.Drawing.Size(75, 16);
             this.label3.TabIndex = 73;
             this.label3.Text = "Sub Total";
-            // 
-            // lblCodigoProducto
-            // 
-            this.lblCodigoProducto.AutoSize = true;
-            this.lblCodigoProducto.Location = new System.Drawing.Point(464, 120);
-            this.lblCodigoProducto.Name = "lblCodigoProducto";
-            this.lblCodigoProducto.Size = new System.Drawing.Size(0, 13);
-            this.lblCodigoProducto.TabIndex = 72;
-            // 
-            // lstvDatos
-            // 
-            this.lstvDatos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5});
-            this.lstvDatos.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstvDatos.FullRowSelect = true;
-            this.lstvDatos.GridLines = true;
-            this.lstvDatos.Location = new System.Drawing.Point(10, 256);
-            this.lstvDatos.Name = "lstvDatos";
-            this.lstvDatos.Size = new System.Drawing.Size(706, 245);
-            this.lstvDatos.TabIndex = 71;
-            this.lstvDatos.UseCompatibleStateImageBehavior = false;
-            this.lstvDatos.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Cantidad";
-            this.columnHeader1.Width = 71;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Medida";
-            this.columnHeader2.Width = 64;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Descripción";
-            this.columnHeader3.Width = 358;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "P.Unitario";
-            this.columnHeader4.Width = 87;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "V. de Venta";
-            this.columnHeader5.Width = 117;
             // 
             // panel1
             // 
@@ -235,6 +191,7 @@
             this.lblSerie.Name = "lblSerie";
             this.lblSerie.Size = new System.Drawing.Size(57, 23);
             this.lblSerie.TabIndex = 1;
+            this.lblSerie.Text = "10000";
             // 
             // lblTipo
             // 
@@ -257,6 +214,7 @@
             this.btnEliminarItem.TabIndex = 69;
             this.btnEliminarItem.Text = "&Eliminar Item";
             this.btnEliminarItem.UseVisualStyleBackColor = true;
+            this.btnEliminarItem.Click += new System.EventHandler(this.btnEliminarItem_Click);
             // 
             // btnInsertarVenta
             // 
@@ -267,6 +225,7 @@
             this.btnInsertarVenta.TabIndex = 68;
             this.btnInsertarVenta.Text = "&Registrar Venta";
             this.btnInsertarVenta.UseVisualStyleBackColor = true;
+            this.btnInsertarVenta.Click += new System.EventHandler(this.btnInsertarVenta_Click);
             // 
             // btnCerrar
             // 
@@ -374,6 +333,7 @@
             this.btnAgregar.TabIndex = 10;
             this.btnAgregar.Text = "&Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // label10
             // 
@@ -529,19 +489,127 @@
             this.rbnBoleta.UseVisualStyleBackColor = true;
             this.rbnBoleta.CheckedChanged += new System.EventHandler(this.rbnBoleta_CheckedChanged);
             // 
+            // lblIdCliente
+            // 
+            this.lblIdCliente.AutoSize = true;
+            this.lblIdCliente.Location = new System.Drawing.Point(444, 119);
+            this.lblIdCliente.Name = "lblIdCliente";
+            this.lblIdCliente.Size = new System.Drawing.Size(48, 13);
+            this.lblIdCliente.TabIndex = 84;
+            this.lblIdCliente.Text = "IdCliente";
+            this.lblIdCliente.Visible = false;
+            // 
+            // lblIdMedida
+            // 
+            this.lblIdMedida.AutoSize = true;
+            this.lblIdMedida.Location = new System.Drawing.Point(444, 98);
+            this.lblIdMedida.Name = "lblIdMedida";
+            this.lblIdMedida.Size = new System.Drawing.Size(51, 13);
+            this.lblIdMedida.TabIndex = 83;
+            this.lblIdMedida.Text = "IdMedida";
+            this.lblIdMedida.Visible = false;
+            // 
+            // lblCodigoProducto
+            // 
+            this.lblCodigoProducto.AutoSize = true;
+            this.lblCodigoProducto.Location = new System.Drawing.Point(444, 72);
+            this.lblCodigoProducto.Name = "lblCodigoProducto";
+            this.lblCodigoProducto.Size = new System.Drawing.Size(59, 13);
+            this.lblCodigoProducto.TabIndex = 82;
+            this.lblCodigoProducto.Text = "IdProducto";
+            this.lblCodigoProducto.Visible = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.lblIdEmpleado);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(341, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(84, 51);
+            this.groupBox2.TabIndex = 85;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Vendedor";
+            // 
+            // lblIdEmpleado
+            // 
+            this.lblIdEmpleado.AutoSize = true;
+            this.lblIdEmpleado.Location = new System.Drawing.Point(20, 23);
+            this.lblIdEmpleado.Name = "lblIdEmpleado";
+            this.lblIdEmpleado.Size = new System.Drawing.Size(50, 16);
+            this.lblIdEmpleado.TabIndex = 0;
+            this.lblIdEmpleado.Text = "100000";
+            // 
+            // lstvDatos
+            // 
+            this.lstvDatos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7});
+            this.lstvDatos.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstvDatos.FullRowSelect = true;
+            this.lstvDatos.GridLines = true;
+            this.lstvDatos.Location = new System.Drawing.Point(12, 256);
+            this.lstvDatos.Name = "lstvDatos";
+            this.lstvDatos.Size = new System.Drawing.Size(706, 245);
+            this.lstvDatos.TabIndex = 86;
+            this.lstvDatos.UseCompatibleStateImageBehavior = false;
+            this.lstvDatos.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Cantidad";
+            this.columnHeader1.Width = 71;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "IdMedida";
+            this.columnHeader2.Width = 0;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Medida";
+            this.columnHeader3.Width = 73;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "IdProducto";
+            this.columnHeader4.Width = 0;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Descripción";
+            this.columnHeader5.Width = 358;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "P.Unitario";
+            this.columnHeader6.Width = 81;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "V.De Venta";
+            this.columnHeader7.Width = 112;
+            // 
             // frmInsertarVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(734, 591);
+            this.Controls.Add(this.lstvDatos);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.lblIdCliente);
+            this.Controls.Add(this.lblIdMedida);
+            this.Controls.Add(this.lblCodigoProducto);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtTotal);
+            this.Controls.Add(this.txtIGV2);
+            this.Controls.Add(this.txtSubtotal);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.lblCodigoProducto);
-            this.Controls.Add(this.lstvDatos);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnEliminarItem);
             this.Controls.Add(this.btnInsertarVenta);
@@ -561,6 +629,8 @@
             this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -570,17 +640,10 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.TextBox txtIGV2;
+        private System.Windows.Forms.TextBox txtSubtotal;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblCodigoProducto;
-        private System.Windows.Forms.ListView lstvDatos;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -613,6 +676,19 @@
         private System.Windows.Forms.RadioButton rbnGuia;
         private System.Windows.Forms.RadioButton rbnFactura;
         private System.Windows.Forms.RadioButton rbnBoleta;
+        private System.Windows.Forms.Label lblIdCliente;
+        private System.Windows.Forms.Label lblIdMedida;
+        private System.Windows.Forms.Label lblCodigoProducto;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label lblIdEmpleado;
+        private System.Windows.Forms.ListView lstvDatos;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
 
     }
 }

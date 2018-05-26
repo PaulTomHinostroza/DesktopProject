@@ -37,3 +37,14 @@ UPDATE tblPrecio
 set
 Precio = @parNUEVO_Precio
 where IdProducto_P=@parIdProducto_P and IdMedida_P=@parIdMedida_P
+
+--/////////////////////////////////////////////////////////////////
+
+create proc usp_Precio_Listar_ProductoMedida
+@parIdProducto_P int,
+@parDescripcion_Med varchar(200)
+as
+select IdProducto_P,Precio,Descripcion_Med,IdMedida
+from tblPrecio inner join tblMedida
+on tblPrecio.IdMedida_P=tblMedida.IdMedida
+where IdProducto_P=@parIdProducto_P and Descripcion_Med=@parDescripcion_Med

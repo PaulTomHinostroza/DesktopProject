@@ -164,7 +164,7 @@ namespace ElAmigo
             while (cont.Read() == true)
             {
                 clsPrecio MiObjeto;
-                MiObjeto = new clsPrecio(Convert.ToInt32(cont["IdProducto_P"]), cont["Descripcion_Med"].ToString(), Convert.ToDecimal(cont["Precio"]));
+                MiObjeto = new clsPrecio(Convert.ToInt32(cont["IdProducto_P"]), cont["Descripcion_Med"].ToString(), Convert.ToDecimal(cont["Precio"]), Convert.ToInt32(cont["IdMedida"]));
                 x.Add(MiObjeto);
             }
             conexion.Close();
