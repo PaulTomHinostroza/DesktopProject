@@ -44,6 +44,7 @@ namespace ElAmigo
                 txtDescripcion.Enabled = true;
                 txtAbrev.Enabled = true;
                 btnGuardar.Enabled = true;
+                nudEquivalencia.Enabled = true;
             }
         }
 
@@ -61,6 +62,8 @@ namespace ElAmigo
                         MedidaEncontrado.Add(ELEMENTO);
                         lstvDatos.Items.Add(ELEMENTO.IdMedida.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DescripcionMed);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.AbreviaturaMed);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.EquivalenteUnidad.ToString());
 
                         if (contador % 2 == 0)
                         {
@@ -87,6 +90,8 @@ namespace ElAmigo
                         MedidaEncontrado.Add(ELEMENTO);
                         lstvDatos.Items.Add(ELEMENTO.IdMedida.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DescripcionMed);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.AbreviaturaMed);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.EquivalenteUnidad.ToString());
 
                         if (contador % 2 == 0)
                         {
@@ -117,6 +122,7 @@ namespace ElAmigo
             txtId.Text = MedidaSeleccionado.IdMedida.ToString();
             txtDescripcion.Text = MedidaSeleccionado.DescripcionMed.ToString();
             txtAbrev.Text = MedidaSeleccionado.AbreviaturaMed.ToString();
+            nudEquivalencia.Value = MedidaSeleccionado.EquivalenteUnidad;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -127,7 +133,7 @@ namespace ElAmigo
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             clsMedida nuevoMedida;
-            nuevoMedida = new clsMedida(txtDescripcion.Text,txtAbrev.Text);
+            nuevoMedida = new clsMedida(txtDescripcion.Text,txtAbrev.Text,Convert.ToInt32(nudEquivalencia.Value));
             MedidaSeleccionado.Actualizar(nuevoMedida);
             MessageBox.Show("Datos actualizados satisfactoriamente.");
 
@@ -135,6 +141,7 @@ namespace ElAmigo
             txtDescripcion.Enabled = false;
             txtDescripcion.Clear();
             txtAbrev.Enabled = false;
+            nudEquivalencia.Enabled=false;
             txtAbrev.Clear();
             txtId.Clear();
             btnGuardar.Enabled = false;

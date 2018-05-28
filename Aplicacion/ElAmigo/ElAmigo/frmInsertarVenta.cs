@@ -228,7 +228,6 @@ namespace ElAmigo
             }
 
             
-
             int n;
             n = 0;
 
@@ -240,5 +239,7 @@ namespace ElAmigo
                 n = n + 1;
             }
         }
+
+
     }
 }

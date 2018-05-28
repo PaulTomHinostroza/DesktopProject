@@ -48,7 +48,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.nudEquivalencia = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEquivalencia)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLimpiar
@@ -110,6 +114,7 @@
             // rbnDescripcion
             // 
             this.rbnDescripcion.AutoSize = true;
+            this.rbnDescripcion.Checked = true;
             this.rbnDescripcion.Location = new System.Drawing.Point(17, 23);
             this.rbnDescripcion.Name = "rbnDescripcion";
             this.rbnDescripcion.Size = new System.Drawing.Size(105, 22);
@@ -152,7 +157,8 @@
             this.lstvDatos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
-            this.columnHeader3});
+            this.columnHeader3,
+            this.columnHeader4});
             this.lstvDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstvDatos.FullRowSelect = true;
             this.lstvDatos.GridLines = true;
@@ -174,12 +180,12 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Descripción";
-            this.columnHeader2.Width = 194;
+            this.columnHeader2.Width = 107;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Abrev";
-            this.columnHeader3.Width = 86;
+            this.columnHeader3.Width = 67;
             // 
             // label5
             // 
@@ -250,11 +256,43 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Equivalente Und";
+            this.columnHeader4.Width = 103;
+            // 
+            // nudEquivalencia
+            // 
+            this.nudEquivalencia.Enabled = false;
+            this.nudEquivalencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudEquivalencia.Location = new System.Drawing.Point(539, 156);
+            this.nudEquivalencia.Maximum = new decimal(new int[] {
+            1215752192,
+            23,
+            0,
+            0});
+            this.nudEquivalencia.Name = "nudEquivalencia";
+            this.nudEquivalencia.Size = new System.Drawing.Size(123, 24);
+            this.nudEquivalencia.TabIndex = 114;
+            this.nudEquivalencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(508, 125);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(175, 18);
+            this.label4.TabIndex = 113;
+            this.label4.Text = "Equivalente En Unidades:";
+            // 
             // frmActualizarEliminarMedida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(731, 390);
+            this.Controls.Add(this.nudEquivalencia);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtId);
@@ -274,6 +312,7 @@
             this.Text = "frmActualizarEliminarMedida";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEquivalencia)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,5 +340,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.NumericUpDown nudEquivalencia;
+        private System.Windows.Forms.Label label4;
     }
 }

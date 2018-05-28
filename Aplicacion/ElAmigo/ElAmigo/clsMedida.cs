@@ -12,21 +12,24 @@ namespace ElAmigo
         private int _IdMedida;
         private string _DescripcionMed;
         private string _AbreviaturaMed;
+        private int _EquivalenteUnidad;
         
         //constructor para insertar medida
-        public clsMedida(string parDescripcionMed, string parAbreviaturaMed)
+        public clsMedida(string parDescripcionMed, string parAbreviaturaMed, int parEquivalente)
         {
             DescripcionMed = parDescripcionMed;
             AbreviaturaMed = parAbreviaturaMed;
+            EquivalenteUnidad = parEquivalente;
 
         }
 
         //constructor para lista medida
-        public clsMedida(int parIdMedida, string parDescripcionMed, string parAbreviaturaMed)
+        public clsMedida(int parIdMedida, string parDescripcionMed, string parAbreviaturaMed, int parEquivalente)
         {
             IdMedida = parIdMedida;
             DescripcionMed = parDescripcionMed;
             AbreviaturaMed = parAbreviaturaMed;
+            EquivalenteUnidad = parEquivalente;
 
         }
         public int IdMedida
@@ -47,6 +50,12 @@ namespace ElAmigo
             set { _DescripcionMed = value.ToUpper(); }
         }
 
+        public int EquivalenteUnidad
+        {
+            get { return _EquivalenteUnidad; }
+            set { _EquivalenteUnidad = value; }
+        }
+
 
         public void InsertarMedida()
         {
@@ -55,6 +64,7 @@ namespace ElAmigo
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@parDescripcion_Med", DescripcionMed);
             cmd.Parameters.AddWithValue("@parAbreviatura_Med", AbreviaturaMed);
+            cmd.Parameters.AddWithValue("@parEquivalente_Med", AbreviaturaMed);
             conexion.Open();
             cmd.ExecuteReader();
             conexion.Close();
@@ -74,7 +84,7 @@ namespace ElAmigo
             {
                 clsMedida MiObjeto;
                 MiObjeto = new clsMedida(Convert.ToInt32(contenedor["IdMedida"]),contenedor["Descripcion_Med"].ToString(),
-                                            contenedor["Abreviatura_Med"].ToString());
+                                            contenedor["Abreviatura_Med"].ToString(), Convert.ToInt32(contenedor["EquivalenteEnUnidades"]));
 
                 x.Add(MiObjeto);
             }
@@ -97,7 +107,7 @@ namespace ElAmigo
             {
                 clsMedida MiObjeto;
                 MiObjeto = new clsMedida(Convert.ToInt32(contenedor["IdMedida"]), contenedor["Descripcion_Med"].ToString(),
-                                            contenedor["Abreviatura_Med"].ToString());
+                                            contenedor["Abreviatura_Med"].ToString(), Convert.ToInt32(contenedor["EquivalenteEnUnidades"]));
 
                 x.Add(MiObjeto);
             }
@@ -119,7 +129,8 @@ namespace ElAmigo
             {
                 clsMedida MiObjeto;
                 MiObjeto = new clsMedida(Convert.ToInt32(contenedor["IdMedida"]), contenedor["Descripcion_Med"].ToString(),
-                                            contenedor["Abreviatura_Med"].ToString());
+                                            contenedor["Abreviatura_Med"].ToString(), Convert.ToInt32(contenedor["EquivalenteEnUnidades"]));
+
                 x.Add(MiObjeto);
             }
             conexion.Close();
@@ -134,6 +145,7 @@ namespace ElAmigo
             comando.Parameters.AddWithValue("@parIdMedida", IdMedida);
             comando.Parameters.AddWithValue("@parNUEVO_Descripcion_Med", NuevosDatos.DescripcionMed);
             comando.Parameters.AddWithValue("@parNUEVO_Abreviatura_Med", NuevosDatos.AbreviaturaMed);
+            comando.Parameters.AddWithValue("@parNUEVO_Equivalente_Med", NuevosDatos.EquivalenteUnidad);
             conexion.Open();
             comando.ExecuteNonQuery();
             conexion.Close();

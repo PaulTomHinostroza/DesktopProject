@@ -40,6 +40,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtAbreviaturaDescripcion = new System.Windows.Forms.TextBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.nudEquivalencia = new System.Windows.Forms.NumericUpDown();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            ((System.ComponentModel.ISupportInitialize)(this.nudEquivalencia)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -77,7 +81,8 @@
             this.lstvDatos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
-            this.columnHeader3});
+            this.columnHeader3,
+            this.columnHeader4});
             this.lstvDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstvDatos.FullRowSelect = true;
             this.lstvDatos.GridLines = true;
@@ -92,17 +97,16 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Id";
-            this.columnHeader1.Width = 54;
+            this.columnHeader1.Width = 53;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Descripción";
-            this.columnHeader2.Width = 194;
+            this.columnHeader2.Width = 147;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Abrev";
-            this.columnHeader3.Width = 86;
             // 
             // btnRegistrarMedida
             // 
@@ -154,11 +158,37 @@
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(493, 116);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(175, 18);
+            this.label4.TabIndex = 108;
+            this.label4.Text = "Equivalente En Unidades:";
+            // 
+            // nudEquivalencia
+            // 
+            this.nudEquivalencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudEquivalencia.Location = new System.Drawing.Point(524, 147);
+            this.nudEquivalencia.Name = "nudEquivalencia";
+            this.nudEquivalencia.Size = new System.Drawing.Size(123, 24);
+            this.nudEquivalencia.TabIndex = 109;
+            this.nudEquivalencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Equivalencia Und";
+            this.columnHeader4.Width = 74;
+            // 
             // frmInsertarMedida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 308);
+            this.Controls.Add(this.nudEquivalencia);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtAbreviaturaDescripcion);
@@ -171,6 +201,7 @@
             this.Name = "frmInsertarMedida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmInsertarMedida";
+            ((System.ComponentModel.ISupportInitialize)(this.nudEquivalencia)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,5 +221,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtAbreviaturaDescripcion;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown nudEquivalencia;
     }
 }

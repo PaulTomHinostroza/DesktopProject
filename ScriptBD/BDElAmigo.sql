@@ -59,7 +59,8 @@ create table tblMedida
 (
 IdMedida	int IDENTITY (1000,1) NOT NULL,
 Descripcion_Med	varchar(50) NOT NULL,
-Abreviatura_Med	varchar(10) NOT NULL
+Abreviatura_Med	varchar(10) NOT NULL,
+EquilvalenteEnUnidades	int NOT NULL
 
 constraint pk_IdMedida primary key(IdMedida)
 )

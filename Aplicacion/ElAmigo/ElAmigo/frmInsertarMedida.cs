@@ -35,7 +35,7 @@ namespace ElAmigo
             try
             {
                 clsMedida nuevaMedida;
-                nuevaMedida = new clsMedida(txtDescripcionMedida.Text, txtAbreviaturaDescripcion.Text);
+                nuevaMedida = new clsMedida(txtDescripcionMedida.Text, txtAbreviaturaDescripcion.Text,Convert.ToInt32(nudEquivalencia.Value));
                 nuevaMedida.InsertarMedida();
                 MessageBox.Show("Medida Registrado");
             }
@@ -60,6 +60,7 @@ namespace ElAmigo
                     lstvDatos.Items.Add(ELEMENTO.IdMedida.ToString());
                     lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DescripcionMed);
                     lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.AbreviaturaMed);
+                    lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.EquivalenteUnidad.ToString());
 
                     if (contador % 2 == 0)
                     {
