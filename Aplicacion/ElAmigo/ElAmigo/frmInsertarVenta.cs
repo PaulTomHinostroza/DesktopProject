@@ -240,6 +240,22 @@ namespace ElAmigo
             }
         }
 
+        private void frmInsertarVenta_Load(object sender, EventArgs e)
+        {
+            foreach (clsAlmacen ELEMENTO in clsAlmacen.ListarAlmacenTodos())
+            {
+                if (ELEMENTO.TipoAlm.ToString()=="PRINCIPAL")
+                {
+                    lblIdAlmacen.Text = ELEMENTO.IdAlmacen.ToString();
+                }
+            }
+            if (lblIdAlmacen.Text == "IdAlmacen")
+            {
+                MessageBox.Show("Registre un Almacen Principal/Contacte con el Administrador");
+                Close();
+            }
+        }
+
 
     }
 }

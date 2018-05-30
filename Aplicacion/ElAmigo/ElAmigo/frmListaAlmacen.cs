@@ -37,6 +37,7 @@ namespace ElAmigo
                 lstvDatos.Items.Add(ELEMENTO.IdAlmacen.ToString());
                 lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DireccionAlm.ToString());
                 lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TelefonoAlm.ToString());
+                lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TipoAlm.ToString());
                 lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DescripcionAlm.ToString());
 
                 if (contador % 2 == 0)
@@ -64,6 +65,7 @@ namespace ElAmigo
                         lstvDatos.Items.Add(ELEMENTO.IdAlmacen.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DireccionAlm.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TelefonoAlm.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TipoAlm.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DescripcionAlm.ToString());
 
                         if (contador % 2 == 0)
@@ -93,6 +95,7 @@ namespace ElAmigo
                         lstvDatos.Items.Add(ELEMENTO.IdAlmacen.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DireccionAlm.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TelefonoAlm.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TipoAlm.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DescripcionAlm.ToString());
 
                         if (contador % 2 == 0)

@@ -38,6 +38,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbnPrincipal = new System.Windows.Forms.RadioButton();
+            this.rbnSecundario = new System.Windows.Forms.RadioButton();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnLimpiar
@@ -138,11 +142,48 @@
             this.txtTelefono.Size = new System.Drawing.Size(143, 24);
             this.txtTelefono.TabIndex = 125;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbnSecundario);
+            this.groupBox1.Controls.Add(this.rbnPrincipal);
+            this.groupBox1.Location = new System.Drawing.Point(194, 124);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(170, 68);
+            this.groupBox1.TabIndex = 127;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Tipo :";
+            // 
+            // rbnPrincipal
+            // 
+            this.rbnPrincipal.AutoSize = true;
+            this.rbnPrincipal.Checked = true;
+            this.rbnPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbnPrincipal.Location = new System.Drawing.Point(28, 19);
+            this.rbnPrincipal.Name = "rbnPrincipal";
+            this.rbnPrincipal.Size = new System.Drawing.Size(78, 20);
+            this.rbnPrincipal.TabIndex = 0;
+            this.rbnPrincipal.TabStop = true;
+            this.rbnPrincipal.Text = "Principal";
+            this.rbnPrincipal.UseVisualStyleBackColor = true;
+            // 
+            // rbnSecundario
+            // 
+            this.rbnSecundario.AutoSize = true;
+            this.rbnSecundario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbnSecundario.Location = new System.Drawing.Point(28, 42);
+            this.rbnSecundario.Name = "rbnSecundario";
+            this.rbnSecundario.Size = new System.Drawing.Size(95, 20);
+            this.rbnSecundario.TabIndex = 1;
+            this.rbnSecundario.TabStop = true;
+            this.rbnSecundario.Text = "Secundario";
+            this.rbnSecundario.UseVisualStyleBackColor = true;
+            // 
             // frmInsertarAlmacen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(388, 378);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.btnLimpiar);
@@ -156,6 +197,8 @@
             this.Name = "frmInsertarAlmacen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmInsertarAlmacen";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,5 +216,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rbnSecundario;
+        private System.Windows.Forms.RadioButton rbnPrincipal;
     }
 }

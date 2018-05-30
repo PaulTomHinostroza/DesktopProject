@@ -52,7 +52,12 @@
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnMostrarTodos = new System.Windows.Forms.Button();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rbnSecundario = new System.Windows.Forms.RadioButton();
+            this.rbnPrincipal = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label7
@@ -119,7 +124,8 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
-            this.columnHeader4});
+            this.columnHeader4,
+            this.columnHeader5});
             this.lstvDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstvDatos.FullRowSelect = true;
             this.lstvDatos.GridLines = true;
@@ -149,8 +155,8 @@
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "Descripción";
-            this.columnHeader4.Width = 250;
+            this.columnHeader4.Text = "Tipo";
+            this.columnHeader4.Width = 71;
             // 
             // btnLimpiar
             // 
@@ -291,11 +297,55 @@
             this.btnMostrarTodos.UseVisualStyleBackColor = true;
             this.btnMostrarTodos.Click += new System.EventHandler(this.btnMostrarTodos_Click);
             // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Descripción";
+            this.columnHeader5.Width = 179;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rbnSecundario);
+            this.groupBox2.Controls.Add(this.rbnPrincipal);
+            this.groupBox2.Location = new System.Drawing.Point(195, 474);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(170, 68);
+            this.groupBox2.TabIndex = 129;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Tipo :";
+            // 
+            // rbnSecundario
+            // 
+            this.rbnSecundario.AutoSize = true;
+            this.rbnSecundario.Enabled = false;
+            this.rbnSecundario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbnSecundario.Location = new System.Drawing.Point(28, 42);
+            this.rbnSecundario.Name = "rbnSecundario";
+            this.rbnSecundario.Size = new System.Drawing.Size(95, 20);
+            this.rbnSecundario.TabIndex = 1;
+            this.rbnSecundario.TabStop = true;
+            this.rbnSecundario.Text = "Secundario";
+            this.rbnSecundario.UseVisualStyleBackColor = true;
+            // 
+            // rbnPrincipal
+            // 
+            this.rbnPrincipal.AutoSize = true;
+            this.rbnPrincipal.Checked = true;
+            this.rbnPrincipal.Enabled = false;
+            this.rbnPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbnPrincipal.Location = new System.Drawing.Point(28, 19);
+            this.rbnPrincipal.Name = "rbnPrincipal";
+            this.rbnPrincipal.Size = new System.Drawing.Size(78, 20);
+            this.rbnPrincipal.TabIndex = 0;
+            this.rbnPrincipal.TabStop = true;
+            this.rbnPrincipal.Text = "Principal";
+            this.rbnPrincipal.UseVisualStyleBackColor = true;
+            // 
             // frmActualizarEliminarAlmacen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(645, 672);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnMostrarTodos);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label1);
@@ -318,6 +368,8 @@
             this.Text = "frmActualizarEliminarAlmacen";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,5 +401,9 @@
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnMostrarTodos;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton rbnSecundario;
+        private System.Windows.Forms.RadioButton rbnPrincipal;
     }
 }

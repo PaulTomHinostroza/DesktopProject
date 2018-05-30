@@ -13,22 +13,25 @@ namespace ElAmigo
         private string _DireccionAlm;
         private string _TelefonoAlm;
         private string _DescripcionAlm;
+        private string _TipoAlm;
 
         //constructor para listar
-        public clsAlmacen(int parIdAlmacen, string parDireccionAlm, string parTelefonoAlm, string parDescripcionAlm) 
+        public clsAlmacen(int parIdAlmacen, string parDireccionAlm, string parTelefonoAlm, string parDescripcionAlm, string parTipoAlm) 
         {
             IdAlmacen = parIdAlmacen;
             DireccionAlm = parDireccionAlm;
             TelefonoAlm = parTelefonoAlm;
             DescripcionAlm = parDescripcionAlm;
+            TipoAlm = parTipoAlm;
             
         }
 
         //constructor para insertar
-        public clsAlmacen(string parDireccionAlm, string parTelefonoAlm)
+        public clsAlmacen(string parDireccionAlm, string parTelefonoAlm, string parTipoAlm)
         {
             DireccionAlm = parDireccionAlm;
             TelefonoAlm = parTelefonoAlm;
+            TipoAlm = parTipoAlm;
 
         }
 
@@ -56,6 +59,12 @@ namespace ElAmigo
             set { _DescripcionAlm = value; }
         }
 
+        public string TipoAlm
+        {
+            get { return _TipoAlm; }
+            set { _TipoAlm = value; }
+        }
+
         public void InsertarAlmacen()
         {
             SqlConnection conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
@@ -64,6 +73,8 @@ namespace ElAmigo
 
             cmd.Parameters.AddWithValue("@parDireccion_Alm", DireccionAlm);
             cmd.Parameters.AddWithValue("@parTelefono_Alm", TelefonoAlm);
+            cmd.Parameters.AddWithValue("@parTipo_Alm", TipoAlm);
+
 
             if (string.IsNullOrEmpty(DescripcionAlm))
             {
@@ -95,7 +106,7 @@ namespace ElAmigo
 
                 clsAlmacen MiObjeto;
                 MiObjeto = new clsAlmacen(Convert.ToInt32(contenedor["IdAlmacen"]), contenedor["Direccion_Alm"].ToString(),
-                                        contenedor["Telefono_Alm"].ToString(), contenedor["Descripcion_Alm"].ToString());
+                                        contenedor["Telefono_Alm"].ToString(), contenedor["Descripcion_Alm"].ToString(), contenedor["Tipo_Alm"].ToString());
 
                 x.Add(MiObjeto);
             }
@@ -119,7 +130,7 @@ namespace ElAmigo
             {
                 clsAlmacen MiObjeto;
                 MiObjeto = new clsAlmacen(Convert.ToInt32(contenedor["IdAlmacen"]), contenedor["Direccion_Alm"].ToString(),
-                                        contenedor["Telefono_Alm"].ToString(), contenedor["Descripcion_Alm"].ToString());
+                                        contenedor["Telefono_Alm"].ToString(), contenedor["Descripcion_Alm"].ToString(), contenedor["Tipo_Alm"].ToString());
 
                 x.Add(MiObjeto);
             }
@@ -145,7 +156,7 @@ namespace ElAmigo
             {
                 clsAlmacen MiObjeto;
                 MiObjeto = new clsAlmacen(Convert.ToInt32(contenedor["IdAlmacen"]), contenedor["Direccion_Alm"].ToString(),
-                                        contenedor["Telefono_Alm"].ToString(), contenedor["Descripcion_Alm"].ToString());
+                                        contenedor["Telefono_Alm"].ToString(), contenedor["Descripcion_Alm"].ToString(), contenedor["Tipo_Alm"].ToString());
 
                 x.Add(MiObjeto);
             }
@@ -165,6 +176,7 @@ namespace ElAmigo
 
             cmd.Parameters.AddWithValue("@parNUEVO_Direccion_Alm", NuevosDatos.DireccionAlm);
             cmd.Parameters.AddWithValue("@parNUEVO_Telefono_Alm", NuevosDatos.TelefonoAlm);
+            cmd.Parameters.AddWithValue("@parNUEVO_Tipo_Alm", NuevosDatos.TipoAlm);
 
             if (string.IsNullOrEmpty(NuevosDatos.DescripcionAlm))
             {

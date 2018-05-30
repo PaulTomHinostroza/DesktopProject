@@ -23,7 +23,15 @@ namespace ElAmigo
             try
             {
                 clsAlmacen nuevoAlmacen;
-                nuevoAlmacen = new clsAlmacen(txtDireccion.Text, txtTelefono.Text);
+                
+                if (rbnPrincipal.Checked == true)
+                {
+                    nuevoAlmacen = new clsAlmacen(txtDireccion.Text, txtTelefono.Text, "PRINCIPAL");
+                }
+                else
+                {
+                    nuevoAlmacen = new clsAlmacen(txtDireccion.Text, txtTelefono.Text, "SECUNDARIO");
+                }
                 nuevoAlmacen.DescripcionAlm = txtDescripcion.Text;
                 nuevoAlmacen.InsertarAlmacen();
                 MessageBox.Show("Almacen Registrado");

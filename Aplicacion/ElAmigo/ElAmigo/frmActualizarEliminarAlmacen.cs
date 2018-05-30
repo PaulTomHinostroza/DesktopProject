@@ -45,6 +45,7 @@ namespace ElAmigo
                 lstvDatos.Items.Add(ELEMENTO.IdAlmacen.ToString());
                 lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DireccionAlm.ToString());
                 lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TelefonoAlm.ToString());
+                lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TipoAlm.ToString());
                 lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DescripcionAlm.ToString());
 
                 if (contador % 2 == 0)
@@ -71,6 +72,7 @@ namespace ElAmigo
                         lstvDatos.Items.Add(ELEMENTO.IdAlmacen.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DireccionAlm.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TelefonoAlm.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TipoAlm.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DescripcionAlm.ToString());
 
                         if (contador % 2 == 0)
@@ -100,6 +102,7 @@ namespace ElAmigo
                         lstvDatos.Items.Add(ELEMENTO.IdAlmacen.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DireccionAlm.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TelefonoAlm.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TipoAlm.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DescripcionAlm.ToString());
 
                         if (contador % 2 == 0)
@@ -130,6 +133,15 @@ namespace ElAmigo
             txtDireccion.Text = AlmacenSeleccionado.DireccionAlm.ToString();
             txtTelefono.Text = AlmacenSeleccionado.TelefonoAlm.ToString();
             txtDescripcion.Text = AlmacenSeleccionado.DescripcionAlm.ToString();
+            if (AlmacenSeleccionado.TipoAlm.ToString() == "PRINCIPAL")
+            {
+                rbnPrincipal.Checked = true;
+            }
+            else
+            {
+                rbnSecundario.Checked = true;
+            }
+                    
 
             txtDireccion.Enabled = false;
             txtTelefono.Enabled = false;
@@ -137,6 +149,8 @@ namespace ElAmigo
             btnGuardar.Visible = false;
             btnActualizar.Visible = true;
             btnLimpiar.Enabled = true;
+            rbnPrincipal.Enabled = false;
+            rbnSecundario.Enabled = false;
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -153,17 +167,36 @@ namespace ElAmigo
                 btnGuardar.Visible = true;
                 btnActualizar.Visible = false;
                 btnLimpiar.Enabled = false;
+                rbnPrincipal.Enabled = true;
+                rbnSecundario.Enabled = true;
             }
  
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            clsAlmacen nuevosDatosAlmacen;
-            nuevosDatosAlmacen = new clsAlmacen(txtDireccion.Text, txtTelefono.Text);
-            nuevosDatosAlmacen.DescripcionAlm = txtDescripcion.Text;
-            AlmacenSeleccionado.Actualizar(nuevosDatosAlmacen);
-            MessageBox.Show("Datos actualizados satisfactoriamente.");
+            try
+            {
+                clsAlmacen nuevosDatosAlmacen;
+                if (rbnPrincipal.Checked == true)
+                {
+                    nuevosDatosAlmacen = new clsAlmacen(txtDireccion.Text, txtTelefono.Text, "PRINCIPAL");
+                }
+                else
+                {
+                    nuevosDatosAlmacen = new clsAlmacen(txtDireccion.Text, txtTelefono.Text, "SECUNDARIO");
+                }
+
+                nuevosDatosAlmacen.DescripcionAlm = txtDescripcion.Text;
+                AlmacenSeleccionado.Actualizar(nuevosDatosAlmacen);
+                MessageBox.Show("Datos actualizados satisfactoriamente.");
+            }
+            catch (Exception ErrorRegCli)
+            {
+                MessageBox.Show(ErrorRegCli.Message);
+
+            }
+            
 
             txtDireccion.Enabled = false;
             txtTelefono.Enabled = false;
@@ -171,6 +204,8 @@ namespace ElAmigo
             btnGuardar.Visible = false;
             btnActualizar.Visible = true;
             btnLimpiar.Enabled = true;
+            rbnPrincipal.Enabled = false;
+            rbnSecundario.Enabled = false;
             lstvDatos.Items.Clear();
             txtTexto.Clear();
 
@@ -184,6 +219,8 @@ namespace ElAmigo
             txtTelefono.Clear();
             txtTexto.Clear();
             lstvDatos.Items.Clear();
+            rbnPrincipal.Checked = false;
+            rbnSecundario.Checked = false;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

@@ -40,6 +40,7 @@
             this.rbnDireccion = new System.Windows.Forms.RadioButton();
             this.txtTexto = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +50,8 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
-            this.columnHeader4});
+            this.columnHeader4,
+            this.columnHeader5});
             this.lstvDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstvDatos.FullRowSelect = true;
             this.lstvDatos.GridLines = true;
@@ -78,8 +80,8 @@
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "Descripción";
-            this.columnHeader4.Width = 370;
+            this.columnHeader4.Text = "Tipo";
+            this.columnHeader4.Width = 98;
             // 
             // btnMostrarTodos
             // 
@@ -158,6 +160,11 @@
             this.label3.TabIndex = 128;
             this.label3.Text = "Listado de Almacenes";
             // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Descripcion";
+            this.columnHeader5.Width = 263;
+            // 
             // frmListaAlmacen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,5 +199,6 @@
         private System.Windows.Forms.RadioButton rbnDireccion;
         private System.Windows.Forms.TextBox txtTexto;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }

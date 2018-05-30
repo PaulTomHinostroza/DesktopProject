@@ -79,6 +79,7 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lblIdAlmacen = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
@@ -492,7 +493,7 @@
             // lblIdCliente
             // 
             this.lblIdCliente.AutoSize = true;
-            this.lblIdCliente.Location = new System.Drawing.Point(444, 119);
+            this.lblIdCliente.Location = new System.Drawing.Point(444, 112);
             this.lblIdCliente.Name = "lblIdCliente";
             this.lblIdCliente.Size = new System.Drawing.Size(48, 13);
             this.lblIdCliente.TabIndex = 84;
@@ -512,7 +513,7 @@
             // lblCodigoProducto
             // 
             this.lblCodigoProducto.AutoSize = true;
-            this.lblCodigoProducto.Location = new System.Drawing.Point(444, 72);
+            this.lblCodigoProducto.Location = new System.Drawing.Point(444, 81);
             this.lblCodigoProducto.Name = "lblCodigoProducto";
             this.lblCodigoProducto.Size = new System.Drawing.Size(59, 13);
             this.lblCodigoProducto.TabIndex = 82;
@@ -594,11 +595,22 @@
             this.columnHeader7.Text = "V.De Venta";
             this.columnHeader7.Width = 112;
             // 
+            // lblIdAlmacen
+            // 
+            this.lblIdAlmacen.AutoSize = true;
+            this.lblIdAlmacen.Location = new System.Drawing.Point(444, 59);
+            this.lblIdAlmacen.Name = "lblIdAlmacen";
+            this.lblIdAlmacen.Size = new System.Drawing.Size(57, 13);
+            this.lblIdAlmacen.TabIndex = 87;
+            this.lblIdAlmacen.Text = "IdAlmacen";
+            this.lblIdAlmacen.Visible = false;
+            // 
             // frmInsertarVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(734, 591);
+            this.Controls.Add(this.lblIdAlmacen);
             this.Controls.Add(this.lstvDatos);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.lblIdCliente);
@@ -620,6 +632,7 @@
             this.Name = "frmInsertarVenta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmInsertarVenta";
+            this.Load += new System.EventHandler(this.frmInsertarVenta_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -689,6 +702,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.Label lblIdAlmacen;
 
     }
 }
