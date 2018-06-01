@@ -64,13 +64,13 @@
             this.rbnId.Name = "rbnId";
             this.rbnId.Size = new System.Drawing.Size(37, 22);
             this.rbnId.TabIndex = 2;
-            this.rbnId.TabStop = true;
             this.rbnId.Text = "Id";
             this.rbnId.UseVisualStyleBackColor = true;
             // 
             // rbnDescripcion
             // 
             this.rbnDescripcion.AutoSize = true;
+            this.rbnDescripcion.Checked = true;
             this.rbnDescripcion.Location = new System.Drawing.Point(17, 23);
             this.rbnDescripcion.Name = "rbnDescripcion";
             this.rbnDescripcion.Size = new System.Drawing.Size(105, 22);
@@ -186,7 +186,7 @@
             this.Controls.Add(this.label3);
             this.Name = "frmListarPrecio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmListarPrecio";
+            this.Text = "s";
             this.Load += new System.EventHandler(this.frmListarPrecio_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

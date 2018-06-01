@@ -96,7 +96,11 @@ namespace ElAmigo
                     }
                     contador = contador + 1;
                 }
+
+                lblIdProducto.Text = ProductoSeleccionado.IdProducto.ToString();
+                txtProducto.Text = ProductoSeleccionado.DescripcionProd.ToString();
             }
+      
         }
 
         private void txtTexto_TextChanged(object sender, EventArgs e)
@@ -153,13 +157,6 @@ namespace ElAmigo
                     lstvDatos.Items.Clear();
                 }
             }
-        }
-
-        private void lstvDatos_DoubleClick(object sender, EventArgs e)
-        {
-            lblIdProducto.Text = ProductoSeleccionado.IdProducto.ToString();
-            txtProducto.Text = ProductoSeleccionado.DescripcionProd.ToString();
-
         }
 
     }
