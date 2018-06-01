@@ -42,3 +42,27 @@ inner join tblMedida
 on tblStock.IdMedida_St=tblMedida.IdMedida
 where IdProducto_St=@parIdProducto
 
+--//////////////////////////////////////////////////
+create proc usp_Stock_Actualizar_Aniadir
+@parIdProducto_St	int,
+@parIdAlmacen_St	int,
+@parEquivalencia	int,
+@parCantidad		decimal
+as
+UPDATE tblStock
+set 
+CantidadStock = CantidadStock+(@parCantidad*@parEquivalencia)
+where IdProducto_St=@parIdProducto_St and IdAlmacen_St=@parIdAlmacen_St
+
+--////////////////////////////////////////////////////////////////////
+
+create proc usp_Stock_Actualizar_Quitar
+@parIdProducto_St	int,
+@parIdAlmacen_St	int,
+@parEquivalencia	int,
+@parCantidad		decimal
+as
+UPDATE tblStock
+set 
+CantidadStock = CantidadStock-(@parCantidad*@parEquivalencia)
+where IdProducto_St=@parIdProducto_St and IdAlmacen_St=@parIdAlmacen_St

@@ -12,6 +12,14 @@ namespace ElAmigo
 {
     public partial class frmInsertarVenta : Form
     {
+        private clsProducto _ProductoSeleccionado;
+
+        public clsProducto ProductoSeleccionado
+        {
+            get { return _ProductoSeleccionado; }
+            set { _ProductoSeleccionado = value; }
+        }
+
         public frmInsertarVenta()
         {
             InitializeComponent();
@@ -125,17 +133,20 @@ namespace ElAmigo
 
                 txtPVenta.Text = ELEMENTO.Precio.ToString();
                 lblIdMedida.Text = ELEMENTO.IdMedidaInt.ToString();
+                lblEquivalenciaMed.Text = ELEMENTO.Equivalencia.ToString();
             }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            double valorVenta, subtotal, igv, total;
+            double valorVenta, subtotal, igv, total,precioUnit;
             subtotal = 0;
             total = 0;
             igv = 0;
+            precioUnit = 0;
             Boolean repetido;
             int index;
+            precioUnit = Convert.ToDouble(txtPVenta.Text) / Convert.ToDouble(lblEquivalenciaMed.Text);
             valorVenta = Convert.ToDouble(nudCantidad.Value) * Convert.ToDouble(txtPVenta.Text);
             index = 0;
             repetido = false;
@@ -147,7 +158,7 @@ namespace ElAmigo
                 lstvDatos.Items[lstvDatos.Items.Count - 1].SubItems.Add(cmbMedida.SelectedItem.ToString());
                 lstvDatos.Items[lstvDatos.Items.Count - 1].SubItems.Add(lblCodigoProducto.Text);
                 lstvDatos.Items[lstvDatos.Items.Count - 1].SubItems.Add(txtDescripcion.Text);
-                lstvDatos.Items[lstvDatos.Items.Count - 1].SubItems.Add(txtPVenta.Text);
+                lstvDatos.Items[lstvDatos.Items.Count - 1].SubItems.Add(precioUnit.ToString("0.00"));
                 lstvDatos.Items[lstvDatos.Items.Count - 1].SubItems.Add(valorVenta.ToString("0.00"));
             }
             else
@@ -175,7 +186,7 @@ namespace ElAmigo
                     lstvDatos.Items[lstvDatos.Items.Count - 1].SubItems.Add(cmbMedida.SelectedItem.ToString());
                     lstvDatos.Items[lstvDatos.Items.Count - 1].SubItems.Add(lblCodigoProducto.Text);
                     lstvDatos.Items[lstvDatos.Items.Count - 1].SubItems.Add(txtDescripcion.Text);
-                    lstvDatos.Items[lstvDatos.Items.Count - 1].SubItems.Add(txtPVenta.Text);
+                    lstvDatos.Items[lstvDatos.Items.Count - 1].SubItems.Add(precioUnit.ToString("0.00"));
                     lstvDatos.Items[lstvDatos.Items.Count - 1].SubItems.Add(valorVenta.ToString("0.00"));
                 }
             }
@@ -191,10 +202,30 @@ namespace ElAmigo
             txtSubtotal.Text = subtotal.ToString("0.00");
             txtIGV2.Text = igv.ToString("0.00");
             txtTotal.Text = total.ToString("0.00");
+
+            ////ACTUALIZAR Stock
+            clsStock nuevoStock;
+            nuevoStock = new clsStock(Convert.ToInt32(lblCodigoProducto.Text),
+                                        Convert.ToInt32(lblIdAlmacen.Text), 
+                                        Convert.ToInt32(lblEquivalenciaMed.Text),
+                                        Convert.ToDecimal(nudCantidad.Value));
+            nuevoStock.ActualizarQuitar();
+
+
+
+
         }
 
         private void btnEliminarItem_Click(object sender, EventArgs e)
         {
+            ////ACTUALIZAR Stock
+            clsStock nuevoStock;
+            nuevoStock = new clsStock(Convert.ToInt32(lstvDatos.SelectedItems[0].SubItems[3].Text),
+                                        Convert.ToInt32(lblIdAlmacen.Text),
+                                        Convert.ToInt32(lblEquivalenciaMed.Text),
+                                        Convert.ToDecimal(lstvDatos.SelectedItems[0].Text));
+            nuevoStock.ActualizarAñadir();
+
             double total, subtotal, igv;
             total = 0;
             subtotal = 0;
@@ -206,6 +237,8 @@ namespace ElAmigo
             txtSubtotal.Text = subtotal.ToString("0.00");
             txtIGV2.Text = igv.ToString("0.00");
             txtTotal.Text = total.ToString("0.00");
+
+            
         }
 
         private void btnInsertarVenta_Click(object sender, EventArgs e)
@@ -238,6 +271,7 @@ namespace ElAmigo
                 nuevoDetalleVenta.InsertarDetalleVenta();
                 n = n + 1;
             }
+
         }
 
         private void frmInsertarVenta_Load(object sender, EventArgs e)

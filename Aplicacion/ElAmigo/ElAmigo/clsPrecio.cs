@@ -16,6 +16,7 @@ namespace ElAmigo
         private int _IdProductoInt;
         private int _IdMedidaInt;
         private string _DescripcionMed;
+        private int _Equivalencia;
 
         public clsProducto IdProducto
         {
@@ -61,6 +62,12 @@ namespace ElAmigo
             Precio = parPrecio;
         }
 
+        public int Equivalencia
+        {
+            get { return _Equivalencia; }
+            set { _Equivalencia = value; }
+        }
+
         //CONSTRUCTOR PARA INSERTAR PRECIO
         public clsPrecio(int parIdProductoInt, clsMedida parIdMedida, decimal parPrecio)
         {
@@ -70,7 +77,17 @@ namespace ElAmigo
         }
 
         //CONSTRUCTOR PARA listar el producto con la medida y precio
-        public clsPrecio(int parIdProductoInt, string parDescripcionMed, decimal parPrecio,int parIdMedidaInt)
+        public clsPrecio(int parIdProductoInt, string parDescripcionMed, decimal parPrecio,int parIdMedidaInt,int parEquivalencia)
+        {
+            IdProductoInt = parIdProductoInt;
+            DescripcionMed = parDescripcionMed;
+            Precio = parPrecio;
+            IdMedidaInt = parIdMedidaInt;
+            Equivalencia = parEquivalencia;
+        }
+
+        //CONSTRUCTOR PARA listar el precios por producto
+        public clsPrecio(int parIdProductoInt, string parDescripcionMed, decimal parPrecio, int parIdMedidaInt)
         {
             IdProductoInt = parIdProductoInt;
             DescripcionMed = parDescripcionMed;
@@ -164,7 +181,7 @@ namespace ElAmigo
             while (cont.Read() == true)
             {
                 clsPrecio MiObjeto;
-                MiObjeto = new clsPrecio(Convert.ToInt32(cont["IdProducto_P"]), cont["Descripcion_Med"].ToString(), Convert.ToDecimal(cont["Precio"]), Convert.ToInt32(cont["IdMedida"]));
+                MiObjeto = new clsPrecio(Convert.ToInt32(cont["IdProducto_P"]), cont["Descripcion_Med"].ToString(), Convert.ToDecimal(cont["Precio"]), Convert.ToInt32(cont["IdMedida"]), Convert.ToInt32(cont["EquivalenteEnUnidades"]));
                 x.Add(MiObjeto);
             }
             conexion.Close();

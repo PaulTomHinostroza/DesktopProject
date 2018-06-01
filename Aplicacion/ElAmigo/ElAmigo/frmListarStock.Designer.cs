@@ -29,26 +29,27 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.rbnId = new System.Windows.Forms.RadioButton();
+            this.rbnDescripcion = new System.Windows.Forms.RadioButton();
+            this.txtTexto = new System.Windows.Forms.TextBox();
             this.lstvDatos = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.lstvPrecio = new System.Windows.Forms.ListView();
+            this.lstvCantidad = new System.Windows.Forms.ListView();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.rbnId);
+            this.groupBox1.Controls.Add(this.rbnDescripcion);
+            this.groupBox1.Controls.Add(this.txtTexto);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(16, 36);
             this.groupBox1.Name = "groupBox1";
@@ -57,35 +58,37 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar Producto Por:";
             // 
-            // radioButton2
+            // rbnId
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(139, 23);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(37, 22);
-            this.radioButton2.TabIndex = 2;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Id";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbnId.AutoSize = true;
+            this.rbnId.Location = new System.Drawing.Point(139, 23);
+            this.rbnId.Name = "rbnId";
+            this.rbnId.Size = new System.Drawing.Size(37, 22);
+            this.rbnId.TabIndex = 2;
+            this.rbnId.TabStop = true;
+            this.rbnId.Text = "Id";
+            this.rbnId.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbnDescripcion
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(17, 23);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(105, 22);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Descripción";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbnDescripcion.AutoSize = true;
+            this.rbnDescripcion.Checked = true;
+            this.rbnDescripcion.Location = new System.Drawing.Point(17, 23);
+            this.rbnDescripcion.Name = "rbnDescripcion";
+            this.rbnDescripcion.Size = new System.Drawing.Size(105, 22);
+            this.rbnDescripcion.TabIndex = 1;
+            this.rbnDescripcion.TabStop = true;
+            this.rbnDescripcion.Text = "Descripción";
+            this.rbnDescripcion.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtTexto
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(17, 53);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(666, 24);
-            this.textBox1.TabIndex = 0;
+            this.txtTexto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTexto.Location = new System.Drawing.Point(17, 53);
+            this.txtTexto.Name = "txtTexto";
+            this.txtTexto.Size = new System.Drawing.Size(666, 24);
+            this.txtTexto.TabIndex = 0;
+            this.txtTexto.TextChanged += new System.EventHandler(this.txtTexto_TextChanged);
             // 
             // lstvDatos
             // 
@@ -102,6 +105,7 @@
             this.lstvDatos.TabIndex = 129;
             this.lstvDatos.UseCompatibleStateImageBehavior = false;
             this.lstvDatos.View = System.Windows.Forms.View.Details;
+            this.lstvDatos.SelectedIndexChanged += new System.EventHandler(this.lstvDatos_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -113,53 +117,16 @@
             this.columnHeader2.Text = "Descripción";
             this.columnHeader2.Width = 648;
             // 
-            // label4
+            // btnCancelar
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(15, 399);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 20);
-            this.label4.TabIndex = 128;
-            this.label4.Text = "Precio";
-            // 
-            // lstvPrecio
-            // 
-            this.lstvPrecio.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader5,
-            this.columnHeader6});
-            this.lstvPrecio.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.lstvPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstvPrecio.FullRowSelect = true;
-            this.lstvPrecio.GridLines = true;
-            this.lstvPrecio.Location = new System.Drawing.Point(16, 425);
-            this.lstvPrecio.MultiSelect = false;
-            this.lstvPrecio.Name = "lstvPrecio";
-            this.lstvPrecio.Size = new System.Drawing.Size(250, 165);
-            this.lstvPrecio.TabIndex = 127;
-            this.lstvPrecio.UseCompatibleStateImageBehavior = false;
-            this.lstvPrecio.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Medida";
-            this.columnHeader5.Width = 109;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Cantidad";
-            this.columnHeader6.Width = 135;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(618, 557);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 35);
-            this.button1.TabIndex = 125;
-            this.button1.Text = "Cancelar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(618, 557);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(99, 35);
+            this.btnCancelar.TabIndex = 125;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -171,16 +138,60 @@
             this.label3.TabIndex = 124;
             this.label3.Text = "Listado de Stock";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(91, 398);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(561, 20);
+            this.label4.TabIndex = 132;
+            this.label4.Text = "---------------------------------------------------------------------------------" +
+    "-----------";
+            // 
+            // lstvCantidad
+            // 
+            this.lstvCantidad.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader3});
+            this.lstvCantidad.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.lstvCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstvCantidad.FullRowSelect = true;
+            this.lstvCantidad.GridLines = true;
+            this.lstvCantidad.Location = new System.Drawing.Point(16, 421);
+            this.lstvCantidad.MultiSelect = false;
+            this.lstvCantidad.Name = "lstvCantidad";
+            this.lstvCantidad.Size = new System.Drawing.Size(701, 92);
+            this.lstvCantidad.TabIndex = 131;
+            this.lstvCantidad.UseCompatibleStateImageBehavior = false;
+            this.lstvCantidad.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Almacen";
+            this.columnHeader5.Width = 476;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Cantidad";
+            this.columnHeader6.Width = 139;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Medida";
+            this.columnHeader3.Width = 74;
+            // 
             // frmListarStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(737, 607);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lstvCantidad);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lstvDatos);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.lstvPrecio);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.label3);
             this.Name = "frmListarStock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -195,17 +206,18 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.RadioButton rbnId;
+        private System.Windows.Forms.RadioButton rbnDescripcion;
+        private System.Windows.Forms.TextBox txtTexto;
         private System.Windows.Forms.ListView lstvDatos;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ListView lstvPrecio;
+        private System.Windows.Forms.ListView lstvCantidad;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
     }
 }

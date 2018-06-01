@@ -20,6 +20,7 @@ namespace ElAmigo
         private string _DescripcionAlmacen;
         private string _DescripcionProducto;
         private string _DescripcionMedida;
+        private int _Equivalencia;
 
         //constructor para insertar
         public clsStock(int parIdProductoInt, clsAlmacen parIdAlmacenST, clsMedida parIdMedidaST, decimal parCantidadSt)
@@ -40,6 +41,15 @@ namespace ElAmigo
             DescripcionAlmacen = parDescripcionAlm;
             IdMedidaInt = parIdMedidaInt;
             DescripcionMedida = parDescripcionMedida;
+            CantidadST = parCantidadSt;
+        }
+
+        //constructor para actualizar_añadir stock
+        public clsStock(int parIdProductoInt, int parIdAlmacenInt,int parEquivalencia, decimal parCantidadSt)
+        {
+            IdProdructoInt = parIdProductoInt;
+            IdAlmacenInt = parIdAlmacenInt;
+            Equivalencia = parEquivalencia;
             CantidadST = parCantidadSt;
         }
 
@@ -103,6 +113,12 @@ namespace ElAmigo
             set { _DescripcionMedida = value; }
         }
 
+        public int Equivalencia
+        {
+            get { return _Equivalencia; }
+            set { _Equivalencia = value; }
+        }
+
         public void InsertarStock()
         {
             SqlConnection conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
@@ -140,6 +156,34 @@ namespace ElAmigo
             }
             conexion.Close();
             return x;
+        }
+
+        public void ActualizarAñadir()
+        {
+            SqlConnection conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
+            SqlCommand comando = new SqlCommand("usp_Stock_Actualizar_Aniadir", conexion);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@parIdProducto_St", IdProdructoInt);
+            comando.Parameters.AddWithValue("@parIdAlmacen_St", IdAlmacenInt);
+            comando.Parameters.AddWithValue("@parEquivalencia",Equivalencia);
+            comando.Parameters.AddWithValue("@parCantidad", CantidadST);
+            conexion.Open();
+            comando.ExecuteNonQuery();
+            conexion.Close();
+        }
+
+        public void ActualizarQuitar()
+        {
+            SqlConnection conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
+            SqlCommand comando = new SqlCommand("usp_Stock_Actualizar_Quitar", conexion);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@parIdProducto_St", IdProdructoInt);
+            comando.Parameters.AddWithValue("@parIdAlmacen_St", IdAlmacenInt);
+            comando.Parameters.AddWithValue("@parEquivalencia", Equivalencia);
+            comando.Parameters.AddWithValue("@parCantidad", CantidadST);
+            conexion.Open();
+            comando.ExecuteNonQuery();
+            conexion.Close();
         }
 
     }

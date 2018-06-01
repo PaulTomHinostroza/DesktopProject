@@ -80,6 +80,7 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblIdAlmacen = new System.Windows.Forms.Label();
+            this.lblEquivalenciaMed = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
@@ -605,11 +606,22 @@
             this.lblIdAlmacen.Text = "IdAlmacen";
             this.lblIdAlmacen.Visible = false;
             // 
+            // lblEquivalenciaMed
+            // 
+            this.lblEquivalenciaMed.AutoSize = true;
+            this.lblEquivalenciaMed.Location = new System.Drawing.Point(444, 39);
+            this.lblEquivalenciaMed.Name = "lblEquivalenciaMed";
+            this.lblEquivalenciaMed.Size = new System.Drawing.Size(55, 13);
+            this.lblEquivalenciaMed.TabIndex = 88;
+            this.lblEquivalenciaMed.Text = "EquivMed";
+            this.lblEquivalenciaMed.Visible = false;
+            // 
             // frmInsertarVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(734, 591);
+            this.Controls.Add(this.lblEquivalenciaMed);
             this.Controls.Add(this.lblIdAlmacen);
             this.Controls.Add(this.lstvDatos);
             this.Controls.Add(this.groupBox2);
@@ -703,6 +715,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.Label lblIdAlmacen;
+        private System.Windows.Forms.Label lblEquivalenciaMed;
 
     }
 }
