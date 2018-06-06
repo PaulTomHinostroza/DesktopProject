@@ -58,7 +58,7 @@ namespace ElAmigo
                     ProductosEncontrados.Clear();
                     lstvDatos.Items.Clear();
                     int contador = 1;
-                    foreach (clsProducto ELEMENTO in clsProducto.ListarProductoPorDescripcion(txtTexto.Text))
+                    foreach (clsProducto ELEMENTO in clsProducto.ListarProductoPorDescripcionVenta(txtTexto.Text))
                     {
                         ProductosEncontrados.Add(ELEMENTO);
                         lstvDatos.Items.Add(ELEMENTO.IdProducto.ToString());
@@ -84,7 +84,7 @@ namespace ElAmigo
                     ProductosEncontrados.Clear();
                     lstvDatos.Items.Clear();
                     int contador = 1;
-                    foreach (clsProducto ELEMENTO in clsProducto.ListarProductoPorId(Convert.ToInt32(txtTexto.Text)))
+                    foreach (clsProducto ELEMENTO in clsProducto.ListarProductoPorIdVenta(Convert.ToInt32(txtTexto.Text)))
                     {
                         ProductosEncontrados.Add(ELEMENTO);
                         lstvDatos.Items.Add(ELEMENTO.IdProducto.ToString());

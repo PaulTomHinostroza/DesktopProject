@@ -62,7 +62,19 @@ create proc usp_Stock_Actualizar_Quitar
 @parEquivalencia	int,
 @parCantidad		decimal
 as
-UPDATE tblStock
-set 
-CantidadStock = CantidadStock-(@parCantidad*@parEquivalencia)
-where IdProducto_St=@parIdProducto_St and IdAlmacen_St=@parIdAlmacen_St
+if exists
+(
+	select IdProducto_St,CantidadStock,IdAlmacen_St from tblStock 
+	where IdAlmacen_St=@parIdAlmacen_St and IdProducto_St=@parIdProducto_St
+	and CantidadStock<@parCantidad*@parEquivalencia
+)
+	begin
+		raiserror('No hay suficientes productos para realizar dicha venta',16,1)
+	end
+else
+	begin
+		UPDATE tblStock
+		set 
+		CantidadStock = CantidadStock-(@parCantidad*@parEquivalencia)
+		where IdProducto_St=@parIdProducto_St and IdAlmacen_St=@parIdAlmacen_St
+	end

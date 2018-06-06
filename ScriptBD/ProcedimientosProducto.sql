@@ -42,6 +42,19 @@ select IdProducto,Descripcion_Prod
 
  --/////////////////////////////////////////////////////
 
+create proc usp_Producto_ListarPorDescripcionVenta
+@parDescripcion_Prod	varchar(200)
+as
+select IdAlmacen_St,IdProducto_St,Descripcion_Prod,Tipo_Alm,IdProducto
+ from tblStock inner join tblProducto
+ on tblStock.IdProducto_St=tblProducto.IdProducto
+ inner join tblAlmacen
+ on tblStock.IdAlmacen_St=tblAlmacen.IdAlmacen
+ where Descripcion_Prod like '%' + @parDescripcion_Prod + '%' and Tipo_Alm='PRINCIPAL'
+ order by Descripcion_Prod
+
+ --/////////////////////////////////////////////////////
+
 create proc usp_Producto_ListarPorId
 @parIdProducto int
 as
@@ -51,6 +64,18 @@ select IdProducto,Descripcion_Prod
  order by IdProducto
 
  --///////////////////////////////////////////////////
+
+create proc usp_Producto_ListarPorIdVenta
+@parIdProducto int
+as
+select IdAlmacen_St,IdProducto_St,Tipo_Alm,IdProducto,Descripcion_Prod
+ from tblStock inner join tblProducto
+ on tblStock.IdProducto_St=tblProducto.IdProducto
+ inner join tblAlmacen
+ on tblStock.IdAlmacen_St=tblAlmacen.IdAlmacen
+ where IdProducto>=@parIdProducto and Tipo_Alm='PRINCIPAL'
+ order by Descripcion_Prod
+
  --///////////////////////////////////////////////////
 
 create proc usp_Producto_Listar_MedidaPrecio

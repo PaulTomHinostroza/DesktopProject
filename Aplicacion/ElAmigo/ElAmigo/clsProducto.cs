@@ -111,6 +111,31 @@ namespace ElAmigo
             return x;
         }
 
+        public static List<clsProducto> ListarProductoPorDescripcionVenta(string parametroDescripcion)
+        {
+            List<clsProducto> x = new List<clsProducto>();
+
+            SqlConnection conexion;
+            conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
+
+            SqlCommand comando;
+            comando = new SqlCommand("usp_Producto_ListarPorDescripcionVenta", conexion);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@parDescripcion_Prod", parametroDescripcion);
+            conexion.Open();
+            SqlDataReader contenedor;
+            contenedor = comando.ExecuteReader();
+            while (contenedor.Read() == true)
+            {
+                clsProducto MiObjeto;
+                MiObjeto = new clsProducto(Convert.ToInt32(contenedor["IdProducto"]), contenedor["Descripcion_Prod"].ToString());
+                x.Add(MiObjeto);
+            }
+            conexion.Close();
+
+            return x;
+        }
+
         public static List<clsProducto> ListarProductoPorId(int parametroId)
         {
             List<clsProducto> x = new List<clsProducto>();
@@ -120,6 +145,31 @@ namespace ElAmigo
 
             SqlCommand comando;
             comando = new SqlCommand("usp_Producto_ListarPorId", conexion);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@parIdProducto", parametroId);
+            conexion.Open();
+            SqlDataReader contenedor;
+            contenedor = comando.ExecuteReader();
+            while (contenedor.Read() == true)
+            {
+                clsProducto MiObjeto;
+                MiObjeto = new clsProducto(Convert.ToInt32(contenedor["IdProducto"]), contenedor["Descripcion_Prod"].ToString());
+                x.Add(MiObjeto);
+            }
+            conexion.Close();
+
+            return x;
+        }
+
+        public static List<clsProducto> ListarProductoPorIdVenta(int parametroId)
+        {
+            List<clsProducto> x = new List<clsProducto>();
+
+            SqlConnection conexion;
+            conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
+
+            SqlCommand comando;
+            comando = new SqlCommand("usp_Producto_ListarPorIdVenta", conexion);
             comando.CommandType = System.Data.CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@parIdProducto", parametroId);
             conexion.Open();

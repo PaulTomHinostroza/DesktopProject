@@ -238,6 +238,7 @@
             this.btnCerrar.TabIndex = 67;
             this.btnCerrar.Text = "&Salir";
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // groupBox4
             // 
