@@ -9,7 +9,7 @@ if exists
 	select IdAlmacen_St,IdProducto_St,IdMedida_St from tblStock where IdAlmacen_St=@parIdAlmacen_St and IdProducto_St=@parIdProducto_St
 )
 	begin
-		raiserror('Stock Registrado.',16,1)
+		raiserror('Dicho Stock Ya está Registrado.',16,1)
 	end
 else
 	begin

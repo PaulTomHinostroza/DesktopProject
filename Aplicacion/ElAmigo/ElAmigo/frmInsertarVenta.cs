@@ -160,6 +160,7 @@ namespace ElAmigo
                 lstvDatos.Items[lstvDatos.Items.Count - 1].SubItems.Add(txtDescripcion.Text);
                 lstvDatos.Items[lstvDatos.Items.Count - 1].SubItems.Add(precioUnit.ToString("0.00"));
                 lstvDatos.Items[lstvDatos.Items.Count - 1].SubItems.Add(valorVenta.ToString("0.00"));
+                lstvDatos.Items[lstvDatos.Items.Count - 1].SubItems.Add(lblEquivalenciaMed.Text);
             }
             else
             {
@@ -188,6 +189,7 @@ namespace ElAmigo
                     lstvDatos.Items[lstvDatos.Items.Count - 1].SubItems.Add(txtDescripcion.Text);
                     lstvDatos.Items[lstvDatos.Items.Count - 1].SubItems.Add(precioUnit.ToString("0.00"));
                     lstvDatos.Items[lstvDatos.Items.Count - 1].SubItems.Add(valorVenta.ToString("0.00"));
+                    lstvDatos.Items[lstvDatos.Items.Count - 1].SubItems.Add(lblEquivalenciaMed.Text);
                 }
             }
 
@@ -243,34 +245,44 @@ namespace ElAmigo
 
         private void btnInsertarVenta_Click(object sender, EventArgs e)
         {
-            clsVenta nuevaVenta;
-            if (rbnBoleta.Checked==true)
+            if (lstvDatos.Items.Count==0)
             {
-                nuevaVenta = new clsVenta(Convert.ToInt32(lblIdCliente.Text), Convert.ToInt32(lblIdEmpleado.Text), Convert.ToInt32(lblSerie.Text), "BOLETA", Convert.ToDecimal(txtTotal.Text));
-                nuevaVenta.InsertarVenta();
+                MessageBox.Show("Agregue un producto a la lista!");
             }
-            if (rbnFactura.Checked == true)
+            else
             {
-                nuevaVenta = new clsVenta(Convert.ToInt32(lblIdCliente.Text), Convert.ToInt32(lblIdEmpleado.Text), Convert.ToInt32(lblSerie.Text), "FACTURA", Convert.ToDecimal(txtTotal.Text));
-                nuevaVenta.InsertarVenta();
-            }
-            if (rbnGuia.Checked == true)
-            {
-                nuevaVenta = new clsVenta(Convert.ToInt32(lblIdCliente.Text), Convert.ToInt32(lblIdEmpleado.Text), Convert.ToInt32(lblSerie.Text), "GUIA DE REMISIÓN", Convert.ToDecimal(txtTotal.Text));
-                nuevaVenta.InsertarVenta();
-            }
+                clsVenta nuevaVenta;
+                if (rbnBoleta.Checked == true)
+                {
+                    nuevaVenta = new clsVenta(Convert.ToInt32(lblIdCliente.Text), Convert.ToInt32(lblIdEmpleado.Text), Convert.ToInt32(lblSerie.Text), "BOLETA", Convert.ToDecimal(txtTotal.Text));
+                    nuevaVenta.InsertarVenta();
+                }
+                if (rbnFactura.Checked == true)
+                {
+                    nuevaVenta = new clsVenta(Convert.ToInt32(lblIdCliente.Text), Convert.ToInt32(lblIdEmpleado.Text), Convert.ToInt32(lblSerie.Text), "FACTURA", Convert.ToDecimal(txtTotal.Text));
+                    nuevaVenta.InsertarVenta();
+                }
+                if (rbnGuia.Checked == true)
+                {
+                    nuevaVenta = new clsVenta(Convert.ToInt32(lblIdCliente.Text), Convert.ToInt32(lblIdEmpleado.Text), Convert.ToInt32(lblSerie.Text), "GUIA DE REMISIÓN", Convert.ToDecimal(txtTotal.Text));
+                    nuevaVenta.InsertarVenta();
+                }
 
+
+                int n;
+                n = 0;
+
+                while (n < lstvDatos.Items.Count)
+                {
+                    clsDetalleVenta nuevoDetalleVenta;
+                    nuevoDetalleVenta = new clsDetalleVenta(8000, Convert.ToInt32(lstvDatos.Items[n].SubItems[3].Text), Convert.ToInt32(lstvDatos.Items[n].SubItems[1].Text), Convert.ToDecimal(lstvDatos.Items[n].Text));
+                    nuevoDetalleVenta.InsertarDetalleVenta();
+                    n = n + 1;
+                }
+
+                lstvDatos.Items.Clear();
+            }
             
-            int n;
-            n = 0;
-
-            while (n<lstvDatos.Items.Count)
-            {
-                clsDetalleVenta nuevoDetalleVenta;
-                nuevoDetalleVenta = new clsDetalleVenta(8000, Convert.ToInt32(lstvDatos.Items[n].SubItems[3].Text), Convert.ToInt32(lstvDatos.Items[n].SubItems[1].Text), Convert.ToDecimal(lstvDatos.Items[n].Text));
-                nuevoDetalleVenta.InsertarDetalleVenta();
-                n = n + 1;
-            }
 
         }
 
@@ -293,6 +305,33 @@ namespace ElAmigo
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            if (lstvDatos.Items.Count == 0)
+            {
+                MessageBox.Show("Agregue productos a la lista!");
+            }
+            else
+            {
+                int n;
+                n = 0;
+
+                while (n < lstvDatos.Items.Count)
+                {
+                    clsStock nuevoStock;
+                    nuevoStock = new clsStock(Convert.ToInt32(lstvDatos.Items[n].SubItems[3].Text),
+                                                Convert.ToInt32(lblIdAlmacen.Text),
+                                                Convert.ToInt32(lstvDatos.Items[n].SubItems[7].Text),
+                                                Convert.ToDecimal(lstvDatos.Items[n].Text));
+                    nuevoStock.ActualizarAñadir();
+                    n = n + 1;
+                }
+
+                lstvDatos.Items.Clear();
+            }
+            
         }
 
 

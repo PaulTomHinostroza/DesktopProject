@@ -81,6 +81,8 @@
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblIdAlmacen = new System.Windows.Forms.Label();
             this.lblEquivalenciaMed = new System.Windows.Forms.Label();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
@@ -210,7 +212,7 @@
             // btnEliminarItem
             // 
             this.btnEliminarItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarItem.Location = new System.Drawing.Point(108, 540);
+            this.btnEliminarItem.Location = new System.Drawing.Point(139, 540);
             this.btnEliminarItem.Name = "btnEliminarItem";
             this.btnEliminarItem.Size = new System.Drawing.Size(110, 25);
             this.btnEliminarItem.TabIndex = 69;
@@ -221,7 +223,7 @@
             // btnInsertarVenta
             // 
             this.btnInsertarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsertarVenta.Location = new System.Drawing.Point(244, 540);
+            this.btnInsertarVenta.Location = new System.Drawing.Point(259, 540);
             this.btnInsertarVenta.Name = "btnInsertarVenta";
             this.btnInsertarVenta.Size = new System.Drawing.Size(126, 25);
             this.btnInsertarVenta.TabIndex = 68;
@@ -551,7 +553,8 @@
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6,
-            this.columnHeader7});
+            this.columnHeader7,
+            this.columnHeader8});
             this.lstvDatos.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstvDatos.FullRowSelect = true;
             this.lstvDatos.GridLines = true;
@@ -610,18 +613,35 @@
             // lblEquivalenciaMed
             // 
             this.lblEquivalenciaMed.AutoSize = true;
+            this.lblEquivalenciaMed.Enabled = false;
             this.lblEquivalenciaMed.Location = new System.Drawing.Point(444, 39);
             this.lblEquivalenciaMed.Name = "lblEquivalenciaMed";
             this.lblEquivalenciaMed.Size = new System.Drawing.Size(55, 13);
             this.lblEquivalenciaMed.TabIndex = 88;
             this.lblEquivalenciaMed.Text = "EquivMed";
-            this.lblEquivalenciaMed.Visible = false;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.Location = new System.Drawing.Point(12, 540);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(110, 25);
+            this.btnLimpiar.TabIndex = 89;
+            this.btnLimpiar.Text = "&Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Equivalencia";
+            this.columnHeader8.Width = 0;
             // 
             // frmInsertarVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(734, 591);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.lblEquivalenciaMed);
             this.Controls.Add(this.lblIdAlmacen);
             this.Controls.Add(this.lstvDatos);
@@ -717,6 +737,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.Label lblIdAlmacen;
         private System.Windows.Forms.Label lblEquivalenciaMed;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
 
     }
 }
