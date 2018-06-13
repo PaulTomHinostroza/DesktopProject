@@ -78,7 +78,9 @@ Genero_Emp		char(1) NOT NULL,
 Email_Emp	varchar(50) NULL,
 FechaNac_Emp	date NOT NULL,
 FechaIncrip_Emp	datetime NOT NULL,
-IdCargo_Emp int NOT NULL
+IdCargo_Emp int NOT NULL,
+Usuario_Emp	varchar(50)	NOT NULL,
+Password_Emp varchar(100)	NOT NULL
 
 
 constraint pk_IdEmpleado primary key (IdEmpleado),

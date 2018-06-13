@@ -38,12 +38,12 @@ namespace ElAmigo
                 if (rbnMasculino.Checked == true)
                 {
                     nuevoEmpleado = new clsEmpleado(txtNombres.Text, txtApellidos.Text, txtDNI.Text, txtDireccion.Text,
-                                                    'M', Convert.ToDateTime(dtpFechaNacimiento.Value.Date), LosCargos[cmbCargo.SelectedIndex]);
+                                                    'M', Convert.ToDateTime(dtpFechaNacimiento.Value.Date), LosCargos[cmbCargo.SelectedIndex],txtUsuario.Text,txtPassword.Text);
                 }
                 else
                 {
                     nuevoEmpleado = new clsEmpleado(txtNombres.Text, txtApellidos.Text, txtDNI.Text, txtDireccion.Text,
-                                                    'F', Convert.ToDateTime(dtpFechaNacimiento.Value.Date), LosCargos[cmbCargo.SelectedIndex]);
+                                                    'F', Convert.ToDateTime(dtpFechaNacimiento.Value.Date), LosCargos[cmbCargo.SelectedIndex], txtUsuario.Text, txtPassword.Text);
 
                 }
                 nuevoEmpleado.TelefonoEmp = txtTelefono.Text;

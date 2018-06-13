@@ -9,6 +9,7 @@ namespace ElAmigo
     class mdlVariables
     {
         //USER-PC\\SQLEXPRESS
+        public static clsEmpleado MiEmpleadoConectado = null;
         public static string CadenaDeConexion = "Server=USER-PC\\SQLEXPRESS;Database=ElAmigo;USER=sa;PWD=continental";
     }
 }

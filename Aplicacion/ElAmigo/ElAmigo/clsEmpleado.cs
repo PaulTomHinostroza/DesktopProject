@@ -22,12 +22,15 @@ namespace ElAmigo
         private clsCargo _CargoEmp;
         private string _NombreCargo;
 
+        private string _Usuario;
+        private string _Password;
+
         //constructores
 
         //constructor para insertar
         public clsEmpleado(string parNombresEmp, string parApellidosEmp, string parDNIEmp,
                             string parDireccionEmp, char parGeneroEmp,
-                            DateTime parFechaNacEmp, clsCargo parCargoEmp)
+                            DateTime parFechaNacEmp, clsCargo parCargoEmp,string parUsuario,string parPassword)
         {
 
             NombresEmp = parNombresEmp;
@@ -37,13 +40,15 @@ namespace ElAmigo
             GeneroEmp = parGeneroEmp;
             FechaNacEmp = parFechaNacEmp;
             CargoEmp = parCargoEmp;
+            Usuario = parUsuario;
+            Password = parPassword;
 
         }
 
         //constructor para listar todos
         public clsEmpleado(int parIdEmpleado, string parNombresEmp, string parApellidosEmp, string parDNIEmp,
                             string parDireccionEmp, string parTelefonoEmp, char parGeneroEmp, string parEmailEmp,
-                            DateTime parFechaNacEmp, DateTime parFechaInscripcionEmp, string parNombreCargo) 
+                            DateTime parFechaNacEmp, DateTime parFechaInscripcionEmp, string parNombreCargo, string parUsuario,string parPassword) 
         {
 
             IdEmpleado = parIdEmpleado;
@@ -57,9 +62,30 @@ namespace ElAmigo
             FechaNacEmp = parFechaNacEmp;
             FechaInscripcionEmp = parFechaInscripcionEmp;
             NombreCargo = parNombreCargo;
+            Usuario = parUsuario;
+            Password = parPassword;
         
         }
 
+        //constructor para validacion de usuario
+        public clsEmpleado(int parIdEmpleado, string parNombresEmp, string parApellidosEmp, string parDNIEmp,
+                            string parDireccionEmp, string parTelefonoEmp, char parGeneroEmp, string parEmailEmp,
+                            DateTime parFechaNacEmp, DateTime parFechaInscripcionEmp, string parNombreCargo)
+        {
+
+            IdEmpleado = parIdEmpleado;
+            ApellidosEmp = parApellidosEmp;
+            NombresEmp = parNombresEmp;
+            DNIEmp = parDNIEmp;
+            DireccionEmp = parDireccionEmp;
+            TelefonoEmp = parTelefonoEmp;
+            GeneroEmp = parGeneroEmp;
+            EmailEmp = parEmailEmp;
+            FechaNacEmp = parFechaNacEmp;
+            FechaInscripcionEmp = parFechaInscripcionEmp;
+            NombreCargo = parNombreCargo;
+
+        }
 
         public int IdEmpleado
         {
@@ -133,6 +159,18 @@ namespace ElAmigo
             set { _NombreCargo = value; }
         }
 
+        public string Usuario
+        {
+            get { return _Usuario; }
+            set { _Usuario = value; }
+        }
+
+        public string Password
+        {
+            get { return _Password; }
+            set { _Password = value; }
+        }
+
         public void InsertarEmpleado()
         {
             SqlConnection  conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
@@ -145,6 +183,8 @@ namespace ElAmigo
             cmd.Parameters.AddWithValue("@parGenero_Emp", GeneroEmp);
             cmd.Parameters.AddWithValue("@parFechaNac_Emp", FechaNacEmp);
             cmd.Parameters.AddWithValue("@parIdCargo_Emp", CargoEmp.IdCargo);
+            cmd.Parameters.AddWithValue("@parUsuario_Emp", Usuario);
+            cmd.Parameters.AddWithValue("@parPassword_Emp", Password);
 
 
             if (string.IsNullOrEmpty(TelefonoEmp))
@@ -194,7 +234,9 @@ namespace ElAmigo
                                             contenedor["Email_Emp"].ToString(),
                                             Convert.ToDateTime(contenedor["FechaNac_Emp"]),
                                             Convert.ToDateTime(contenedor["FechaIncrip_Emp"]),
-                                            contenedor["Nombre_Car"].ToString());
+                                            contenedor["Nombre_Car"].ToString(),
+                                            contenedor["Usuario_Emp"].ToString(),
+                                            contenedor["Password_Emp"].ToString());
 
                 x.Add(MiObjeto);
             }
@@ -228,7 +270,9 @@ namespace ElAmigo
                                             contenedor["Email_Emp"].ToString(),
                                             Convert.ToDateTime(contenedor["FechaNac_Emp"]),
                                             Convert.ToDateTime(contenedor["FechaIncrip_Emp"]),
-                                            contenedor["Nombre_Car"].ToString());
+                                            contenedor["Nombre_Car"].ToString(),
+                                            contenedor["Usuario_Emp"].ToString(),
+                                            contenedor["Password_Emp"].ToString());
 
                 x.Add(MiObjeto);
             }
@@ -262,7 +306,9 @@ namespace ElAmigo
                                             contenedor["Email_Emp"].ToString(),
                                             Convert.ToDateTime(contenedor["FechaNac_Emp"]),
                                             Convert.ToDateTime(contenedor["FechaIncrip_Emp"]),
-                                            contenedor["Nombre_Car"].ToString());
+                                            contenedor["Nombre_Car"].ToString(),
+                                            contenedor["Usuario_Emp"].ToString(),
+                                            contenedor["Password_Emp"].ToString());
 
                 x.Add(MiObjeto);
             }
@@ -296,7 +342,9 @@ namespace ElAmigo
                                             contenedor["Email_Emp"].ToString(),
                                             Convert.ToDateTime(contenedor["FechaNac_Emp"]),
                                             Convert.ToDateTime(contenedor["FechaIncrip_Emp"]),
-                                            contenedor["Nombre_Car"].ToString());
+                                            contenedor["Nombre_Car"].ToString(),
+                                            contenedor["Usuario_Emp"].ToString(),
+                                            contenedor["Password_Emp"].ToString());
 
                 x.Add(MiObjeto);
             }
@@ -330,7 +378,9 @@ namespace ElAmigo
                                             contenedor["Email_Emp"].ToString(),
                                             Convert.ToDateTime(contenedor["FechaNac_Emp"]),
                                             Convert.ToDateTime(contenedor["FechaIncrip_Emp"]),
-                                            contenedor["Nombre_Car"].ToString());
+                                            contenedor["Nombre_Car"].ToString(),
+                                            contenedor["Usuario_Emp"].ToString(),
+                                            contenedor["Password_Emp"].ToString());
 
                 x.Add(MiObjeto);
             }
@@ -364,7 +414,9 @@ namespace ElAmigo
                                             contenedor["Email_Emp"].ToString(),
                                             Convert.ToDateTime(contenedor["FechaNac_Emp"]),
                                             Convert.ToDateTime(contenedor["FechaIncrip_Emp"]),
-                                            contenedor["Nombre_Car"].ToString());
+                                            contenedor["Nombre_Car"].ToString(),
+                                            contenedor["Usuario_Emp"].ToString(),
+                                            contenedor["Password_Emp"].ToString());
 
                 x.Add(MiObjeto);
             }
@@ -386,6 +438,8 @@ namespace ElAmigo
             cmd.Parameters.AddWithValue("@parNUEVO_Genero_Emp", NuevosDatos.GeneroEmp);
             cmd.Parameters.AddWithValue("@parNUEVO_FechaNac_Emp", NuevosDatos.FechaNacEmp);
             cmd.Parameters.AddWithValue("@parNUEVO_IdCargo_Emp", NuevosDatos.CargoEmp.IdCargo);
+            cmd.Parameters.AddWithValue("@parNUEVO_Usuario_Emp", NuevosDatos.Usuario);
+            cmd.Parameters.AddWithValue("@parNUEVO_Password_Emp", NuevosDatos.Password);
 
 
             if (string.IsNullOrEmpty(NuevosDatos.TelefonoEmp))
@@ -408,6 +462,36 @@ namespace ElAmigo
             conexion.Open();
             cmd.ExecuteNonQuery();
             conexion.Close();
+        }
+
+        public static clsEmpleado Validar(string parUsuario,
+                                        string parPassword)
+        {
+            clsEmpleado EmpleadoRetornado = null;
+            SqlConnection conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
+            SqlCommand cmd = new SqlCommand("usp_Usuario_Validacion", conexion);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@parUsuario_Emp", parUsuario);
+            cmd.Parameters.AddWithValue("@parPassword_Emp", parPassword);
+            conexion.Open();
+            SqlDataReader contenedor;
+            contenedor = cmd.ExecuteReader();
+            while (contenedor.Read() == true)
+            {
+                EmpleadoRetornado = new clsEmpleado(Convert.ToInt32(contenedor["IdEmpleado"]),
+                                            contenedor["Nombre_Emp"].ToString(),
+                                            contenedor["Apellidos_Emp"].ToString(),
+                                            contenedor["DNI_Emp"].ToString(),
+                                            contenedor["Direccion_Emp"].ToString(),
+                                            contenedor["Telefono_Emp"].ToString(),
+                                            Convert.ToChar(contenedor["Genero_Emp"]),
+                                            contenedor["Email_Emp"].ToString(),
+                                            Convert.ToDateTime(contenedor["FechaNac_Emp"]),
+                                            Convert.ToDateTime(contenedor["FechaIncrip_Emp"]),
+                                            contenedor["Nombre_Car"].ToString());
+            }
+            conexion.Close();
+            return EmpleadoRetornado;
         }
 
 

@@ -243,3 +243,4 @@ F:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.Properties.Resour
 F:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.csproj.GenerateResource.Cache
 E:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.frmListarClienteVenta.resources
 E:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.frmListarProductoMedidaPrecioVenta.resources
+E:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.frmLogin.resources

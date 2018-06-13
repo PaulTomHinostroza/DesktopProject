@@ -63,6 +63,8 @@ namespace ElAmigo
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.NombreCargo);
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaNacEmp.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaInscripcionEmp.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.Usuario.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.Password.ToString());
                         if (contador % 2 == 0)
                         {
                             lstvDatos.Items[contador - 1].BackColor = Color.Khaki;
@@ -98,6 +100,8 @@ namespace ElAmigo
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.NombreCargo);
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaNacEmp.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaInscripcionEmp.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.Usuario.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.Password.ToString());
                         if (contador % 2 == 0)
                         {
                             lstvDatos.Items[contador - 1].BackColor = Color.Khaki;
@@ -133,6 +137,8 @@ namespace ElAmigo
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.NombreCargo);
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaNacEmp.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaInscripcionEmp.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.Usuario.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.Password.ToString());
                         if (contador % 2 == 0)
                         {
                             lstvDatos.Items[contador - 1].BackColor = Color.Khaki;
@@ -168,6 +174,8 @@ namespace ElAmigo
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.NombreCargo);
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaNacEmp.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaInscripcionEmp.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.Usuario.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.Password.ToString());
                         if (contador % 2 == 0)
                         {
                             lstvDatos.Items[contador - 1].BackColor = Color.Khaki;
@@ -203,6 +211,8 @@ namespace ElAmigo
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.NombreCargo);
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaNacEmp.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaInscripcionEmp.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.Usuario.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.Password.ToString());
                         if (contador % 2 == 0)
                         {
                             lstvDatos.Items[contador - 1].BackColor = Color.Khaki;
@@ -237,6 +247,8 @@ namespace ElAmigo
                 lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.NombreCargo);
                 lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaNacEmp.ToString());
                 lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaInscripcionEmp.ToString());
+                lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.Usuario.ToString());
+                lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.Password.ToString());
                 if (contador % 2 == 0)
                 {
                     lstvDatos.Items[contador - 1].BackColor = Color.Khaki;
@@ -264,6 +276,8 @@ namespace ElAmigo
                 lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.NombreCargo);
                 lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaNacEmp.ToString());
                 lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaInscripcionEmp.ToString());
+                lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.Usuario.ToString());
+                lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.Password.ToString());
                 if (contador % 2 == 0)
                 {
                     lstvDatos.Items[contador - 1].BackColor = Color.Khaki;
@@ -288,6 +302,8 @@ namespace ElAmigo
             txtDireccion.Text = EmpleadoSeleccionado.DireccionEmp.ToString();
             dtpFechaNacimiento.Value = Convert.ToDateTime(EmpleadoSeleccionado.FechaNacEmp.Date);
             txtTelefono.Text = EmpleadoSeleccionado.TelefonoEmp.ToString();
+            txtUsuario.Text = EmpleadoSeleccionado.Usuario.ToString();
+            txtPassword.Text = EmpleadoSeleccionado.Password.ToString();
 
             if (EmpleadoSeleccionado.GeneroEmp.ToString()=="M")
             {
@@ -315,6 +331,8 @@ namespace ElAmigo
             cmbCargo.Visible = false;
             btnGuardar.Visible = false;
             btnActualizar.Visible = true;
+            txtUsuario.Enabled = false;
+            txtPassword.Enabled = false;
 
         }
 
@@ -338,6 +356,8 @@ namespace ElAmigo
                 txtCargo.Visible = false;
                 cmbCargo.Visible = true;
                 btnGuardar.Visible = true;
+                txtUsuario.Enabled = true;
+                txtPassword.Enabled = true;
             }
             
 
@@ -361,12 +381,14 @@ namespace ElAmigo
             if (rbnMasculino.Checked == true)
             {
                 nuevoEmpleado = new clsEmpleado(txtNombres.Text, txtApellidos.Text, txtDNI.Text, txtDireccion.Text,
-                                                'M', Convert.ToDateTime(dtpFechaNacimiento.Value.Date), LosCargos[cmbCargo.SelectedIndex]);
+                                                'M', Convert.ToDateTime(dtpFechaNacimiento.Value.Date), LosCargos[cmbCargo.SelectedIndex],
+                                                txtUsuario.Text,txtPassword.Text);
             }
             else
             {
                 nuevoEmpleado = new clsEmpleado(txtNombres.Text, txtApellidos.Text, txtDNI.Text, txtDireccion.Text,
-                                                'F', Convert.ToDateTime(dtpFechaNacimiento.Value.Date), LosCargos[cmbCargo.SelectedIndex]);
+                                                'F', Convert.ToDateTime(dtpFechaNacimiento.Value.Date), LosCargos[cmbCargo.SelectedIndex],
+                                                txtUsuario.Text, txtPassword.Text);
 
             }
             nuevoEmpleado.TelefonoEmp = txtTelefono.Text;
@@ -388,6 +410,8 @@ namespace ElAmigo
             txtCargo.Visible = true;
             cmbCargo.Visible = false;
             btnGuardar.Visible = false;
+            txtUsuario.Enabled = false;
+            txtPassword.Enabled = false;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
