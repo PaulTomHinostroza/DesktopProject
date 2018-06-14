@@ -79,10 +79,10 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblIdAlmacen = new System.Windows.Forms.Label();
             this.lblEquivalenciaMed = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
@@ -600,6 +600,11 @@
             this.columnHeader7.Text = "V.De Venta";
             this.columnHeader7.Width = 112;
             // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Equivalencia";
+            this.columnHeader8.Width = 0;
+            // 
             // lblIdAlmacen
             // 
             this.lblIdAlmacen.AutoSize = true;
@@ -613,12 +618,12 @@
             // lblEquivalenciaMed
             // 
             this.lblEquivalenciaMed.AutoSize = true;
-            this.lblEquivalenciaMed.Enabled = false;
             this.lblEquivalenciaMed.Location = new System.Drawing.Point(444, 39);
             this.lblEquivalenciaMed.Name = "lblEquivalenciaMed";
             this.lblEquivalenciaMed.Size = new System.Drawing.Size(55, 13);
             this.lblEquivalenciaMed.TabIndex = 88;
             this.lblEquivalenciaMed.Text = "EquivMed";
+            this.lblEquivalenciaMed.Visible = false;
             // 
             // btnLimpiar
             // 
@@ -630,11 +635,6 @@
             this.btnLimpiar.Text = "&Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Equivalencia";
-            this.columnHeader8.Width = 0;
             // 
             // frmInsertarVenta
             // 

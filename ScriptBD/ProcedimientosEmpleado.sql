@@ -141,3 +141,14 @@ IdCargo_Emp		=@parNUEVO_IdCargo_Emp,
 Usuario_Emp		=@parNUEVO_Usuario_Emp,
 Password_Emp	=@parNUEVO_Password_Emp
 where IdEmpleado=@parIdEmpleado
+
+--/////////////////////////////////////////////////////////////
+create proc usp_Usuario_Validacion
+@parUsuario_Emp varchar(50), 
+@parPassword_Emp varchar(100)
+AS
+select IdEmpleado,Nombre_Emp,Apellidos_Emp,DNI_Emp,Direccion_Emp,Telefono_Emp,Genero_Emp,
+		Email_Emp,FechaNac_Emp,FechaIncrip_Emp,Nombre_Car,Usuario_Emp,Password_Emp
+from tblEmpleado inner join tblCargo
+on tblEmpleado.IdCargo_Emp=tblCargo.IdCargo
+where	Usuario_Emp = @parUsuario_Emp AND Password_Emp = @parPassword_Emp 

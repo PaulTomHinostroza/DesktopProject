@@ -244,3 +244,6 @@ F:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.csproj.GenerateRe
 E:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.frmListarClienteVenta.resources
 E:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.frmListarProductoMedidaPrecioVenta.resources
 E:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.frmLogin.resources
+E:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.frmVentanaPrincipal.resources
+E:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.frmPrueba.resources
+E:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.frmActualizarProducto.resources

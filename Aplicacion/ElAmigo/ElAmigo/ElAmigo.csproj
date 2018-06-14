@@ -105,6 +105,12 @@
     <Compile Include="frmActualizarEliminarCliente.Designer.cs">
       <DependentUpon>frmActualizarEliminarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmActualizarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmActualizarProducto.Designer.cs">
+      <DependentUpon>frmActualizarProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmActualizarStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,11 +249,23 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPrueba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrueba.Designer.cs">
+      <DependentUpon>frmPrueba.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVentanaAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmVentanaAdministrador.Designer.cs">
       <DependentUpon>frmVentanaAdministrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVentanaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVentanaPrincipal.Designer.cs">
+      <DependentUpon>frmVentanaPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="mdlVariables.cs" />
     <Compile Include="Program.cs" />
@@ -275,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmActualizarEliminarCliente.resx">
       <DependentUpon>frmActualizarEliminarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmActualizarProducto.resx">
+      <DependentUpon>frmActualizarProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmActualizarStock.resx">
       <DependentUpon>frmActualizarStock.cs</DependentUpon>
@@ -345,8 +366,14 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPrueba.resx">
+      <DependentUpon>frmPrueba.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmVentanaAdministrador.resx">
       <DependentUpon>frmVentanaAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVentanaPrincipal.resx">
+      <DependentUpon>frmVentanaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
