@@ -105,14 +105,5 @@ namespace ElAmigo
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            frmActualizarProducto x;
-            x = new frmActualizarProducto();
-            x.ShowDialog();
-        }
-
-
-
     }
 }

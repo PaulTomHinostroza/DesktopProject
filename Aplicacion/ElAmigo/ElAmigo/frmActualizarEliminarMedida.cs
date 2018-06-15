@@ -43,7 +43,7 @@ namespace ElAmigo
             {
                 txtDescripcion.Enabled = true;
                 txtAbrev.Enabled = true;
-                btnGuardar.Enabled = true;
+                btnGuardar.Visible = true;
                 nudEquivalencia.Enabled = true;
             }
         }
@@ -141,10 +141,11 @@ namespace ElAmigo
             txtDescripcion.Enabled = false;
             txtDescripcion.Clear();
             txtAbrev.Enabled = false;
+            nudEquivalencia.Value = 0;
             nudEquivalencia.Enabled=false;
             txtAbrev.Clear();
             txtId.Clear();
-            btnGuardar.Enabled = false;
+            btnGuardar.Visible = false;
 
             txtTexto.Clear();
         }

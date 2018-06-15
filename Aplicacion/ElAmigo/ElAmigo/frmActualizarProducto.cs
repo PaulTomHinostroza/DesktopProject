@@ -16,5 +16,19 @@ namespace ElAmigo
         {
             InitializeComponent();
         }
+
+        private Boolean _Abierto;
+
+        public Boolean Abierto
+        {
+            get { return _Abierto; }
+            set { _Abierto = value; }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+            Abierto = true;
+        }
     }
 }

@@ -247,3 +247,6 @@ E:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.frmLogin.resource
 E:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.frmVentanaPrincipal.resources
 E:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.frmPrueba.resources
 E:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.frmActualizarProducto.resources
+E:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.frmVentanaProducto.resources
+E:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.frmVentanaPrecio.resources
+E:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.frmVentanaMedida.resources

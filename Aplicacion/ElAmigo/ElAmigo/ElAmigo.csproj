@@ -261,11 +261,29 @@
     <Compile Include="frmVentanaAdministrador.Designer.cs">
       <DependentUpon>frmVentanaAdministrador.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVentanaMedida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVentanaMedida.Designer.cs">
+      <DependentUpon>frmVentanaMedida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVentanaPrecio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVentanaPrecio.Designer.cs">
+      <DependentUpon>frmVentanaPrecio.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVentanaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmVentanaPrincipal.Designer.cs">
       <DependentUpon>frmVentanaPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVentanaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVentanaProducto.Designer.cs">
+      <DependentUpon>frmVentanaProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="mdlVariables.cs" />
     <Compile Include="Program.cs" />
@@ -372,8 +390,17 @@
     <EmbeddedResource Include="frmVentanaAdministrador.resx">
       <DependentUpon>frmVentanaAdministrador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmVentanaMedida.resx">
+      <DependentUpon>frmVentanaMedida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVentanaPrecio.resx">
+      <DependentUpon>frmVentanaPrecio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmVentanaPrincipal.resx">
       <DependentUpon>frmVentanaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVentanaProducto.resx">
+      <DependentUpon>frmVentanaProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

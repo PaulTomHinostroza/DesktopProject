@@ -47,7 +47,7 @@ namespace ElAmigo
             else 
             {
                 txtDescripcion2.Enabled = true;
-                btnGuardar.Enabled = true;
+                btnGuardar.Visible = true;
             }
             
             
@@ -66,7 +66,7 @@ namespace ElAmigo
             txtDescripcion2.Enabled = false;
             txtDescripcion2.Clear();
             txtId.Clear();
-            btnGuardar.Enabled = false;
+            btnGuardar.Visible = false;
             txtTexto.Clear();
 
         }
