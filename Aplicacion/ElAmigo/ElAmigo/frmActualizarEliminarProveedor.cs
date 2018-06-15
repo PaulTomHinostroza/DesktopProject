@@ -43,6 +43,8 @@ namespace ElAmigo
                 ProveedoresEncontrados.Add(ELEMENTO);
                 lstvDatos.Items.Add(ELEMENTO.IdProveedor.ToString());
                 lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.NombreRazonProv.ToString());
+                lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.NombreContactoProv.ToString());
+                lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.CelularContactoProv.ToString());
                 lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TelefonoProv.ToString());
                 lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.EmailProv.ToString());
                 lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DireccionProv.ToString());
@@ -70,6 +72,8 @@ namespace ElAmigo
                         ProveedoresEncontrados.Add(ELEMENTO);
                         lstvDatos.Items.Add(ELEMENTO.IdProveedor.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.NombreRazonProv.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.NombreContactoProv.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.CelularContactoProv.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TelefonoProv.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.EmailProv.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DireccionProv.ToString());
@@ -100,6 +104,8 @@ namespace ElAmigo
                         ProveedoresEncontrados.Add(ELEMENTO);
                         lstvDatos.Items.Add(ELEMENTO.IdProveedor.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.NombreRazonProv.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.NombreContactoProv.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.CelularContactoProv.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TelefonoProv.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.EmailProv.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DireccionProv.ToString());
@@ -131,6 +137,8 @@ namespace ElAmigo
 
             txtId.Text = ProveedorSeleccionado.IdProveedor.ToString();
             txtNombres.Text = ProveedorSeleccionado.NombreRazonProv.ToString();
+            txtNombreContacto.Text = ProveedorSeleccionado.NombreContactoProv.ToString();
+            txtCelularContacto.Text = ProveedorSeleccionado.CelularContactoProv.ToString();
             txtDireccion.Text = ProveedorSeleccionado.DireccionProv.ToString();
             txtTelefono.Text = ProveedorSeleccionado.TelefonoProv.ToString();
             txtEmail.Text = ProveedorSeleccionado.EmailProv.ToString();
@@ -140,6 +148,8 @@ namespace ElAmigo
             //deshabilitar texbox
 
             txtNombres.Enabled = false;
+            txtCelularContacto.Enabled = false;
+            txtNombreContacto.Enabled = false;
             txtDireccion.Enabled = false;
             txtEmail.Enabled = false;
             txtNroCuenta.Enabled = false;
@@ -158,6 +168,8 @@ namespace ElAmigo
             else
             {
                 txtNombres.Enabled = true;
+                txtNombreContacto.Enabled = true;
+                txtCelularContacto.Enabled = true;
                 txtDireccion.Enabled = true;
                 txtEmail.Enabled = true;
                 txtTelefono.Enabled = true;
@@ -172,7 +184,7 @@ namespace ElAmigo
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             clsProveedor nuevosDatosProveedor;
-            nuevosDatosProveedor = new clsProveedor(txtNombres.Text, txtTelefono.Text);
+            nuevosDatosProveedor = new clsProveedor(txtNombres.Text,txtNombreContacto.Text,txtCelularContacto.Text, txtTelefono.Text);
             nuevosDatosProveedor.DireccionProv = txtDireccion.Text;
             nuevosDatosProveedor.EmailProv = txtEmail.Text;
             nuevosDatosProveedor.NroCuentaProv = txtNroCuenta.Text;
@@ -181,6 +193,8 @@ namespace ElAmigo
 
             //Bloquear todo
             txtNombres.Enabled = false;
+            txtNombreContacto.Enabled = false;
+            txtCelularContacto.Enabled = false;
             txtDireccion.Enabled = false;
             txtEmail.Enabled = false;
             txtTelefono.Enabled = false;
@@ -198,6 +212,8 @@ namespace ElAmigo
             txtTexto.Clear();
             txtId.Clear();
             txtNombres.Clear();
+            txtNombreContacto.Clear();
+            txtCelularContacto.Clear();
             txtDireccion.Clear();
             txtTelefono.Clear();
             txtNroCuenta.Clear();

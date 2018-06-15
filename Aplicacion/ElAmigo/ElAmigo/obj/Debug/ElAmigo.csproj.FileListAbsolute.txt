@@ -250,3 +250,10 @@ E:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.frmActualizarProd
 E:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.frmVentanaProducto.resources
 E:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.frmVentanaPrecio.resources
 E:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.frmVentanaMedida.resources
+E:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.frmVentanaAlmacen.resources
+E:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.frmVentanaCliente.resources
+E:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.frmVentanaEmpleado.resources
+E:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.frmVentanaProveedor.resources
+E:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.frmVentanaReportes.resources
+E:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.frmVentanaStock.resources
+E:\DesktopProject\Aplicacion\ElAmigo\ElAmigo\obj\Debug\ElAmigo.frmVentanaCargo.resources

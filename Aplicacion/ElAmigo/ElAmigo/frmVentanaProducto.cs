@@ -80,6 +80,11 @@ namespace ElAmigo
             btnUnidadesMedida.BackColor = Color.White;
             btnPrecio.BackColor = Color.FromArgb(0, 122, 100);
         }
+
+        private void frmVentanaProducto_Load(object sender, EventArgs e)
+        {
+            btnListar.PerformClick();
+        }
         
     }
 }

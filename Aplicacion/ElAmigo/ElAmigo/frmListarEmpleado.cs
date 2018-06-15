@@ -45,8 +45,8 @@ namespace ElAmigo
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TelefonoEmp);
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.EmailEmp);
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.NombreCargo);
-                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaNacEmp.ToString());
-                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaInscripcionEmp.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaNacEmp.ToString("dd/MM/yyyy"));
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaInscripcionEmp.ToString("dd/MM/yyyy"));
                         if (contador % 2 == 0)
                         {
                             lstvDatos.Items[contador - 1].BackColor = Color.Khaki;
@@ -80,8 +80,8 @@ namespace ElAmigo
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TelefonoEmp);
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.EmailEmp);
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.NombreCargo);
-                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaNacEmp.ToString());
-                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaInscripcionEmp.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaNacEmp.ToString("dd/MM/yyyy"));
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaInscripcionEmp.ToString("dd/MM/yyyy"));
                         if (contador % 2 == 0)
                         {
                             lstvDatos.Items[contador - 1].BackColor = Color.Khaki;
@@ -115,8 +115,8 @@ namespace ElAmigo
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TelefonoEmp);
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.EmailEmp);
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.NombreCargo);
-                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaNacEmp.ToString());
-                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaInscripcionEmp.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaNacEmp.ToString("dd/MM/yyyy"));
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaInscripcionEmp.ToString("dd/MM/yyyy"));
                         if (contador % 2 == 0)
                         {
                             lstvDatos.Items[contador - 1].BackColor = Color.Khaki;
@@ -150,8 +150,8 @@ namespace ElAmigo
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TelefonoEmp);
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.EmailEmp);
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.NombreCargo);
-                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaNacEmp.ToString());
-                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaInscripcionEmp.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaNacEmp.ToString("dd/MM/yyyy"));
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaInscripcionEmp.ToString("dd/MM/yyyy"));
                         if (contador % 2 == 0)
                         {
                             lstvDatos.Items[contador - 1].BackColor = Color.Khaki;
@@ -185,8 +185,8 @@ namespace ElAmigo
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TelefonoEmp);
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.EmailEmp);
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.NombreCargo);
-                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaNacEmp.ToString());
-                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaInscripcionEmp.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaNacEmp.ToString("dd/MM/yyyy"));
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaInscripcionEmp.ToString("dd/MM/yyyy"));
                         if (contador % 2 == 0)
                         {
                             lstvDatos.Items[contador - 1].BackColor = Color.Khaki;
@@ -219,8 +219,8 @@ namespace ElAmigo
                 lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TelefonoEmp);
                 lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.EmailEmp);
                 lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.NombreCargo);
-                lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaNacEmp.ToString());
-                lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaInscripcionEmp.ToString());
+                lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaNacEmp.ToString("dd/MM/yyyy"));
+                lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.FechaInscripcionEmp.ToString("dd/MM/yyyy"));
                 if (contador % 2 == 0)
                 {
                     lstvDatos.Items[contador - 1].BackColor = Color.Khaki;

@@ -36,7 +36,9 @@ CONSTRAINT pk_IdProducto primary key(IdProducto)
 create table tblProveedor
 (
 IdProveedor	int IDENTITY (1000,1) NOT NULL,
-Nombre_Prov varchar(100) NOT NULL,
+Nombre_Empresa_Prov varchar(100) NOT NULL,
+Nombre_Contacto_Prov varchar(150) NOT NULL,
+Celular_Contacto_Prov varchar(20) NOT NULL,
 Direccion_Prov varchar(100) NULL,
 Telefono_Prov varchar(20) NOT NULL,
 Email_Prov varchar(50) NULL,

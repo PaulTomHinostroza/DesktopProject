@@ -27,7 +27,7 @@ namespace ElAmigo
             try
             {
                 clsProveedor nuevoProveedor;
-                nuevoProveedor = new clsProveedor(txtNombres.Text, txtTelefono.Text);
+                nuevoProveedor = new clsProveedor(txtNombres.Text,txtNombreContacto.Text,txtCelularContacto.Text,txtTelefono.Text);
                 nuevoProveedor.DireccionProv = txtDireccion.Text;
                 nuevoProveedor.EmailProv = txtEmail.Text;
                 nuevoProveedor.NroCuentaProv = txtNroCuenta.Text;
@@ -44,6 +44,8 @@ namespace ElAmigo
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtNombres.Clear();
+            txtCelularContacto.Clear();
+            txtNombreContacto.Clear();
             txtDireccion.Clear();
             txtEmail.Clear();
             txtTelefono.Clear();

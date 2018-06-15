@@ -39,6 +39,8 @@ namespace ElAmigo
                         ProveedoresEncontrados.Add(ELEMENTO);
                         lstvDatos.Items.Add(ELEMENTO.IdProveedor.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.NombreRazonProv.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.NombreContactoProv.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.CelularContactoProv.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TelefonoProv.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.EmailProv.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DireccionProv.ToString());
@@ -69,6 +71,8 @@ namespace ElAmigo
                         ProveedoresEncontrados.Add(ELEMENTO);
                         lstvDatos.Items.Add(ELEMENTO.IdProveedor.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.NombreRazonProv.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.NombreContactoProv.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.CelularContactoProv.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TelefonoProv.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.EmailProv.ToString());
                         lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DireccionProv.ToString());
@@ -99,6 +103,8 @@ namespace ElAmigo
                 ProveedoresEncontrados.Add(ELEMENTO);
                 lstvDatos.Items.Add(ELEMENTO.IdProveedor.ToString());
                 lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.NombreRazonProv.ToString());
+                lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.NombreContactoProv.ToString());
+                lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.CelularContactoProv.ToString());
                 lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TelefonoProv.ToString());
                 lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.EmailProv.ToString());
                 lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DireccionProv.ToString());

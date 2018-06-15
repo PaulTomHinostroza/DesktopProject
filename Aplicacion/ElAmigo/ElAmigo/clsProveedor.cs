@@ -12,24 +12,30 @@ namespace ElAmigo
 
         private int _IdProveedor;
         private string _NombreRazonProv;
+        private string _NombreContactoProv;
+        private string _CelularContactoProv;
         private string _DireccionProv;
         private string _TelefonoProv;
         private string _EmailProv;
         private string _NroCuentaProv;
 
-        //constructor para inserta proveedor
-        public clsProveedor(string parNombreRazon, string parTelefonoProv)
+        //constructor para insertar proveedor
+        public clsProveedor(string parNombreRazon,string parNombreContacto,string parCelularContacto, string parTelefonoProv)
         {
             NombreRazonProv = parNombreRazon;
+            NombreContactoProv = parNombreContacto;
+            CelularContactoProv = parCelularContacto;
             TelefonoProv = parTelefonoProv;
         }
 
         //constructor para listar todos
-        public clsProveedor(int parIdProveedor, string parNombreRazon, string parDireccionProv, string parTelefonoProv,
+        public clsProveedor(int parIdProveedor, string parNombreRazon,string parNombreContactoProv,string parCelularContactoProv, string parDireccionProv, string parTelefonoProv,
                             string parEmailProv, string parNroCuentaProv) 
         {
             IdProveedor = parIdProveedor;
             NombreRazonProv = parNombreRazon;
+            NombreContactoProv = parNombreContactoProv;
+            CelularContactoProv = parCelularContactoProv;
             DireccionProv = parDireccionProv;
             TelefonoProv = parTelefonoProv;
             EmailProv = parEmailProv;
@@ -48,6 +54,18 @@ namespace ElAmigo
         {
             get { return _NombreRazonProv; }
             set { _NombreRazonProv = value; }
+        }
+
+        public string NombreContactoProv
+        {
+            get { return _NombreContactoProv; }
+            set { _NombreContactoProv = value; }
+        }
+
+        public string CelularContactoProv
+        {
+            get { return _CelularContactoProv; }
+            set { _CelularContactoProv = value; }
         }
 
         public string DireccionProv
@@ -81,6 +99,8 @@ namespace ElAmigo
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@parNombre_Prov", NombreRazonProv);
+            cmd.Parameters.AddWithValue("@parNombre_Contacto_Prov", NombreContactoProv);
+            cmd.Parameters.AddWithValue("@parCelular_Contacto_Prov", CelularContactoProv);
             cmd.Parameters.AddWithValue("@parTelefono_Prov", TelefonoProv);
 
             if (string.IsNullOrEmpty(DireccionProv))
@@ -129,8 +149,9 @@ namespace ElAmigo
             {
 
                 clsProveedor MiObjeto;
-                MiObjeto = new clsProveedor(Convert.ToInt32(contenedor["IdProveedor"]), contenedor["Nombre_Prov"].ToString(), contenedor["Direccion_Prov"].ToString(),
-                                            contenedor["Telefono_Prov"].ToString(), contenedor["Email_Prov"].ToString(), contenedor["NroCuenta_Prov"].ToString());
+                MiObjeto = new clsProveedor(Convert.ToInt32(contenedor["IdProveedor"]), contenedor["Nombre_Prov"].ToString(), contenedor["Nombre_Contacto_Prov"].ToString(),
+                                            contenedor["Celular_Contacto_Prov"].ToString(), contenedor["Direccion_Prov"].ToString(), contenedor["Telefono_Prov"].ToString(),
+                                            contenedor["Email_Prov"].ToString(), contenedor["NroCuenta_Prov"].ToString());
 
                 x.Add(MiObjeto);
             }
@@ -153,8 +174,9 @@ namespace ElAmigo
             while (contenedor.Read() == true)
             {
                 clsProveedor MiObjeto;
-                MiObjeto = new clsProveedor(Convert.ToInt32(contenedor["IdProveedor"]), contenedor["Nombre_Prov"].ToString(), contenedor["Direccion_Prov"].ToString(),
-                                            contenedor["Telefono_Prov"].ToString(), contenedor["Email_Prov"].ToString(), contenedor["NroCuenta_Prov"].ToString());
+                MiObjeto = new clsProveedor(Convert.ToInt32(contenedor["IdProveedor"]), contenedor["Nombre_Prov"].ToString(), contenedor["Nombre_Contacto_Prov"].ToString(),
+                                            contenedor["Celular_Contacto_Prov"].ToString(), contenedor["Direccion_Prov"].ToString(), contenedor["Telefono_Prov"].ToString(),
+                                            contenedor["Email_Prov"].ToString(), contenedor["NroCuenta_Prov"].ToString());
 
                 x.Add(MiObjeto);
             }
@@ -178,8 +200,9 @@ namespace ElAmigo
             while (contenedor.Read() == true)
             {
                 clsProveedor MiObjeto;
-                MiObjeto = new clsProveedor(Convert.ToInt32(contenedor["IdProveedor"]), contenedor["Nombre_Prov"].ToString(), contenedor["Direccion_Prov"].ToString(),
-                                            contenedor["Telefono_Prov"].ToString(), contenedor["Email_Prov"].ToString(), contenedor["NroCuenta_Prov"].ToString());
+                MiObjeto = new clsProveedor(Convert.ToInt32(contenedor["IdProveedor"]), contenedor["Nombre_Prov"].ToString(), contenedor["Nombre_Contacto_Prov"].ToString(),
+                                            contenedor["Celular_Contacto_Prov"].ToString(), contenedor["Direccion_Prov"].ToString(), contenedor["Telefono_Prov"].ToString(),
+                                            contenedor["Email_Prov"].ToString(), contenedor["NroCuenta_Prov"].ToString());
 
                 x.Add(MiObjeto);
             }
@@ -196,6 +219,8 @@ namespace ElAmigo
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@parIdProveedor", IdProveedor);
             cmd.Parameters.AddWithValue("@parNUEVO_Nombre_Prov", NuevosDatos.NombreRazonProv);
+            cmd.Parameters.AddWithValue("@parNUEVO_Nombre_Contacto_Prov", NuevosDatos.NombreContactoProv);
+            cmd.Parameters.AddWithValue("@parNUEVO_Celular_Contacto_Prov", NuevosDatos.CelularContactoProv);
             cmd.Parameters.AddWithValue("@parNUEVO_Telefono_Prov", NuevosDatos.TelefonoProv);
 
             if (string.IsNullOrEmpty(NuevosDatos.DireccionProv))

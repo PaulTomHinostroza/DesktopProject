@@ -91,10 +91,13 @@ namespace ElAmigo
             btnProveedores.BackColor = Color.FromArgb(0, 122, 204);
             btnAlmacen.BackColor = Color.FromArgb(0, 122, 204);
             btnReportes.BackColor = Color.FromArgb(0, 122, 204);
+            btnStock.BackColor = Color.FromArgb(0, 122, 204);
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
+            AbrirFormInPanel(new frmVentanaCliente());
+
             btnVentas.BackColor = Color.FromArgb(0, 122, 204);
             btnProductos.BackColor = Color.FromArgb(0, 122, 204);
             btnClientes.BackColor = Color.FromArgb(45,45,48);
@@ -102,6 +105,7 @@ namespace ElAmigo
             btnProveedores.BackColor = Color.FromArgb(0, 122, 204);
             btnAlmacen.BackColor = Color.FromArgb(0, 122, 204);
             btnReportes.BackColor = Color.FromArgb(0, 122, 204);
+            btnStock.BackColor = Color.FromArgb(0, 122, 204);
         }
 
         private void btnProductos_Click(object sender, EventArgs e)
@@ -115,10 +119,13 @@ namespace ElAmigo
             btnProveedores.BackColor = Color.FromArgb(0, 122, 204);
             btnAlmacen.BackColor = Color.FromArgb(0, 122, 204);
             btnReportes.BackColor = Color.FromArgb(0, 122, 204);
+            btnStock.BackColor = Color.FromArgb(0, 122, 204);
         }
 
         private void btnProveedores_Click(object sender, EventArgs e)
         {
+            AbrirFormInPanel(new frmVentanaProveedor());
+
             btnProductos.BackColor = Color.FromArgb(0, 122, 204);
             btnVentas.BackColor = Color.FromArgb(0, 122, 204);
             btnClientes.BackColor = Color.FromArgb(0, 122, 204);
@@ -126,10 +133,13 @@ namespace ElAmigo
             btnProveedores.BackColor = Color.FromArgb(45, 45, 48);
             btnAlmacen.BackColor = Color.FromArgb(0, 122, 204);
             btnReportes.BackColor = Color.FromArgb(0, 122, 204);
+            btnStock.BackColor = Color.FromArgb(0, 122, 204);
         }
 
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
+            AbrirFormInPanel(new frmVentanaEmpleado());
+
             btnProductos.BackColor = Color.FromArgb(0, 122, 204);
             btnVentas.BackColor = Color.FromArgb(0, 122, 204);
             btnClientes.BackColor = Color.FromArgb(0, 122, 204);
@@ -137,10 +147,13 @@ namespace ElAmigo
             btnProveedores.BackColor = Color.FromArgb(0, 122, 204);
             btnAlmacen.BackColor = Color.FromArgb(0, 122, 204);
             btnReportes.BackColor = Color.FromArgb(0, 122, 204);
+            btnStock.BackColor = Color.FromArgb(0, 122, 204);
         }
 
         private void btnAlmacen_Click(object sender, EventArgs e)
         {
+            AbrirFormInPanel(new frmVentanaAlmacen());
+
             btnProductos.BackColor = Color.FromArgb(0, 122, 204);
             btnVentas.BackColor = Color.FromArgb(0, 122, 204);
             btnClientes.BackColor = Color.FromArgb(0, 122, 204);
@@ -148,10 +161,13 @@ namespace ElAmigo
             btnProveedores.BackColor = Color.FromArgb(0, 122, 204);
             btnAlmacen.BackColor = Color.FromArgb(45,45,48);
             btnReportes.BackColor = Color.FromArgb(0, 122, 204);
+            btnStock.BackColor = Color.FromArgb(0, 122, 204);
         }
 
         private void btnReportes_Click(object sender, EventArgs e)
         {
+            AbrirFormInPanel(new frmVentanaReportes());
+
             btnProductos.BackColor = Color.FromArgb(0, 122, 204);
             btnVentas.BackColor = Color.FromArgb(0, 122, 204);
             btnClientes.BackColor = Color.FromArgb(0, 122, 204);
@@ -159,6 +175,21 @@ namespace ElAmigo
             btnProveedores.BackColor = Color.FromArgb(0, 122, 204);
             btnAlmacen.BackColor = Color.FromArgb(0, 122, 204);
             btnReportes.BackColor = Color.FromArgb(45, 45, 48);
+            btnStock.BackColor = Color.FromArgb(0, 122, 204);
+        }
+
+        private void btnStock_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new frmVentanaStock());
+
+            btnProductos.BackColor = Color.FromArgb(0, 122, 204);
+            btnVentas.BackColor = Color.FromArgb(0, 122, 204);
+            btnClientes.BackColor = Color.FromArgb(0, 122, 204);
+            btnEmpleados.BackColor = Color.FromArgb(0, 122, 204);
+            btnProveedores.BackColor = Color.FromArgb(0, 122, 204);
+            btnAlmacen.BackColor = Color.FromArgb(0, 122, 204);
+            btnReportes.BackColor = Color.FromArgb(0, 122, 204);
+            btnStock.BackColor = Color.FromArgb(45, 45, 48);
         }
     }
 }

@@ -53,24 +53,32 @@
             // 
             // btnMostrarTodos
             // 
-            this.btnMostrarTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMostrarTodos.Location = new System.Drawing.Point(753, 69);
+            this.btnMostrarTodos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnMostrarTodos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnMostrarTodos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMostrarTodos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMostrarTodos.ForeColor = System.Drawing.Color.White;
+            this.btnMostrarTodos.Location = new System.Drawing.Point(824, 84);
             this.btnMostrarTodos.Name = "btnMostrarTodos";
-            this.btnMostrarTodos.Size = new System.Drawing.Size(128, 35);
+            this.btnMostrarTodos.Size = new System.Drawing.Size(150, 40);
             this.btnMostrarTodos.TabIndex = 126;
-            this.btnMostrarTodos.Text = "Mostrar Todos";
-            this.btnMostrarTodos.UseVisualStyleBackColor = true;
+            this.btnMostrarTodos.Text = "MOSTRAR TODOS";
+            this.btnMostrarTodos.UseVisualStyleBackColor = false;
             this.btnMostrarTodos.Click += new System.EventHandler(this.btnMostrarTodos_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(1198, 580);
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(938, 518);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(99, 35);
+            this.btnCancelar.Size = new System.Drawing.Size(100, 40);
             this.btnCancelar.TabIndex = 125;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // groupBox1
@@ -80,8 +88,8 @@
             this.groupBox1.Controls.Add(this.rbnApellidos);
             this.groupBox1.Controls.Add(this.rbnNombres);
             this.groupBox1.Controls.Add(this.txtTexto);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(16, 36);
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(12, 61);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(701, 87);
             this.groupBox1.TabIndex = 124;
@@ -93,7 +101,7 @@
             this.rbnDNI.AutoSize = true;
             this.rbnDNI.Location = new System.Drawing.Point(241, 23);
             this.rbnDNI.Name = "rbnDNI";
-            this.rbnDNI.Size = new System.Drawing.Size(51, 22);
+            this.rbnDNI.Size = new System.Drawing.Size(47, 21);
             this.rbnDNI.TabIndex = 4;
             this.rbnDNI.Text = "DNI";
             this.rbnDNI.UseVisualStyleBackColor = true;
@@ -103,7 +111,7 @@
             this.rbnId.AutoSize = true;
             this.rbnId.Location = new System.Drawing.Point(198, 23);
             this.rbnId.Name = "rbnId";
-            this.rbnId.Size = new System.Drawing.Size(37, 22);
+            this.rbnId.Size = new System.Drawing.Size(37, 21);
             this.rbnId.TabIndex = 3;
             this.rbnId.Text = "Id";
             this.rbnId.UseVisualStyleBackColor = true;
@@ -113,7 +121,7 @@
             this.rbnApellidos.AutoSize = true;
             this.rbnApellidos.Location = new System.Drawing.Point(111, 23);
             this.rbnApellidos.Name = "rbnApellidos";
-            this.rbnApellidos.Size = new System.Drawing.Size(85, 22);
+            this.rbnApellidos.Size = new System.Drawing.Size(81, 21);
             this.rbnApellidos.TabIndex = 2;
             this.rbnApellidos.Text = "Apellidos";
             this.rbnApellidos.UseVisualStyleBackColor = true;
@@ -124,7 +132,7 @@
             this.rbnNombres.Checked = true;
             this.rbnNombres.Location = new System.Drawing.Point(17, 23);
             this.rbnNombres.Name = "rbnNombres";
-            this.rbnNombres.Size = new System.Drawing.Size(88, 22);
+            this.rbnNombres.Size = new System.Drawing.Size(79, 21);
             this.rbnNombres.TabIndex = 1;
             this.rbnNombres.TabStop = true;
             this.rbnNombres.Text = "Nombres";
@@ -132,22 +140,22 @@
             // 
             // txtTexto
             // 
-            this.txtTexto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTexto.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTexto.Location = new System.Drawing.Point(17, 53);
             this.txtTexto.Name = "txtTexto";
-            this.txtTexto.Size = new System.Drawing.Size(666, 24);
+            this.txtTexto.Size = new System.Drawing.Size(666, 22);
             this.txtTexto.TabIndex = 0;
             this.txtTexto.TextChanged += new System.EventHandler(this.txtTexto_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 9);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(384, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(187, 24);
+            this.label3.Size = new System.Drawing.Size(285, 32);
             this.label3.TabIndex = 123;
-            this.label3.Text = "Listado de Clientes";
+            this.label3.Text = "LISTADO DE CLIENTES";
             // 
             // lstvDatos
             // 
@@ -162,13 +170,13 @@
             this.columnHeader9,
             this.columnHeader10,
             this.columnHeader8});
-            this.lstvDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstvDatos.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstvDatos.FullRowSelect = true;
             this.lstvDatos.GridLines = true;
-            this.lstvDatos.Location = new System.Drawing.Point(16, 129);
+            this.lstvDatos.Location = new System.Drawing.Point(12, 154);
             this.lstvDatos.MultiSelect = false;
             this.lstvDatos.Name = "lstvDatos";
-            this.lstvDatos.Size = new System.Drawing.Size(1283, 430);
+            this.lstvDatos.Size = new System.Drawing.Size(1026, 347);
             this.lstvDatos.TabIndex = 127;
             this.lstvDatos.UseCompatibleStateImageBehavior = false;
             this.lstvDatos.View = System.Windows.Forms.View.Details;
@@ -226,12 +234,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1309, 627);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1050, 570);
             this.Controls.Add(this.lstvDatos);
             this.Controls.Add(this.btnMostrarTodos);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmListarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmListarCliente";
