@@ -41,13 +41,19 @@ namespace ElAmigo
         public string AbreviaturaMed
         {
             get { return _AbreviaturaMed; }
-            set { _AbreviaturaMed = value.ToUpper(); }
+            set 
+            { 
+                _AbreviaturaMed = value.ToUpper(); 
+            }
         }
 
         public string DescripcionMed
         {
             get { return _DescripcionMed; }
-            set { _DescripcionMed = value.ToUpper(); }
+            set 
+            { 
+                _DescripcionMed = value.ToUpper(); 
+            }
         }
 
         public int EquivalenteUnidad

@@ -62,15 +62,15 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.MenuVertical.Controls.Add(this.lblCargo);
             this.MenuVertical.Controls.Add(this.btnStock);
             this.MenuVertical.Controls.Add(this.btnProductos);
-            this.MenuVertical.Controls.Add(this.lblCargo);
-            this.MenuVertical.Controls.Add(this.lblApellidos);
-            this.MenuVertical.Controls.Add(this.lblNombres);
             this.MenuVertical.Controls.Add(this.pictureBox2);
             this.MenuVertical.Controls.Add(this.btnReportes);
+            this.MenuVertical.Controls.Add(this.lblApellidos);
             this.MenuVertical.Controls.Add(this.btnAlmacen);
             this.MenuVertical.Controls.Add(this.btnEmpleados);
+            this.MenuVertical.Controls.Add(this.lblNombres);
             this.MenuVertical.Controls.Add(this.btnProveedores);
             this.MenuVertical.Controls.Add(this.btnClientes);
             this.MenuVertical.Controls.Add(this.btnVentas);
@@ -89,7 +89,7 @@
             this.btnStock.ForeColor = System.Drawing.Color.White;
             this.btnStock.Image = ((System.Drawing.Image)(resources.GetObject("btnStock.Image")));
             this.btnStock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStock.Location = new System.Drawing.Point(0, 410);
+            this.btnStock.Location = new System.Drawing.Point(0, 433);
             this.btnStock.Name = "btnStock";
             this.btnStock.Size = new System.Drawing.Size(250, 40);
             this.btnStock.TabIndex = 13;
@@ -106,7 +106,7 @@
             this.btnProductos.ForeColor = System.Drawing.Color.White;
             this.btnProductos.Image = ((System.Drawing.Image)(resources.GetObject("btnProductos.Image")));
             this.btnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProductos.Location = new System.Drawing.Point(0, 180);
+            this.btnProductos.Location = new System.Drawing.Point(0, 203);
             this.btnProductos.Name = "btnProductos";
             this.btnProductos.Size = new System.Drawing.Size(250, 40);
             this.btnProductos.TabIndex = 12;
@@ -117,9 +117,10 @@
             // lblCargo
             // 
             this.lblCargo.AutoSize = true;
+            this.lblCargo.BackColor = System.Drawing.Color.Transparent;
             this.lblCargo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCargo.ForeColor = System.Drawing.Color.White;
-            this.lblCargo.Location = new System.Drawing.Point(123, 83);
+            this.lblCargo.Location = new System.Drawing.Point(118, 42);
             this.lblCargo.Name = "lblCargo";
             this.lblCargo.Size = new System.Drawing.Size(56, 20);
             this.lblCargo.TabIndex = 11;
@@ -128,9 +129,10 @@
             // lblApellidos
             // 
             this.lblApellidos.AutoSize = true;
+            this.lblApellidos.BackColor = System.Drawing.Color.Transparent;
             this.lblApellidos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApellidos.ForeColor = System.Drawing.Color.White;
-            this.lblApellidos.Location = new System.Drawing.Point(123, 56);
+            this.lblApellidos.Location = new System.Drawing.Point(118, 106);
             this.lblApellidos.Name = "lblApellidos";
             this.lblApellidos.Size = new System.Drawing.Size(75, 20);
             this.lblApellidos.TabIndex = 10;
@@ -139,9 +141,10 @@
             // lblNombres
             // 
             this.lblNombres.AutoSize = true;
+            this.lblNombres.BackColor = System.Drawing.Color.Transparent;
             this.lblNombres.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombres.ForeColor = System.Drawing.Color.White;
-            this.lblNombres.Location = new System.Drawing.Point(123, 29);
+            this.lblNombres.Location = new System.Drawing.Point(118, 74);
             this.lblNombres.Name = "lblNombres";
             this.lblNombres.Size = new System.Drawing.Size(74, 20);
             this.lblNombres.TabIndex = 9;
@@ -150,9 +153,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(12, 24);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(105, 116);
+            this.pictureBox2.Size = new System.Drawing.Size(100, 116);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
@@ -166,7 +169,7 @@
             this.btnReportes.ForeColor = System.Drawing.Color.White;
             this.btnReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnReportes.Image")));
             this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(0, 456);
+            this.btnReportes.Location = new System.Drawing.Point(0, 479);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Size = new System.Drawing.Size(250, 40);
             this.btnReportes.TabIndex = 7;
@@ -183,7 +186,7 @@
             this.btnAlmacen.ForeColor = System.Drawing.Color.White;
             this.btnAlmacen.Image = ((System.Drawing.Image)(resources.GetObject("btnAlmacen.Image")));
             this.btnAlmacen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAlmacen.Location = new System.Drawing.Point(0, 364);
+            this.btnAlmacen.Location = new System.Drawing.Point(0, 387);
             this.btnAlmacen.Name = "btnAlmacen";
             this.btnAlmacen.Size = new System.Drawing.Size(250, 40);
             this.btnAlmacen.TabIndex = 6;
@@ -200,7 +203,7 @@
             this.btnEmpleados.ForeColor = System.Drawing.Color.White;
             this.btnEmpleados.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpleados.Image")));
             this.btnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmpleados.Location = new System.Drawing.Point(0, 318);
+            this.btnEmpleados.Location = new System.Drawing.Point(0, 341);
             this.btnEmpleados.Name = "btnEmpleados";
             this.btnEmpleados.Size = new System.Drawing.Size(250, 40);
             this.btnEmpleados.TabIndex = 5;
@@ -217,7 +220,7 @@
             this.btnProveedores.ForeColor = System.Drawing.Color.White;
             this.btnProveedores.Image = ((System.Drawing.Image)(resources.GetObject("btnProveedores.Image")));
             this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProveedores.Location = new System.Drawing.Point(0, 272);
+            this.btnProveedores.Location = new System.Drawing.Point(0, 295);
             this.btnProveedores.Name = "btnProveedores";
             this.btnProveedores.Size = new System.Drawing.Size(250, 40);
             this.btnProveedores.TabIndex = 4;
@@ -234,7 +237,7 @@
             this.btnClientes.ForeColor = System.Drawing.Color.White;
             this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(0, 226);
+            this.btnClientes.Location = new System.Drawing.Point(0, 249);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(250, 40);
             this.btnClientes.TabIndex = 3;
@@ -251,7 +254,7 @@
             this.btnVentas.ForeColor = System.Drawing.Color.White;
             this.btnVentas.Image = ((System.Drawing.Image)(resources.GetObject("btnVentas.Image")));
             this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentas.Location = new System.Drawing.Point(0, 134);
+            this.btnVentas.Location = new System.Drawing.Point(0, 157);
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Size = new System.Drawing.Size(250, 40);
             this.btnVentas.TabIndex = 1;
@@ -359,6 +362,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmVentanaPrincipal";
             this.Text = "frmVentanaPrincipal";
+            this.Load += new System.EventHandler(this.frmVentanaPrincipal_Load);
             this.MenuVertical.ResumeLayout(false);
             this.MenuVertical.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

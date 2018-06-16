@@ -7,11 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace ElAmigo
 {
     public partial class frmListarClienteVenta : Form
     {
+        //mover el formulario
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
         private List<clsCliente> _ClientesEncontrados = new List<clsCliente>();
 
         public List<clsCliente> ClientesEncontrados
@@ -221,6 +229,13 @@ namespace ElAmigo
         {
             ClienteSeleccionado = ClientesEncontrados[lstvDatos.SelectedItems[0].Index];
             Close();
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            //mover el formulario
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
 

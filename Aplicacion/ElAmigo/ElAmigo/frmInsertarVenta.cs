@@ -51,7 +51,7 @@ namespace ElAmigo
             }
             else
             {
-                txtDatos.Text = x.ClienteSeleccionado.NombresCli;
+                txtDatos.Text = x.ClienteSeleccionado.NombresCli+" "+x.ClienteSeleccionado.ApellidosCli.ToString();
                 txtDocIdentidad.Text = x.ClienteSeleccionado.DNICli;
                 lblIdCliente.Text = x.ClienteSeleccionado.IdCliente.ToString();
 
@@ -330,6 +330,9 @@ namespace ElAmigo
                 }
 
                 lstvDatos.Items.Clear();
+                txtIGV2.Clear();
+                txtSubtotal.Clear();
+                txtTotal.Clear();
             }
             
         }

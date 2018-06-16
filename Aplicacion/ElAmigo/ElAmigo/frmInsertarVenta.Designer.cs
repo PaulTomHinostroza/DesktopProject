@@ -120,6 +120,7 @@
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(126, 21);
             this.txtTotal.TabIndex = 76;
+            this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtIGV2
             // 
@@ -129,6 +130,7 @@
             this.txtIGV2.ReadOnly = true;
             this.txtIGV2.Size = new System.Drawing.Size(126, 21);
             this.txtIGV2.TabIndex = 75;
+            this.txtIGV2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtSubtotal
             // 
@@ -138,6 +140,7 @@
             this.txtSubtotal.ReadOnly = true;
             this.txtSubtotal.Size = new System.Drawing.Size(126, 21);
             this.txtSubtotal.TabIndex = 74;
+            this.txtSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label3
             // 

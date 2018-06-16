@@ -44,7 +44,10 @@ namespace ElAmigo
         public string DireccionAlm
         {
             get { return _DireccionAlm; }
-            set { _DireccionAlm = value; }
+            set 
+            { 
+                _DireccionAlm = value.ToUpper(); 
+            }
         }
 
         public string TelefonoAlm
@@ -56,13 +59,19 @@ namespace ElAmigo
         public string DescripcionAlm
         {
             get { return _DescripcionAlm; }
-            set { _DescripcionAlm = value; }
+            set 
+            { 
+                _DescripcionAlm = value.ToUpper(); 
+            }
         }
 
         public string TipoAlm
         {
             get { return _TipoAlm; }
-            set { _TipoAlm = value; }
+            set 
+            { 
+                _TipoAlm = value.ToUpper(); 
+            }
         }
 
         public void InsertarAlmacen()

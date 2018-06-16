@@ -96,13 +96,19 @@ namespace ElAmigo
         public string NombresEmp
         {
             get { return _NombresEmp; }
-            set { _NombresEmp = value; }
+            set 
+            { 
+                _NombresEmp = value.ToUpper(); 
+            }
         }
 
         public string ApellidosEmp
         {
             get { return _ApellidosEmp; }
-            set { _ApellidosEmp = value; }
+            set 
+            { 
+                _ApellidosEmp = value.ToUpper(); 
+            }
         }
 
         public string DNIEmp
@@ -114,7 +120,10 @@ namespace ElAmigo
         public string DireccionEmp
         {
             get { return _DireccionEmp; }
-            set { _DireccionEmp = value; }
+            set 
+            { 
+                _DireccionEmp = value.ToUpper(); 
+            }
         }
 
         public string TelefonoEmp
@@ -132,7 +141,10 @@ namespace ElAmigo
         public string EmailEmp
         {
             get { return _EmailEmp; }
-            set { _EmailEmp = value; }
+            set 
+            { 
+                _EmailEmp = value.ToUpper(); 
+            }
         }
 
         public DateTime FechaNacEmp

@@ -191,5 +191,24 @@ namespace ElAmigo
             btnReportes.BackColor = Color.FromArgb(0, 122, 204);
             btnStock.BackColor = Color.FromArgb(45, 45, 48);
         }
+
+        private void frmVentanaPrincipal_Load(object sender, EventArgs e)
+        {
+            lblCargo.Text = mdlVariables.MiEmpleadoConectado.NombreCargo;
+            lblNombres.Text = mdlVariables.MiEmpleadoConectado.NombresEmp;
+            lblApellidos.Text = mdlVariables.MiEmpleadoConectado.ApellidosEmp;
+
+            if (lblCargo.Text != "ADMINISTRADOR")
+            {
+                btnProductos.Enabled = false;
+                btnClientes.Enabled = false;
+                btnProveedores.Enabled = false;
+                btnEmpleados.Enabled = false;
+                btnAlmacen.Enabled = false;
+                btnStock.Enabled = false;
+                btnReportes.Enabled = false;
+            }
+            
+        }
     }
 }

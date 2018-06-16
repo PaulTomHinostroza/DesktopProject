@@ -53,13 +53,19 @@ namespace ElAmigo
         public string NombreRazonProv
         {
             get { return _NombreRazonProv; }
-            set { _NombreRazonProv = value; }
+            set 
+            { 
+                _NombreRazonProv = value.ToUpper(); 
+            }
         }
 
         public string NombreContactoProv
         {
             get { return _NombreContactoProv; }
-            set { _NombreContactoProv = value; }
+            set 
+            { 
+                _NombreContactoProv = value.ToUpper(); 
+            }
         }
 
         public string CelularContactoProv
@@ -71,7 +77,10 @@ namespace ElAmigo
         public string DireccionProv
         {
             get { return _DireccionProv; }
-            set { _DireccionProv = value; }
+            set 
+            { 
+                _DireccionProv = value.ToUpper(); 
+            }
         }
 
         public string TelefonoProv
@@ -83,7 +92,10 @@ namespace ElAmigo
         public string EmailProv
         {
             get { return _EmailProv; }
-            set { _EmailProv = value; }
+            set 
+            { 
+                _EmailProv = value.ToUpper(); 
+            }
         }
 
         public string NroCuentaProv

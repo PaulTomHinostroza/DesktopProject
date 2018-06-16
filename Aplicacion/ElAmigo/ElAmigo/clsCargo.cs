@@ -37,13 +37,19 @@ namespace ElAmigo
         public string NombreCargo
         {
             get { return _NombreCargo; }
-            set { _NombreCargo = value; }
+            set 
+            { 
+                _NombreCargo = value.ToUpper(); 
+            }
         }
 
         public string DescripcionCargo
         {
             get { return _DescripcionCargo; }
-            set { _DescripcionCargo = value; }
+            set 
+            {
+                _DescripcionCargo = value.ToUpper(); 
+            }
         }
 
 

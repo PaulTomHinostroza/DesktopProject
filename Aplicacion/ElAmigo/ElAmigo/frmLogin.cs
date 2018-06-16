@@ -78,5 +78,10 @@ namespace ElAmigo
                 Close();
             }
         }
+
+        private void linkRecuperar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show("Contacte con el Administrador! XD");
+        }
     }
 }

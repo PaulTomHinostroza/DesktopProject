@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ElAmigo
 {
-    class mdlVariables
+    public class mdlVariables
     {
         //USER-PC\\SQLEXPRESS
         public static clsEmpleado MiEmpleadoConectado = null;
