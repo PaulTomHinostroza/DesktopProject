@@ -46,7 +46,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(100)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(118)))), ((int)(((byte)(14)))));
             this.panel1.Controls.Add(this.btnNuevo);
             this.panel1.Controls.Add(this.btnActualizar);
             this.panel1.Controls.Add(this.btnListar);
@@ -114,6 +114,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmVentanaProveedor";
             this.Text = "frmVentanaProveedor";
+            this.Load += new System.EventHandler(this.frmVentanaProveedor_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

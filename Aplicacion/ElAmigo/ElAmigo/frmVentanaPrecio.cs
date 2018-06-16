@@ -35,24 +35,29 @@ namespace ElAmigo
         {
             AbrirFormInPanel(new frmListarPrecio());
             btnListar.BackColor = Color.White;
-            btnActualizar.BackColor = Color.FromArgb(0, 122, 204);
-            btnNuevo.BackColor = Color.FromArgb(0, 122, 204);
+            btnActualizar.BackColor = Color.FromArgb(254, 207, 0);
+            btnNuevo.BackColor = Color.FromArgb(254, 207, 0);
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new frmInsertarPrecio());
-            btnListar.BackColor = Color.FromArgb(0, 122, 204);
-            btnActualizar.BackColor = Color.FromArgb(0, 122, 204);
+            btnListar.BackColor = Color.FromArgb(254, 207, 0);
+            btnActualizar.BackColor = Color.FromArgb(254, 207, 0);
             btnNuevo.BackColor = Color.White;
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new frmActualizarEliminarPrecio());
-            btnListar.BackColor = Color.FromArgb(0, 122, 204);
+            btnListar.BackColor = Color.FromArgb(254, 207, 0);
             btnActualizar.BackColor = Color.White;
-            btnNuevo.BackColor = Color.FromArgb(0, 122, 204);
+            btnNuevo.BackColor = Color.FromArgb(254, 207, 0);
+        }
+
+        private void frmVentanaPrecio_Load(object sender, EventArgs e)
+        {
+            btnListar.PerformClick();
         }
     }
 }

@@ -40,7 +40,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(100)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(118)))), ((int)(((byte)(14)))));
             this.panel1.Controls.Add(this.btnUnidadesMedida);
             this.panel1.Controls.Add(this.btnPrecio);
             this.panel1.Controls.Add(this.btnNuevo);

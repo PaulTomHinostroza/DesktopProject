@@ -33,7 +33,7 @@ else
 create proc usp_Stock_Listar_AlmCantMed
 @parIdProducto	int
 as
-select IdProducto_St,Descripcion_Prod,IdAlmacen_St,Direccion_Alm,IdMedida_St,Descripcion_Med,CantidadStock
+select IdProducto_St,Descripcion_Prod,IdAlmacen_St,Direccion_Alm,Tipo_Alm,IdMedida_St,Descripcion_Med,CantidadStock
 from tblStock inner join tblProducto
 on tblStock.IdProducto_St=tblProducto.IdProducto
 inner join tblAlmacen

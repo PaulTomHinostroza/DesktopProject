@@ -234,5 +234,10 @@ namespace ElAmigo
         {
             Close();
         }
+
+        private void frmListarEmpleado_Load(object sender, EventArgs e)
+        {
+            btnMostrarTodos.PerformClick();
+        }
     }
 }

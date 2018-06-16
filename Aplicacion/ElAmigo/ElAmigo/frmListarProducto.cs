@@ -105,5 +105,10 @@ namespace ElAmigo
             }
         }
 
+        private void frmListarProducto_Load(object sender, EventArgs e)
+        {
+            btnMostrarTodos.PerformClick();
+        }
+
     }
 }

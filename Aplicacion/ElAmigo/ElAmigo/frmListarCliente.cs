@@ -207,5 +207,10 @@ namespace ElAmigo
             }
 
         }
+
+        private void frmListarCliente_Load(object sender, EventArgs e)
+        {
+            btnMostrarTodos.PerformClick();
+        }
     }
 }

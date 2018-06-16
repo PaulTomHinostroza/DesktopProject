@@ -245,6 +245,7 @@
             this.Name = "frmListarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmListarCliente";
+            this.Load += new System.EventHandler(this.frmListarCliente_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

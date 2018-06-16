@@ -112,5 +112,10 @@ namespace ElAmigo
             }
         }
 
+        private void frmListarMedida_Load(object sender, EventArgs e)
+        {
+            btnMostrarTodos.PerformClick();
+        }
+
     }
 }

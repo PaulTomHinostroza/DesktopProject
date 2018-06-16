@@ -106,6 +106,7 @@ namespace ElAmigo
                 {
 
                     lstvCantidad.Items.Add(ELEMENTO.DescripcionAlmacen.ToString());
+                    lstvCantidad.Items[contador - 1].SubItems.Add(ELEMENTO.TipoAlm.ToString());
                     lstvCantidad.Items[contador - 1].SubItems.Add(ELEMENTO.CantidadST.ToString());
                     lstvCantidad.Items[contador - 1].SubItems.Add(ELEMENTO.DescripcionMedida.ToString());
 

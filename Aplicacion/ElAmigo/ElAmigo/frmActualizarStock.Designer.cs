@@ -51,6 +51,7 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtAlmacen = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnQuitar = new System.Windows.Forms.Button();
@@ -63,51 +64,69 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(391, 574);
+            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.Location = new System.Drawing.Point(469, 518);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(89, 35);
+            this.btnLimpiar.Size = new System.Drawing.Size(100, 40);
             this.btnLimpiar.TabIndex = 109;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Text = "LIMPIAR";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.Location = new System.Drawing.Point(486, 574);
+            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizar.FlatAppearance.BorderSize = 0;
+            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.Color.White;
+            this.btnActualizar.Location = new System.Drawing.Point(585, 518);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(125, 35);
+            this.btnActualizar.Size = new System.Drawing.Size(120, 40);
             this.btnActualizar.TabIndex = 98;
-            this.btnActualizar.Text = "Actualizar Stock";
-            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Text = "ACTUALIZAR";
+            this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(617, 574);
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(722, 518);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(99, 35);
+            this.btnCancelar.Size = new System.Drawing.Size(100, 40);
             this.btnCancelar.TabIndex = 97;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 9);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(357, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(221, 24);
+            this.label3.Size = new System.Drawing.Size(269, 32);
             this.label3.TabIndex = 96;
-            this.label3.Text = "Actualización de Stock";
+            this.label3.Text = "ACTUALIZAR STOCK";
             // 
             // lblIdProducto
             // 
             this.lblIdProducto.AutoSize = true;
-            this.lblIdProducto.Location = new System.Drawing.Point(421, 473);
+            this.lblIdProducto.Location = new System.Drawing.Point(646, 28);
             this.lblIdProducto.Name = "lblIdProducto";
             this.lblIdProducto.Size = new System.Drawing.Size(59, 13);
             this.lblIdProducto.TabIndex = 139;
@@ -117,64 +136,64 @@
             // Almacen
             // 
             this.Almacen.AutoSize = true;
-            this.Almacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Almacen.Location = new System.Drawing.Point(12, 435);
+            this.Almacen.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Almacen.Location = new System.Drawing.Point(116, 408);
             this.Almacen.Name = "Almacen";
-            this.Almacen.Size = new System.Drawing.Size(69, 18);
+            this.Almacen.Size = new System.Drawing.Size(65, 17);
             this.Almacen.TabIndex = 137;
             this.Almacen.Text = "Almacen:";
             // 
             // txtProducto
             // 
             this.txtProducto.Enabled = false;
-            this.txtProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProducto.Location = new System.Drawing.Point(87, 390);
+            this.txtProducto.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProducto.Location = new System.Drawing.Point(187, 363);
             this.txtProducto.Name = "txtProducto";
             this.txtProducto.ReadOnly = true;
-            this.txtProducto.Size = new System.Drawing.Size(581, 24);
+            this.txtProducto.Size = new System.Drawing.Size(581, 22);
             this.txtProducto.TabIndex = 131;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 393);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(118, 366);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 18);
+            this.label2.Size = new System.Drawing.Size(66, 17);
             this.label2.TabIndex = 135;
             this.label2.Text = "Producto:";
             // 
             // nudCantidad
             // 
             this.nudCantidad.Enabled = false;
-            this.nudCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudCantidad.Location = new System.Drawing.Point(87, 513);
+            this.nudCantidad.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudCantidad.Location = new System.Drawing.Point(441, 446);
             this.nudCantidad.Maximum = new decimal(new int[] {
             1316134912,
             2328,
             0,
             0});
             this.nudCantidad.Name = "nudCantidad";
-            this.nudCantidad.Size = new System.Drawing.Size(359, 24);
+            this.nudCantidad.Size = new System.Drawing.Size(161, 22);
             this.nudCantidad.TabIndex = 134;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 515);
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(368, 448);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 18);
+            this.label6.Size = new System.Drawing.Size(67, 17);
             this.label6.TabIndex = 133;
             this.label6.Text = "Cantidad:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(12, 476);
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(124, 448);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(60, 18);
+            this.label8.Size = new System.Drawing.Size(57, 17);
             this.label8.TabIndex = 132;
             this.label8.Text = "Medida:";
             // 
@@ -183,8 +202,8 @@
             this.groupBox1.Controls.Add(this.rbnId);
             this.groupBox1.Controls.Add(this.rbnDescripcion);
             this.groupBox1.Controls.Add(this.txtTexto);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(15, 36);
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(121, 53);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(701, 87);
             this.groupBox1.TabIndex = 130;
@@ -196,7 +215,7 @@
             this.rbnId.AutoSize = true;
             this.rbnId.Location = new System.Drawing.Point(139, 23);
             this.rbnId.Name = "rbnId";
-            this.rbnId.Size = new System.Drawing.Size(37, 22);
+            this.rbnId.Size = new System.Drawing.Size(37, 21);
             this.rbnId.TabIndex = 2;
             this.rbnId.Text = "Id";
             this.rbnId.UseVisualStyleBackColor = true;
@@ -207,7 +226,7 @@
             this.rbnDescripcion.Checked = true;
             this.rbnDescripcion.Location = new System.Drawing.Point(17, 23);
             this.rbnDescripcion.Name = "rbnDescripcion";
-            this.rbnDescripcion.Size = new System.Drawing.Size(105, 22);
+            this.rbnDescripcion.Size = new System.Drawing.Size(97, 21);
             this.rbnDescripcion.TabIndex = 1;
             this.rbnDescripcion.TabStop = true;
             this.rbnDescripcion.Text = "Descripción";
@@ -215,10 +234,10 @@
             // 
             // txtTexto
             // 
-            this.txtTexto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTexto.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTexto.Location = new System.Drawing.Point(17, 53);
             this.txtTexto.Name = "txtTexto";
-            this.txtTexto.Size = new System.Drawing.Size(666, 24);
+            this.txtTexto.Size = new System.Drawing.Size(666, 22);
             this.txtTexto.TabIndex = 0;
             this.txtTexto.TextChanged += new System.EventHandler(this.txtTexto_TextChanged);
             // 
@@ -227,13 +246,13 @@
             this.lstvDatos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
-            this.lstvDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstvDatos.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstvDatos.FullRowSelect = true;
             this.lstvDatos.GridLines = true;
-            this.lstvDatos.Location = new System.Drawing.Point(15, 129);
+            this.lstvDatos.Location = new System.Drawing.Point(121, 146);
             this.lstvDatos.MultiSelect = false;
             this.lstvDatos.Name = "lstvDatos";
-            this.lstvDatos.Size = new System.Drawing.Size(701, 119);
+            this.lstvDatos.Size = new System.Drawing.Size(701, 95);
             this.lstvDatos.TabIndex = 129;
             this.lstvDatos.UseCompatibleStateImageBehavior = false;
             this.lstvDatos.View = System.Windows.Forms.View.Details;
@@ -242,20 +261,20 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Id";
-            this.columnHeader1.Width = 48;
+            this.columnHeader1.Width = 50;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Descripción";
-            this.columnHeader2.Width = 648;
+            this.columnHeader2.Width = 621;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(90, 251);
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(242, 244);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(561, 20);
+            this.label4.Size = new System.Drawing.Size(468, 16);
             this.label4.TabIndex = 128;
             this.label4.Text = "---------------------------------------------------------------------------------" +
     "-----------";
@@ -265,15 +284,16 @@
             this.lstvCantidad.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader5,
             this.columnHeader6,
-            this.columnHeader3});
+            this.columnHeader3,
+            this.columnHeader4});
             this.lstvCantidad.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.lstvCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstvCantidad.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstvCantidad.FullRowSelect = true;
             this.lstvCantidad.GridLines = true;
-            this.lstvCantidad.Location = new System.Drawing.Point(15, 274);
+            this.lstvCantidad.Location = new System.Drawing.Point(121, 263);
             this.lstvCantidad.MultiSelect = false;
             this.lstvCantidad.Name = "lstvCantidad";
-            this.lstvCantidad.Size = new System.Drawing.Size(701, 92);
+            this.lstvCantidad.Size = new System.Drawing.Size(701, 94);
             this.lstvCantidad.TabIndex = 127;
             this.lstvCantidad.UseCompatibleStateImageBehavior = false;
             this.lstvCantidad.View = System.Windows.Forms.View.Details;
@@ -282,56 +302,73 @@
             // columnHeader5
             // 
             this.columnHeader5.Text = "Almacen";
-            this.columnHeader5.Width = 483;
+            this.columnHeader5.Width = 329;
             // 
             // columnHeader6
             // 
-            this.columnHeader6.Text = "Cantidad";
+            this.columnHeader6.Text = "Tipo";
             this.columnHeader6.Width = 144;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Medida";
-            this.columnHeader3.Width = 61;
+            this.columnHeader3.Text = "Cantidad";
+            this.columnHeader3.Width = 119;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Medida";
+            this.columnHeader4.Width = 103;
             // 
             // txtAlmacen
             // 
             this.txtAlmacen.Enabled = false;
-            this.txtAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAlmacen.Location = new System.Drawing.Point(87, 432);
+            this.txtAlmacen.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAlmacen.Location = new System.Drawing.Point(187, 405);
             this.txtAlmacen.Name = "txtAlmacen";
             this.txtAlmacen.ReadOnly = true;
-            this.txtAlmacen.Size = new System.Drawing.Size(581, 24);
+            this.txtAlmacen.Size = new System.Drawing.Size(581, 22);
             this.txtAlmacen.TabIndex = 140;
             // 
             // btnAgregar
             // 
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregar.Enabled = false;
-            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(32, 574);
+            this.btnAgregar.FlatAppearance.BorderSize = 0;
+            this.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.Color.White;
+            this.btnAgregar.Location = new System.Drawing.Point(163, 518);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(125, 35);
+            this.btnAgregar.Size = new System.Drawing.Size(100, 40);
             this.btnAgregar.TabIndex = 142;
-            this.btnAgregar.Text = "Añafir";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Text = "AÑADIR";
+            this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnQuitar
             // 
+            this.btnQuitar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnQuitar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuitar.Enabled = false;
-            this.btnQuitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuitar.Location = new System.Drawing.Point(173, 574);
+            this.btnQuitar.FlatAppearance.BorderSize = 0;
+            this.btnQuitar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnQuitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuitar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuitar.ForeColor = System.Drawing.Color.White;
+            this.btnQuitar.Location = new System.Drawing.Point(280, 518);
             this.btnQuitar.Name = "btnQuitar";
-            this.btnQuitar.Size = new System.Drawing.Size(125, 35);
+            this.btnQuitar.Size = new System.Drawing.Size(100, 40);
             this.btnQuitar.TabIndex = 143;
-            this.btnQuitar.Text = "Restar";
-            this.btnQuitar.UseVisualStyleBackColor = true;
+            this.btnQuitar.Text = "RESTAR";
+            this.btnQuitar.UseVisualStyleBackColor = false;
             this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
             // lblIdAlmacen
             // 
             this.lblIdAlmacen.AutoSize = true;
-            this.lblIdAlmacen.Location = new System.Drawing.Point(499, 473);
+            this.lblIdAlmacen.Location = new System.Drawing.Point(724, 28);
             this.lblIdAlmacen.Name = "lblIdAlmacen";
             this.lblIdAlmacen.Size = new System.Drawing.Size(57, 13);
             this.lblIdAlmacen.TabIndex = 144;
@@ -341,7 +378,7 @@
             // lblEquivalencia
             // 
             this.lblEquivalencia.AutoSize = true;
-            this.lblEquivalencia.Location = new System.Drawing.Point(573, 473);
+            this.lblEquivalencia.Location = new System.Drawing.Point(798, 28);
             this.lblEquivalencia.Name = "lblEquivalencia";
             this.lblEquivalencia.Size = new System.Drawing.Size(68, 13);
             this.lblEquivalencia.TabIndex = 145;
@@ -352,11 +389,11 @@
             // 
             this.cmbMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMedida.Enabled = false;
-            this.cmbMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMedida.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMedida.FormattingEnabled = true;
-            this.cmbMedida.Location = new System.Drawing.Point(87, 473);
+            this.cmbMedida.Location = new System.Drawing.Point(187, 445);
             this.cmbMedida.Name = "cmbMedida";
-            this.cmbMedida.Size = new System.Drawing.Size(161, 26);
+            this.cmbMedida.Size = new System.Drawing.Size(161, 25);
             this.cmbMedida.TabIndex = 146;
             this.cmbMedida.SelectedValueChanged += new System.EventHandler(this.cmbMedida_SelectedValueChanged);
             // 
@@ -364,7 +401,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(733, 621);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1050, 570);
             this.Controls.Add(this.cmbMedida);
             this.Controls.Add(this.lblEquivalencia);
             this.Controls.Add(this.lblIdAlmacen);
@@ -386,6 +424,7 @@
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.label3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmActualizarStock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmActualizarStock";
@@ -428,5 +467,6 @@
         private System.Windows.Forms.Label lblIdAlmacen;
         private System.Windows.Forms.Label lblEquivalencia;
         private System.Windows.Forms.ComboBox cmbMedida;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }

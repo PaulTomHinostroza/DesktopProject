@@ -109,5 +109,10 @@ namespace ElAmigo
                 contador = contador + 1;
             }
         }
+
+        private void frmListarCargo_Load(object sender, EventArgs e)
+        {
+            btnMostrarTodos.PerformClick();
+        }
     }
 }

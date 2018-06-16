@@ -171,6 +171,7 @@
             this.Name = "frmListarProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmListarProductos";
+            this.Load += new System.EventHandler(this.frmListarProducto_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

@@ -21,6 +21,7 @@ namespace ElAmigo
         private string _DescripcionProducto;
         private string _DescripcionMedida;
         private int _Equivalencia;
+        private string _TipoAlm;
 
         //constructor para insertar
         public clsStock(int parIdProductoInt, clsAlmacen parIdAlmacenST, clsMedida parIdMedidaST, decimal parCantidadSt)
@@ -32,13 +33,14 @@ namespace ElAmigo
         }
 
         //constructor para listar por producto
-        public clsStock(int parIdProductoInt,string parDescripcionProd , int parIdAlmacenInt,string parDescripcionAlm,
+        public clsStock(int parIdProductoInt,string parDescripcionProd , int parIdAlmacenInt,string parDescripcionAlm,string parTipoAlm,
                           int parIdMedidaInt,string parDescripcionMedida, decimal parCantidadSt)
         {
             IdProdructoInt = parIdProductoInt;
             DescripcionProducto = parDescripcionProd;
             IdAlmacenInt = parIdAlmacenInt;
             DescripcionAlmacen = parDescripcionAlm;
+            TipoAlm = parTipoAlm;
             IdMedidaInt = parIdMedidaInt;
             DescripcionMedida = parDescripcionMedida;
             CantidadST = parCantidadSt;
@@ -119,6 +121,12 @@ namespace ElAmigo
             set { _Equivalencia = value; }
         }
 
+        public string TipoAlm
+        {
+            get { return _TipoAlm; }
+            set { _TipoAlm = value; }
+        }
+
         public void InsertarStock()
         {
             SqlConnection conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
@@ -150,7 +158,7 @@ namespace ElAmigo
                 clsStock MiObjeto;
                 MiObjeto = new clsStock(Convert.ToInt32(cont["IdProducto_St"]), cont["Descripcion_Prod"].ToString(),
                                         Convert.ToInt32(cont["IdAlmacen_St"]), cont["Direccion_Alm"].ToString(),
-                                        Convert.ToInt32(cont["IdMedida_St"]), cont["Descripcion_Med"].ToString(),
+                                        cont["Tipo_Alm"].ToString(),Convert.ToInt32(cont["IdMedida_St"]), cont["Descripcion_Med"].ToString(),
                                         Convert.ToDecimal(cont["CantidadStock"]));
                 x.Add(MiObjeto);
             }

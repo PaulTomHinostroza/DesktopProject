@@ -40,10 +40,10 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -160,6 +160,16 @@
             this.columnHeader7.Text = "Email";
             this.columnHeader7.Width = 123;
             // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Dirección";
+            this.columnHeader3.Width = 131;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Nro Cuenta";
+            this.columnHeader8.Width = 121;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -187,16 +197,6 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Dirección";
-            this.columnHeader3.Width = 131;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Nro Cuenta";
-            this.columnHeader8.Width = 121;
-            // 
             // frmListarProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -212,6 +212,7 @@
             this.Name = "frmListarProveedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmListarProveedor";
+            this.Load += new System.EventHandler(this.frmListarProveedor_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

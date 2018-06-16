@@ -34,8 +34,8 @@ namespace ElAmigo
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new frmInsertarMedida());
-            btnListar.BackColor = Color.FromArgb(0, 122, 204);
-            btnActualizar.BackColor = Color.FromArgb(0, 122, 204);
+            btnListar.BackColor = Color.FromArgb(254, 207, 0);
+            btnActualizar.BackColor = Color.FromArgb(254, 207, 0);
             btnNuevo.BackColor = Color.White;
 
         }
@@ -43,17 +43,22 @@ namespace ElAmigo
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new frmActualizarEliminarMedida());
-            btnListar.BackColor = Color.FromArgb(0, 122, 204);
+            btnListar.BackColor = Color.FromArgb(254, 207, 0);
             btnActualizar.BackColor = Color.White;
-            btnNuevo.BackColor = Color.FromArgb(0, 122, 204);
+            btnNuevo.BackColor = Color.FromArgb(254, 207, 0);
         }
 
         private void btnListar_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new frmListarMedida());
             btnListar.BackColor = Color.White;
-            btnActualizar.BackColor = Color.FromArgb(0, 122, 204);
-            btnNuevo.BackColor = Color.FromArgb(0, 122, 204);
+            btnActualizar.BackColor = Color.FromArgb(254, 207, 0);
+            btnNuevo.BackColor = Color.FromArgb(254, 207, 0);
+        }
+
+        private void frmVentanaMedida_Load(object sender, EventArgs e)
+        {
+            btnListar.PerformClick();
         }
     }
 }

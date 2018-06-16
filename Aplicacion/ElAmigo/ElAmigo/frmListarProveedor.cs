@@ -123,5 +123,10 @@ namespace ElAmigo
             Close();
         }
 
+        private void frmListarProveedor_Load(object sender, EventArgs e)
+        {
+            btnMostrarTodos.PerformClick();
+        }
+
     }
 }

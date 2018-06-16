@@ -35,50 +35,50 @@ namespace ElAmigo
         {
             AbrirFormInPanel(new frmListarProducto());
             btnListar.BackColor = Color.White;
-            btnActualizar.BackColor=Color.FromArgb(0,122,100);
-            btnNuevo.BackColor = Color.FromArgb(0,122,100);
-            btnUnidadesMedida.BackColor = Color.FromArgb(0, 122, 100);
-            btnPrecio.BackColor = Color.FromArgb(0, 122, 100);
+            btnActualizar.BackColor = Color.FromArgb(237, 118, 14);
+            btnNuevo.BackColor = Color.FromArgb(237, 118, 14);
+            btnUnidadesMedida.BackColor = Color.FromArgb(237, 118, 14);
+            btnPrecio.BackColor = Color.FromArgb(237, 118, 14);
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new frmInsertarProducto());
             btnNuevo.BackColor = Color.White;
-            btnListar.BackColor=Color.FromArgb(0,122,100);
-            btnActualizar.BackColor=Color.FromArgb(0,122,100);
-            btnUnidadesMedida.BackColor = Color.FromArgb(0, 122, 100);
-            btnPrecio.BackColor = Color.FromArgb(0, 122, 100);
+            btnListar.BackColor = Color.FromArgb(237, 118, 14);
+            btnActualizar.BackColor = Color.FromArgb(237, 118, 14);
+            btnUnidadesMedida.BackColor = Color.FromArgb(237, 118, 14);
+            btnPrecio.BackColor = Color.FromArgb(237, 118, 14);
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new frmActualizarEliminarProducto());
-            btnNuevo.BackColor = Color.FromArgb(0, 122, 100);
-            btnListar.BackColor = Color.FromArgb(0, 122, 100);
+            btnNuevo.BackColor = Color.FromArgb(237, 118, 14);
+            btnListar.BackColor = Color.FromArgb(237, 118, 14);
             btnActualizar.BackColor = Color.White;
-            btnUnidadesMedida.BackColor = Color.FromArgb(0, 122, 100);
-            btnPrecio.BackColor = Color.FromArgb(0, 122, 100);
+            btnUnidadesMedida.BackColor = Color.FromArgb(237, 118, 14);
+            btnPrecio.BackColor = Color.FromArgb(237, 118, 14);
         }
 
         private void btnPrecio_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new frmVentanaPrecio());
-            btnNuevo.BackColor = Color.FromArgb(0, 122, 100);
-            btnListar.BackColor = Color.FromArgb(0, 122, 100);
-            btnActualizar.BackColor = Color.FromArgb(0, 122, 100);
-            btnUnidadesMedida.BackColor = Color.FromArgb(0, 122, 100);
+            btnNuevo.BackColor = Color.FromArgb(237, 118, 14);
+            btnListar.BackColor = Color.FromArgb(237, 118, 14);
+            btnActualizar.BackColor = Color.FromArgb(237, 118, 14);
+            btnUnidadesMedida.BackColor = Color.FromArgb(237, 118, 14);
             btnPrecio.BackColor = Color.White;
         }
 
         private void btnUnidadesMedida_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new frmVentanaMedida());
-            btnNuevo.BackColor = Color.FromArgb(0, 122, 100);
-            btnListar.BackColor = Color.FromArgb(0, 122, 100);
-            btnActualizar.BackColor = Color.FromArgb(0, 122, 100);
+            btnNuevo.BackColor = Color.FromArgb(237, 118, 14);
+            btnListar.BackColor = Color.FromArgb(237, 118, 14);
+            btnActualizar.BackColor = Color.FromArgb(237, 118, 14);
             btnUnidadesMedida.BackColor = Color.White;
-            btnPrecio.BackColor = Color.FromArgb(0, 122, 100);
+            btnPrecio.BackColor = Color.FromArgb(237, 118, 14);
         }
 
         private void frmVentanaProducto_Load(object sender, EventArgs e)
