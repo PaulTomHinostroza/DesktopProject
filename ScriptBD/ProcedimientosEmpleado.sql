@@ -21,7 +21,7 @@ insert into tblEmpleado
 	Genero_Emp            ,
 	Email_Emp            ,
 	FechaNac_Emp		,
-	FechaIncrip_Emp		,
+	FechaInscrip_Emp		,
 	IdCargo_Emp         ,
 	Usuario_Emp			,
 	Password_Emp  
@@ -46,7 +46,7 @@ values
 create proc usp_Empleado_Listar_Todos
 as 
 select IdEmpleado,Nombre_Emp,Apellidos_Emp,DNI_Emp,Direccion_Emp,Telefono_Emp,Genero_Emp,
-		Email_Emp,FechaNac_Emp,FechaIncrip_Emp,Nombre_Car,Usuario_Emp,Password_Emp
+		Email_Emp,FechaNac_Emp,FechaInscrip_Emp,Nombre_Car,Usuario_Emp,Password_Emp
 from tblEmpleado inner join tblCargo
 on tblEmpleado.IdCargo_Emp=tblCargo.IdCargo
 order by Nombre_Emp
@@ -57,7 +57,7 @@ create proc usp_Empleado_ListarPorNombre
 @parNombre_Emp	varchar(200)
 as
 select IdEmpleado,Nombre_Emp,Apellidos_Emp,DNI_Emp,Direccion_Emp,Telefono_Emp,Genero_Emp,
-		Email_Emp,FechaNac_Emp,FechaIncrip_Emp,Nombre_Car,Usuario_Emp,Password_Emp
+		Email_Emp,FechaNac_Emp,FechaInscrip_Emp,Nombre_Car,Usuario_Emp,Password_Emp
 from tblEmpleado inner join tblCargo
 on tblEmpleado.IdCargo_Emp=tblCargo.IdCargo
 where Nombre_Emp like '%' + @parNombre_Emp + '%'
@@ -69,7 +69,7 @@ create proc usp_Empleado_ListarPorApellido
 @parApellidos_Emp	varchar(200)
 as
 select IdEmpleado,Nombre_Emp,Apellidos_Emp,DNI_Emp,Direccion_Emp,Telefono_Emp,Genero_Emp,
-		Email_Emp,FechaNac_Emp,FechaIncrip_Emp,Nombre_Car,Usuario_Emp,Password_Emp
+		Email_Emp,FechaNac_Emp,FechaInscrip_Emp,Nombre_Car,Usuario_Emp,Password_Emp
 from tblEmpleado inner join tblCargo
 on tblEmpleado.IdCargo_Emp=tblCargo.IdCargo
 where Apellidos_Emp like '%' + @parApellidos_Emp + '%'
@@ -81,7 +81,7 @@ create proc usp_Empleado_ListarPorId
 @parIdEmpleado int
 as
 select IdEmpleado,Nombre_Emp,Apellidos_Emp,DNI_Emp,Direccion_Emp,Telefono_Emp,Genero_Emp,
-		Email_Emp,FechaNac_Emp,FechaIncrip_Emp,Nombre_Car,Usuario_Emp,Password_Emp
+		Email_Emp,FechaNac_Emp,FechaInscrip_Emp,Nombre_Car,Usuario_Emp,Password_Emp
 from tblEmpleado inner join tblCargo
 on tblEmpleado.IdCargo_Emp=tblCargo.IdCargo
 where IdEmpleado>=@parIdEmpleado
@@ -93,7 +93,7 @@ create proc usp_Empleado_ListarPorDNI
 @parDNI_Emp	varchar(200)
 as
 select IdEmpleado,Nombre_Emp,Apellidos_Emp,DNI_Emp,Direccion_Emp,Telefono_Emp,Genero_Emp,
-		Email_Emp,FechaNac_Emp,FechaIncrip_Emp,Nombre_Car,Usuario_Emp,Password_Emp
+		Email_Emp,FechaNac_Emp,FechaInscrip_Emp,Nombre_Car,Usuario_Emp,Password_Emp
 from tblEmpleado inner join tblCargo
 on tblEmpleado.IdCargo_Emp=tblCargo.IdCargo
 where DNI_Emp like '%' + @parDNI_Emp + '%'
@@ -105,7 +105,7 @@ create proc usp_Empleado_ListarPorCargo
 @parCargo_Emp	varchar(200)
 as
 select IdEmpleado,Nombre_Emp,Apellidos_Emp,DNI_Emp,Direccion_Emp,Telefono_Emp,Genero_Emp,
-		Email_Emp,FechaNac_Emp,FechaIncrip_Emp,Nombre_Car,Usuario_Emp,Password_Emp
+		Email_Emp,FechaNac_Emp,FechaInscrip_Emp,Nombre_Car,Usuario_Emp,Password_Emp
 from tblEmpleado inner join tblCargo
 on tblEmpleado.IdCargo_Emp=tblCargo.IdCargo
 where Nombre_Car like '%' + @parCargo_Emp + '%'
@@ -148,7 +148,7 @@ create proc usp_Usuario_Validacion
 @parPassword_Emp varchar(100)
 AS
 select IdEmpleado,Nombre_Emp,Apellidos_Emp,DNI_Emp,Direccion_Emp,Telefono_Emp,Genero_Emp,
-		Email_Emp,FechaNac_Emp,FechaIncrip_Emp,Nombre_Car,Usuario_Emp,Password_Emp
+		Email_Emp,FechaNac_Emp,FechaInscrip_Emp,Nombre_Car,Usuario_Emp,Password_Emp
 from tblEmpleado inner join tblCargo
 on tblEmpleado.IdCargo_Emp=tblCargo.IdCargo
 where	Usuario_Emp = @parUsuario_Emp AND Password_Emp = @parPassword_Emp 

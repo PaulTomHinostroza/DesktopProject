@@ -97,8 +97,20 @@ namespace ElAmigo
         {
             get { return _NombresEmp; }
             set 
-            { 
-                _NombresEmp = value.ToUpper(); 
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("El nombre no debe quedar vacío.");
+                }
+                else if (value.Length > 60)
+                {
+                    throw new Exception("El nombre no debe exceder mas de 60 caracteres");
+                }
+                else
+                {
+                    _NombresEmp = value.ToUpper();
+                }
+                 
             }
         }
 
@@ -106,30 +118,80 @@ namespace ElAmigo
         {
             get { return _ApellidosEmp; }
             set 
-            { 
-                _ApellidosEmp = value.ToUpper(); 
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("El apellido no debe quedar vacío.");
+                }
+                else if (value.Length > 100)
+                {
+                    throw new Exception("El apellido no debe exceder mas de 100 caracteres");
+                }
+                else
+                {
+                    _ApellidosEmp = value.ToUpper(); 
+                }
+                
             }
         }
 
         public string DNIEmp
         {
             get { return _DNIEmp; }
-            set { _DNIEmp = value; }
+            set 
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("El DNI no debe quedar vacío.");
+                }
+                else if (value.Length != 8)
+                {
+                    throw new Exception("El DNI no debe exceder mas de 8 caracteres");
+                }
+                else
+                {
+                    _DNIEmp = value; 
+                } 
+                
+            }
         }
 
         public string DireccionEmp
         {
             get { return _DireccionEmp; }
             set 
-            { 
-                _DireccionEmp = value.ToUpper(); 
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("La dirección no debe quedar vacío.");
+                }
+                else if (value.Length > 100)
+                {
+                    throw new Exception("La dirección no debe exceder mas de 100 caracteres");
+                }
+                else
+                {
+                    _DireccionEmp = value.ToUpper(); 
+                }
+                
             }
         }
 
         public string TelefonoEmp
         {
             get { return _TelefonoEmp; }
-            set { _TelefonoEmp = value; }
+            set 
+            {
+                if (value.Length > 20)
+                {
+                    throw new Exception("El teléfono no debe exceder mas de 20 caracteres");
+                }
+                else
+                {
+                    _TelefonoEmp = value; 
+                }
+                
+            }
         }
 
         public char GeneroEmp
@@ -142,8 +204,20 @@ namespace ElAmigo
         {
             get { return _EmailEmp; }
             set 
-            { 
-                _EmailEmp = value.ToUpper(); 
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("El email no debe quedar vacío.");
+                }
+                else if (value.Length > 50)
+                {
+                    throw new Exception("El email no debe exceder mas de 50 caracteres");
+                }
+                else
+                {
+                    _EmailEmp = value.ToUpper(); 
+                }
+                
             }
         }
 
@@ -174,7 +248,22 @@ namespace ElAmigo
         public string Usuario
         {
             get { return _Usuario; }
-            set { _Usuario = value; }
+            set 
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("El usuario no debe quedar vacío.");
+                }
+                else if (value.Length > 50)
+                {
+                    throw new Exception("El usuario no debe exceder mas de 50 caracteres");
+                }
+                else
+                {
+                    _Usuario = value; 
+                }
+                
+            }
         }
 
         public string Password
@@ -245,7 +334,7 @@ namespace ElAmigo
                                             Convert.ToChar(contenedor["Genero_Emp"]),
                                             contenedor["Email_Emp"].ToString(),
                                             Convert.ToDateTime(contenedor["FechaNac_Emp"]),
-                                            Convert.ToDateTime(contenedor["FechaIncrip_Emp"]),
+                                            Convert.ToDateTime(contenedor["FechaInscrip_Emp"]),
                                             contenedor["Nombre_Car"].ToString(),
                                             contenedor["Usuario_Emp"].ToString(),
                                             contenedor["Password_Emp"].ToString());
@@ -281,7 +370,7 @@ namespace ElAmigo
                                             Convert.ToChar(contenedor["Genero_Emp"]),
                                             contenedor["Email_Emp"].ToString(),
                                             Convert.ToDateTime(contenedor["FechaNac_Emp"]),
-                                            Convert.ToDateTime(contenedor["FechaIncrip_Emp"]),
+                                            Convert.ToDateTime(contenedor["FechaInscrip_Emp"]),
                                             contenedor["Nombre_Car"].ToString(),
                                             contenedor["Usuario_Emp"].ToString(),
                                             contenedor["Password_Emp"].ToString());
@@ -317,7 +406,7 @@ namespace ElAmigo
                                             Convert.ToChar(contenedor["Genero_Emp"]),
                                             contenedor["Email_Emp"].ToString(),
                                             Convert.ToDateTime(contenedor["FechaNac_Emp"]),
-                                            Convert.ToDateTime(contenedor["FechaIncrip_Emp"]),
+                                            Convert.ToDateTime(contenedor["FechaInscrip_Emp"]),
                                             contenedor["Nombre_Car"].ToString(),
                                             contenedor["Usuario_Emp"].ToString(),
                                             contenedor["Password_Emp"].ToString());
@@ -353,7 +442,7 @@ namespace ElAmigo
                                             Convert.ToChar(contenedor["Genero_Emp"]),
                                             contenedor["Email_Emp"].ToString(),
                                             Convert.ToDateTime(contenedor["FechaNac_Emp"]),
-                                            Convert.ToDateTime(contenedor["FechaIncrip_Emp"]),
+                                            Convert.ToDateTime(contenedor["FechaInscrip_Emp"]),
                                             contenedor["Nombre_Car"].ToString(),
                                             contenedor["Usuario_Emp"].ToString(),
                                             contenedor["Password_Emp"].ToString());
@@ -389,7 +478,7 @@ namespace ElAmigo
                                             Convert.ToChar(contenedor["Genero_Emp"]),
                                             contenedor["Email_Emp"].ToString(),
                                             Convert.ToDateTime(contenedor["FechaNac_Emp"]),
-                                            Convert.ToDateTime(contenedor["FechaIncrip_Emp"]),
+                                            Convert.ToDateTime(contenedor["FechaInscrip_Emp"]),
                                             contenedor["Nombre_Car"].ToString(),
                                             contenedor["Usuario_Emp"].ToString(),
                                             contenedor["Password_Emp"].ToString());
@@ -425,7 +514,7 @@ namespace ElAmigo
                                             Convert.ToChar(contenedor["Genero_Emp"]),
                                             contenedor["Email_Emp"].ToString(),
                                             Convert.ToDateTime(contenedor["FechaNac_Emp"]),
-                                            Convert.ToDateTime(contenedor["FechaIncrip_Emp"]),
+                                            Convert.ToDateTime(contenedor["FechaInscrip_Emp"]),
                                             contenedor["Nombre_Car"].ToString(),
                                             contenedor["Usuario_Emp"].ToString(),
                                             contenedor["Password_Emp"].ToString());
@@ -499,7 +588,7 @@ namespace ElAmigo
                                             Convert.ToChar(contenedor["Genero_Emp"]),
                                             contenedor["Email_Emp"].ToString(),
                                             Convert.ToDateTime(contenedor["FechaNac_Emp"]),
-                                            Convert.ToDateTime(contenedor["FechaIncrip_Emp"]),
+                                            Convert.ToDateTime(contenedor["FechaInscrip_Emp"]),
                                             contenedor["Nombre_Car"].ToString());
             }
             conexion.Close();

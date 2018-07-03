@@ -11,7 +11,7 @@ constraint pk_IdCargo PRIMARY KEY (IdCargo)
 
 create table tblCliente
 (
-IdCliente	int IDENTITY (100000,1) NOT NULL,
+IdCliente	int IDENTITY (1000,1) NOT NULL,
 Nombres_Cli	varchar(60) NOT NULL,
 Apellidos_Cli	varchar(100) NOT NULL,
 DNI_Cli		varchar(20) NOT NULL,
@@ -27,7 +27,7 @@ constraint pk_IdCliente primary key (IdCliente)
 
 create table tblProducto
 (
-IdProducto	int IDENTITY(10000000,1) NOT NULL,
+IdProducto	int IDENTITY(1000,1) NOT NULL,
 Descripcion_Prod	varchar(200) NOT NULL
 
 CONSTRAINT pk_IdProducto primary key(IdProducto)
@@ -60,17 +60,17 @@ constraint pk_IdAlmacen primary key(IdAlmacen)
 
 create table tblMedida
 (
-IdMedida	int IDENTITY (1000,1) NOT NULL,
+IdMedida	int IDENTITY (100,1) NOT NULL,
 Descripcion_Med	varchar(50) NOT NULL,
 Abreviatura_Med	varchar(10) NOT NULL,
-EquilvalenteEnUnidades	int NOT NULL
+EquivalenteEnUnidades	int NOT NULL
 
 constraint pk_IdMedida primary key(IdMedida)
 )
 
 create table tblEmpleado
 (
-IdEmpleado	int IDENTITY (100000,1) NOT NULL,
+IdEmpleado	int IDENTITY (1000,1) NOT NULL,
 Nombre_Emp	varchar(60) NOT NULL,
 Apellidos_Emp	varchar(100) NOT NULL,
 DNI_Emp		varchar(20) NOT NULL,
@@ -79,7 +79,7 @@ Telefono_Emp	varchar(20) NULL,
 Genero_Emp		char(1) NOT NULL,
 Email_Emp	varchar(50) NULL,
 FechaNac_Emp	date NOT NULL,
-FechaIncrip_Emp	datetime NOT NULL,
+FechaInscrip_Emp	datetime NOT NULL,
 IdCargo_Emp int NOT NULL,
 Usuario_Emp	varchar(50)	NOT NULL,
 Password_Emp varchar(100)	NOT NULL

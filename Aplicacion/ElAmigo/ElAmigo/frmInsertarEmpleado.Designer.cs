@@ -95,13 +95,13 @@
             this.rbnFemenino.Name = "rbnFemenino";
             this.rbnFemenino.Size = new System.Drawing.Size(84, 21);
             this.rbnFemenino.TabIndex = 77;
-            this.rbnFemenino.TabStop = true;
             this.rbnFemenino.Text = "Femenino";
             this.rbnFemenino.UseVisualStyleBackColor = true;
             // 
             // rbnMasculino
             // 
             this.rbnMasculino.AutoSize = true;
+            this.rbnMasculino.Checked = true;
             this.rbnMasculino.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbnMasculino.Location = new System.Drawing.Point(610, 268);
             this.rbnMasculino.Name = "rbnMasculino";

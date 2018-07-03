@@ -41,9 +41,21 @@ namespace ElAmigo
         public string AbreviaturaMed
         {
             get { return _AbreviaturaMed; }
-            set 
-            { 
-                _AbreviaturaMed = value.ToUpper(); 
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("La abreviatura no debe quedar vacío.");
+                }
+                else if (value.Length > 10)
+                {
+                    throw new Exception("La abreviatura no debe exceder mas de 10 caracteres");
+                }
+                else
+                {
+                    _AbreviaturaMed = value.ToUpper(); 
+                }
+                
             }
         }
 
@@ -51,15 +63,38 @@ namespace ElAmigo
         {
             get { return _DescripcionMed; }
             set 
-            { 
-                _DescripcionMed = value.ToUpper(); 
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("La descripción no debe quedar vacío.");
+                }
+                else if (value.Length > 50)
+                {
+                    throw new Exception("La descripción no debe exceder mas de 50 caracteres");
+                }
+                else
+                {
+                    _DescripcionMed = value.ToUpper(); 
+                }
+                
             }
         }
 
         public int EquivalenteUnidad
         {
             get { return _EquivalenteUnidad; }
-            set { _EquivalenteUnidad = value; }
+            set 
+            {
+                if (value == 0)
+                {
+                    throw new Exception("El equivalente no puede ser 0.");
+                }
+                else
+                {
+                    _EquivalenteUnidad = value; 
+                }
+                
+            }
         }
 
 
@@ -70,7 +105,7 @@ namespace ElAmigo
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@parDescripcion_Med", DescripcionMed);
             cmd.Parameters.AddWithValue("@parAbreviatura_Med", AbreviaturaMed);
-            cmd.Parameters.AddWithValue("@parEquivalente_Med", AbreviaturaMed);
+            cmd.Parameters.AddWithValue("@parEquivalente_Med", EquivalenteUnidad);
             conexion.Open();
             cmd.ExecuteReader();
             conexion.Close();

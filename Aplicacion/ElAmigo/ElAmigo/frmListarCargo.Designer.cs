@@ -128,13 +128,13 @@
             this.rbnId.Name = "rbnId";
             this.rbnId.Size = new System.Drawing.Size(37, 21);
             this.rbnId.TabIndex = 2;
-            this.rbnId.TabStop = true;
             this.rbnId.Text = "Id";
             this.rbnId.UseVisualStyleBackColor = true;
             // 
             // rbnNombre
             // 
             this.rbnNombre.AutoSize = true;
+            this.rbnNombre.Checked = true;
             this.rbnNombre.Location = new System.Drawing.Point(17, 23);
             this.rbnNombre.Name = "rbnNombre";
             this.rbnNombre.Size = new System.Drawing.Size(74, 21);

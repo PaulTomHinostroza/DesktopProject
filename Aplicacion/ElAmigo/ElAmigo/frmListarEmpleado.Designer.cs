@@ -108,7 +108,6 @@
             this.rbnCargo.Name = "rbnCargo";
             this.rbnCargo.Size = new System.Drawing.Size(63, 21);
             this.rbnCargo.TabIndex = 5;
-            this.rbnCargo.TabStop = true;
             this.rbnCargo.Text = "Cargo";
             this.rbnCargo.UseVisualStyleBackColor = true;
             // 
@@ -119,7 +118,6 @@
             this.rbnDNI.Name = "rbnDNI";
             this.rbnDNI.Size = new System.Drawing.Size(47, 21);
             this.rbnDNI.TabIndex = 4;
-            this.rbnDNI.TabStop = true;
             this.rbnDNI.Text = "DNI";
             this.rbnDNI.UseVisualStyleBackColor = true;
             // 
@@ -130,7 +128,6 @@
             this.rbnId.Name = "rbnId";
             this.rbnId.Size = new System.Drawing.Size(37, 21);
             this.rbnId.TabIndex = 3;
-            this.rbnId.TabStop = true;
             this.rbnId.Text = "Id";
             this.rbnId.UseVisualStyleBackColor = true;
             // 
@@ -141,13 +138,13 @@
             this.rbnApellidos.Name = "rbnApellidos";
             this.rbnApellidos.Size = new System.Drawing.Size(81, 21);
             this.rbnApellidos.TabIndex = 2;
-            this.rbnApellidos.TabStop = true;
             this.rbnApellidos.Text = "Apellidos";
             this.rbnApellidos.UseVisualStyleBackColor = true;
             // 
             // rbnNombres
             // 
             this.rbnNombres.AutoSize = true;
+            this.rbnNombres.Checked = true;
             this.rbnNombres.Location = new System.Drawing.Point(17, 23);
             this.rbnNombres.Name = "rbnNombres";
             this.rbnNombres.Size = new System.Drawing.Size(79, 21);

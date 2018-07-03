@@ -57,7 +57,11 @@ namespace ElAmigo
             get { return _NombresCli; }
             set
             {
-                if (value.Length > 60)
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("El nombre no debe quedar vacío.");
+                }
+                else if (value.Length > 60)
                 {
                     throw new Exception("El nombre del cliente no debe exceder mas de 60 caracteres");
                 }
@@ -73,9 +77,13 @@ namespace ElAmigo
             get { return _ApellidosCli; }
             set
             {
-                if (value.Length > 70)
+                if (string.IsNullOrEmpty(value))
                 {
-                    throw new Exception("El apellido del cliente no debe exceder mas de 70 caracteres");
+                    throw new Exception("El apellido no debe quedar vacío.");
+                }
+                else if (value.Length > 100)
+                {
+                    throw new Exception("El apellido del cliente no debe exceder mas de 100 caracteres");
                 }
                 else
                 {
@@ -88,7 +96,11 @@ namespace ElAmigo
             get { return _DNICli; }
             set
             {
-                if (value.Length !=8)
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("El DNI no debe quedar vacío.");
+                }
+                else if (value.Length !=8)
                 {
                     throw new Exception("El DNI del cliente no debe exceder mas de 8 caracteres");
                 }
@@ -104,7 +116,11 @@ namespace ElAmigo
             get { return _DireccionCli; }
             set
             {
-                if (value.Length > 80)
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("La dirección no debe quedar vacío.");
+                }
+                else if (value.Length > 80)
                 {
                     throw new Exception("La direccion del cliente no debe exceder mas de 80 caracteres");
                 }
@@ -120,9 +136,9 @@ namespace ElAmigo
             set
             {
 
-                if (value.Length != 9)
+                if (value.Length > 20)
                 {
-                    throw new Exception("El telefono del cliente  debe tener 9 caracteres");
+                    throw new Exception("El telefono del cliente no debe exceder mas de 20 caracteres");
                 }
                 else
                 {
@@ -144,9 +160,9 @@ namespace ElAmigo
             get { return _RUCCli; }
             set
             {
-                if (value.Length > 10)
+                if (value.Length > 30)
                 {
-                    throw new Exception("El RUC del cliente debe tener  10 caracteres");
+                    throw new Exception("El RUC del cliente debe tener  30 caracteres");
                 }
                 else
                 {
@@ -160,9 +176,9 @@ namespace ElAmigo
             get { return _EmailCli; }
             set
             {
-                if (value.Length > 30)
+                if (value.Length > 50)
                 {
-                    throw new Exception("El Correo electronico del cliente no debe exceder mas de 30 caracteres");
+                    throw new Exception("El Correo electronico del cliente no debe exceder mas de 50 caracteres");
                 }
                 else
                 {

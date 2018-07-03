@@ -38,8 +38,20 @@ namespace ElAmigo
         {
             get { return _NombreCargo; }
             set 
-            { 
-                _NombreCargo = value.ToUpper(); 
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("El nombre no debe quedar vacío.");
+                }
+                else if (value.Length > 60)
+                {
+                    throw new Exception("El nombre no puede exceder mas de 60 caracteres");
+                }
+                else
+                {
+                    _NombreCargo = value.ToUpper();
+                }
+                 
             }
         }
 
@@ -48,7 +60,15 @@ namespace ElAmigo
             get { return _DescripcionCargo; }
             set 
             {
-                _DescripcionCargo = value.ToUpper(); 
+                if (value.Length > 500)
+                {
+                    throw new Exception("El nombre no puede exceder mas de 500 caracteres");
+                }
+                else
+                {
+                    _DescripcionCargo = value.ToUpper(); 
+                }
+                
             }
         }
 

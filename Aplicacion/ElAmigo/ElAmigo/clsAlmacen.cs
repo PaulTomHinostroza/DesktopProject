@@ -45,23 +45,58 @@ namespace ElAmigo
         {
             get { return _DireccionAlm; }
             set 
-            { 
-                _DireccionAlm = value.ToUpper(); 
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("La dirección no debe quedar vacío.");
+                }
+                else if (value.Length > 100)
+                {
+                    throw new Exception("La dirección no puede exceder mas de 100 caracteres");
+                }
+                else
+                {
+                    _DireccionAlm = value.ToUpper();
+                }
+                 
             }
         }
 
         public string TelefonoAlm
         {
             get { return _TelefonoAlm; }
-            set { _TelefonoAlm = value; }
+            set 
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("El teléfono no debe quedar vacío.");
+                }
+                else if (value.Length > 20)
+                {
+                    throw new Exception("El teléfono no puede exceder mas de 20 caracteres");
+                }
+                else
+                {
+                    _TelefonoAlm = value; 
+                }
+                
+            }
         }
 
         public string DescripcionAlm
         {
             get { return _DescripcionAlm; }
             set 
-            { 
-                _DescripcionAlm = value.ToUpper(); 
+            {
+                if (value.Length > 500)
+                {
+                    throw new Exception("La Descripción no puede exceder mas de 500 caracteres");
+                }
+                else
+                {
+                    _DescripcionAlm = value.ToUpper(); 
+                }
+                
             }
         }
 

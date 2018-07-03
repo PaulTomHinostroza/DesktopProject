@@ -54,8 +54,20 @@ namespace ElAmigo
         {
             get { return _NombreRazonProv; }
             set 
-            { 
-                _NombreRazonProv = value.ToUpper(); 
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("El nombre no debe quedar vacío.");
+                }
+                else if (value.Length > 100)
+                {
+                    throw new Exception("El nombre no puede exceder mas de 100 caracteres");
+                }
+                else
+                {
+                    _NombreRazonProv = value.ToUpper(); 
+                }
+                
             }
         }
 
@@ -63,45 +75,114 @@ namespace ElAmigo
         {
             get { return _NombreContactoProv; }
             set 
-            { 
-                _NombreContactoProv = value.ToUpper(); 
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("El nombre no debe quedar vacío.");
+                }
+                else if (value.Length > 150)
+                {
+                    throw new Exception("El nombre no puede exceder mas de 150 caracteres");
+                }
+                else
+                {
+                    _NombreContactoProv = value.ToUpper(); 
+                }
+                
             }
         }
 
         public string CelularContactoProv
         {
             get { return _CelularContactoProv; }
-            set { _CelularContactoProv = value; }
+            set 
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("El celular no debe quedar vacío.");
+                }
+                else if (value.Length > 20)
+                {
+                    throw new Exception("El celular no puede exceder mas de 20 caracteres");
+                }
+                else
+                {
+                    _CelularContactoProv = value; 
+                }
+                
+            }
         }
 
         public string DireccionProv
         {
             get { return _DireccionProv; }
             set 
-            { 
-                _DireccionProv = value.ToUpper(); 
+            {
+                if (value.Length > 100)
+                {
+                    throw new Exception("La dirección no puede exceder mas de 100 caracteres");
+                }
+                else
+                {
+                    _DireccionProv = value.ToUpper(); 
+                }
+                
             }
         }
 
         public string TelefonoProv
         {
             get { return _TelefonoProv; }
-            set { _TelefonoProv = value; }
+            set 
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("El teléfono no debe quedar vacío.");
+                }
+                else if (value.Length > 20)
+                {
+                    throw new Exception("El teléfono no puede exceder mas de 20 caracteres");
+                }
+                else
+                {
+                    _TelefonoProv = value;
+                }
+                 
+            }
         }
 
         public string EmailProv
         {
             get { return _EmailProv; }
             set 
-            { 
-                _EmailProv = value.ToUpper(); 
+            {
+                if (value.Length > 50)
+                {
+                    throw new Exception("El email no puede exceder mas de 50 caracteres");
+                }
+                else
+                {
+                    _EmailProv = value.ToUpper(); 
+                }
+                
             }
         }
 
         public string NroCuentaProv
         {
             get { return _NroCuentaProv; }
-            set { _NroCuentaProv = value; }
+            set 
+            {
+                if (value.Length > 100)
+                {
+                    throw new Exception("El nro de cuenta no puede exceder mas de 100 caracteres");
+                }
+                else
+                {
+                    _NroCuentaProv = value;
+                }
+                 
+            }
         }
 
         public void InsertarProveedor() 
@@ -110,7 +191,7 @@ namespace ElAmigo
             SqlCommand cmd = new SqlCommand("usp_Proveedor_Insertar", conexion);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@parNombre_Prov", NombreRazonProv);
+            cmd.Parameters.AddWithValue("@parNombre_Empresa_Prov", NombreRazonProv);
             cmd.Parameters.AddWithValue("@parNombre_Contacto_Prov", NombreContactoProv);
             cmd.Parameters.AddWithValue("@parCelular_Contacto_Prov", CelularContactoProv);
             cmd.Parameters.AddWithValue("@parTelefono_Prov", TelefonoProv);
@@ -161,7 +242,7 @@ namespace ElAmigo
             {
 
                 clsProveedor MiObjeto;
-                MiObjeto = new clsProveedor(Convert.ToInt32(contenedor["IdProveedor"]), contenedor["Nombre_Prov"].ToString(), contenedor["Nombre_Contacto_Prov"].ToString(),
+                MiObjeto = new clsProveedor(Convert.ToInt32(contenedor["IdProveedor"]), contenedor["Nombre_Empresa_Prov"].ToString(), contenedor["Nombre_Contacto_Prov"].ToString(),
                                             contenedor["Celular_Contacto_Prov"].ToString(), contenedor["Direccion_Prov"].ToString(), contenedor["Telefono_Prov"].ToString(),
                                             contenedor["Email_Prov"].ToString(), contenedor["NroCuenta_Prov"].ToString());
 
@@ -179,14 +260,14 @@ namespace ElAmigo
 
             SqlCommand cmd = new SqlCommand("usp_Proveedor_ListarPorNombre", conexion);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@parNombre_Prov", parametroNombre);
+            cmd.Parameters.AddWithValue("@parNombre_Empresa_Prov", parametroNombre);
             conexion.Open();
             SqlDataReader contenedor;
             contenedor = cmd.ExecuteReader();
             while (contenedor.Read() == true)
             {
                 clsProveedor MiObjeto;
-                MiObjeto = new clsProveedor(Convert.ToInt32(contenedor["IdProveedor"]), contenedor["Nombre_Prov"].ToString(), contenedor["Nombre_Contacto_Prov"].ToString(),
+                MiObjeto = new clsProveedor(Convert.ToInt32(contenedor["IdProveedor"]), contenedor["Nombre_Empresa_Prov"].ToString(), contenedor["Nombre_Contacto_Prov"].ToString(),
                                             contenedor["Celular_Contacto_Prov"].ToString(), contenedor["Direccion_Prov"].ToString(), contenedor["Telefono_Prov"].ToString(),
                                             contenedor["Email_Prov"].ToString(), contenedor["NroCuenta_Prov"].ToString());
 
@@ -212,7 +293,7 @@ namespace ElAmigo
             while (contenedor.Read() == true)
             {
                 clsProveedor MiObjeto;
-                MiObjeto = new clsProveedor(Convert.ToInt32(contenedor["IdProveedor"]), contenedor["Nombre_Prov"].ToString(), contenedor["Nombre_Contacto_Prov"].ToString(),
+                MiObjeto = new clsProveedor(Convert.ToInt32(contenedor["IdProveedor"]), contenedor["Nombre_Empresa_Prov"].ToString(), contenedor["Nombre_Contacto_Prov"].ToString(),
                                             contenedor["Celular_Contacto_Prov"].ToString(), contenedor["Direccion_Prov"].ToString(), contenedor["Telefono_Prov"].ToString(),
                                             contenedor["Email_Prov"].ToString(), contenedor["NroCuenta_Prov"].ToString());
 
@@ -230,7 +311,7 @@ namespace ElAmigo
             SqlCommand cmd = new SqlCommand("usp_Proveedor_Actualizar", conexion);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@parIdProveedor", IdProveedor);
-            cmd.Parameters.AddWithValue("@parNUEVO_Nombre_Prov", NuevosDatos.NombreRazonProv);
+            cmd.Parameters.AddWithValue("@parNUEVO_Nombre_Empresa_Prov", NuevosDatos.NombreRazonProv);
             cmd.Parameters.AddWithValue("@parNUEVO_Nombre_Contacto_Prov", NuevosDatos.NombreContactoProv);
             cmd.Parameters.AddWithValue("@parNUEVO_Celular_Contacto_Prov", NuevosDatos.CelularContactoProv);
             cmd.Parameters.AddWithValue("@parNUEVO_Telefono_Prov", NuevosDatos.TelefonoProv);

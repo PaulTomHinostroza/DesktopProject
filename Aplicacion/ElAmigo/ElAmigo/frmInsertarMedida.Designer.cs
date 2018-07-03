@@ -192,6 +192,11 @@
             // 
             this.nudEquivalencia.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudEquivalencia.Location = new System.Drawing.Point(786, 243);
+            this.nudEquivalencia.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
             this.nudEquivalencia.Name = "nudEquivalencia";
             this.nudEquivalencia.Size = new System.Drawing.Size(123, 22);
             this.nudEquivalencia.TabIndex = 109;

@@ -41,7 +41,7 @@ namespace ElAmigo
                 }
                 else if (value.Length > 200)
                 {
-                    throw new Exception("El nombre del Producto no puede exceder mas de  30 caracteres");
+                    throw new Exception("El nombre del Producto no puede exceder mas de 200 caracteres");
                 }
                 else
                 {

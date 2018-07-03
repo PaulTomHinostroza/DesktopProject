@@ -292,8 +292,8 @@
             this.nudEquivalencia.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudEquivalencia.Location = new System.Drawing.Point(824, 275);
             this.nudEquivalencia.Maximum = new decimal(new int[] {
-            1215752192,
-            23,
+            100000000,
+            0,
             0,
             0});
             this.nudEquivalencia.Name = "nudEquivalencia";
