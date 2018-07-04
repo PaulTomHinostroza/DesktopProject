@@ -413,6 +413,37 @@ namespace ElAmigo
             return x;
         }
 
+        public static List<clsCliente> Listar_PorFechasDeRegistro(DateTime parDesde,DateTime parHasta)
+        {
+            List<clsCliente> x = new List<clsCliente>();
+            SqlConnection conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
+            SqlCommand cmd = new SqlCommand("usp_Cliente_Listar_Entre_FechasRegistro", conexion);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@parFechaDeRegistroDesde", parDesde);
+            cmd.Parameters.AddWithValue("@parFechaDeRegistroHasta", parHasta);
+            conexion.Open();
+            SqlDataReader contenedor;
+            contenedor = cmd.ExecuteReader();
+            while (contenedor.Read() == true)
+            {
+                clsCliente MiObjeto;
+                MiObjeto = new clsCliente(Convert.ToInt32(contenedor["IdCliente"]),
+                                            contenedor["Nombres_Cli"].ToString(),
+                                            contenedor["Apellidos_Cli"].ToString(),
+                                            contenedor["DNI_Cli"].ToString(),
+                                            contenedor["Direccion_Cli"].ToString(),
+                                            contenedor["Telefono_Cli"].ToString(),
+                                            Convert.ToChar(contenedor["Genero_Cli"]),
+                                            contenedor["RUC_Cli"].ToString(),
+                                            Convert.ToDateTime(contenedor["FechaInscrip_Cli"]),
+                                            contenedor["Email_Cli"].ToString());
+
+                x.Add(MiObjeto);
+            }
+            conexion.Close();
+            return x;
+        }
+
         public void Actualizar(clsCliente NuevosDatos)
         {
             SqlConnection conexion = new SqlConnection(mdlVariables.CadenaDeConexion);

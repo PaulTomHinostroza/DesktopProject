@@ -153,3 +153,15 @@ else
 		Email_Cli	=@parNUEVO_Email_Cli
 		where IdCliente=@parIdCliente
 	end
+
+--///////////////////////////////////////////////////////////////////
+
+create proc usp_Cliente_Listar_Entre_FechasRegistro
+@parFechaDeRegistroDesde DATE,
+@parFechaDeRegistroHasta DATE
+AS
+SELECT IdCliente,Nombres_Cli,Apellidos_Cli,DNI_Cli,Direccion_Cli,
+		Telefono_Cli,Genero_Cli,RUC_Cli,FechaInscrip_Cli,Email_Cli
+FROM tblCliente 
+WHERE FechaInscrip_Cli BETWEEN @parFechaDeRegistroDesde AND @parFechaDeRegistroHasta
+ORDER BY FechaInscrip_Cli  

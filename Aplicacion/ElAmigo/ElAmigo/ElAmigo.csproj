@@ -32,10 +32,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -110,6 +113,42 @@
     </Compile>
     <Compile Include="frmActualizarStock.Designer.cs">
       <DependentUpon>frmActualizarStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBusquedaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBusquedaCliente.Designer.cs">
+      <DependentUpon>frmBusquedaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBusquedaEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBusquedaEmpleado.Designer.cs">
+      <DependentUpon>frmBusquedaEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBusquedaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBusquedaProducto.Designer.cs">
+      <DependentUpon>frmBusquedaProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBusquedaProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBusquedaProveedor.Designer.cs">
+      <DependentUpon>frmBusquedaProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBusquedaStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBusquedaStock.Designer.cs">
+      <DependentUpon>frmBusquedaStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBusquedaVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBusquedaVenta.Designer.cs">
+      <DependentUpon>frmBusquedaVenta.cs</DependentUpon>
     </Compile>
     <Compile Include="frmInsertarAlmacen.cs">
       <SubType>Form</SubType>
@@ -249,6 +288,12 @@
     <Compile Include="frmPrueba.Designer.cs">
       <DependentUpon>frmPrueba.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReporteCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteCliente.Designer.cs">
+      <DependentUpon>frmReporteCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVentanaAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -351,6 +396,24 @@
     <EmbeddedResource Include="frmActualizarStock.resx">
       <DependentUpon>frmActualizarStock.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmBusquedaCliente.resx">
+      <DependentUpon>frmBusquedaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBusquedaEmpleado.resx">
+      <DependentUpon>frmBusquedaEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBusquedaProducto.resx">
+      <DependentUpon>frmBusquedaProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBusquedaProveedor.resx">
+      <DependentUpon>frmBusquedaProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBusquedaStock.resx">
+      <DependentUpon>frmBusquedaStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBusquedaVenta.resx">
+      <DependentUpon>frmBusquedaVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInsertarAlmacen.resx">
       <DependentUpon>frmInsertarAlmacen.cs</DependentUpon>
     </EmbeddedResource>
@@ -420,6 +483,9 @@
     <EmbeddedResource Include="frmPrueba.resx">
       <DependentUpon>frmPrueba.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteCliente.resx">
+      <DependentUpon>frmReporteCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmVentanaAdministrador.resx">
       <DependentUpon>frmVentanaAdministrador.cs</DependentUpon>
     </EmbeddedResource>
@@ -465,6 +531,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="rptClientes_Detalles.rdlc" />
+    <None Include="Properties\DataSources\clsCliente.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
