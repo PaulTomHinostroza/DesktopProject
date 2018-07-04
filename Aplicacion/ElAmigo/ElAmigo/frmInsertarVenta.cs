@@ -288,6 +288,7 @@ namespace ElAmigo
 
         private void frmInsertarVenta_Load(object sender, EventArgs e)
         {
+            lblIdEmpleado.Text = mdlVariables.MiEmpleadoConectado.IdEmpleado.ToString();
             foreach (clsAlmacen ELEMENTO in clsAlmacen.ListarAlmacenTodos())
             {
                 if (ELEMENTO.TipoAlm.ToString()=="PRINCIPAL")

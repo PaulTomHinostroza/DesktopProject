@@ -16,12 +16,12 @@ namespace ElAmigo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmVentanaPrincipal());
-            //Application.Run(new frmLogin());
-            //if (mdlVariables.MiEmpleadoConectado != null)
-            //{
-            //    Application.Run(new frmVentanaPrincipal());
-            //}
+            //Application.Run(new frmVentanaPrincipal());
+            Application.Run(new frmLogin());
+            if (mdlVariables.MiEmpleadoConectado != null)
+            {
+                Application.Run(new frmVentanaPrincipal());
+            }
         }
     }
 }

@@ -159,5 +159,11 @@ namespace ElAmigo
             }
         }
 
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtProducto.Clear();
+            nudPrecio.Value = 0;
+        }
+
     }
 }

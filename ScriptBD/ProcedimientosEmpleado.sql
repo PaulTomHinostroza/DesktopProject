@@ -1,4 +1,4 @@
-create proc usp_Empleado_Insertar
+alter proc usp_Empleado_Insertar
 	@parNombres_Emp          varchar(60),
 	@parApellidos_Emp        varchar(100),
 	@parDNI_Emp              varchar(20),
@@ -11,37 +11,46 @@ create proc usp_Empleado_Insertar
 	@parUsuario_Emp				varchar(50),
 	@parPassword_Emp		varchar(100)
 as
-insert into tblEmpleado
+if exists
 (
-	Nombre_Emp          ,
-	Apellidos_Emp        ,
-	DNI_Emp              ,
-	Direccion_Emp        ,
-	Telefono_Emp         ,
-	Genero_Emp            ,
-	Email_Emp            ,
-	FechaNac_Emp		,
-	FechaInscrip_Emp		,
-	IdCargo_Emp         ,
-	Usuario_Emp			,
-	Password_Emp  
+	select DNI_Emp from tblEmpleado where DNI_Emp=@parDNI_Emp
 )
-values
-(
-	@parNombres_Emp          ,
-	@parApellidos_Emp        ,
-	@parDNI_Emp              ,
-	@parDireccion_Emp        ,
-	@parTelefono_Emp         ,
-	@parGenero_Emp            ,
-	@parEmail_Emp			,
-	@parFechaNac_Emp		,
-	GETDATE()				,
-	@parIdCargo_Emp			,
-	@parUsuario_Emp		,
-	@parPassword_Emp
-)
-
+	begin
+		raiserror('El DNI ya está registrado.',16,1)
+	end
+else
+	begin
+		insert into	tblEmpleado
+		(
+			Nombre_Emp          ,
+			Apellidos_Emp        ,
+			DNI_Emp              ,
+			Direccion_Emp        ,
+			Telefono_Emp         ,
+			Genero_Emp            ,
+			Email_Emp            ,
+			FechaNac_Emp		,
+			FechaInscrip_Emp		,
+			IdCargo_Emp         ,
+			Usuario_Emp			,
+			Password_Emp
+		)
+		values
+		(
+			@parNombres_Emp          ,
+			@parApellidos_Emp        ,
+			@parDNI_Emp              ,
+			@parDireccion_Emp        ,
+			@parTelefono_Emp         ,
+			@parGenero_Emp            ,
+			@parEmail_Emp			,
+			@parFechaNac_Emp		,
+			GETDATE()				,
+			@parIdCargo_Emp			,
+			@parUsuario_Emp		,
+			@parPassword_Emp
+		)
+	end
 --//////////////////////////////////////////////////////
 create proc usp_Empleado_Listar_Todos
 as 
@@ -127,21 +136,30 @@ create proc usp_Empleado_Actualizar
 @parNUEVO_Usuario_Emp				varchar(50),
 @parNUEVO_Password_Emp		varchar(100)
 as
-UPDATE tblEmpleado
-set
-Nombre_Emp		=@parNUEVO_Nombres_Emp,
-Apellidos_Emp	=@parNUEVO_Apellidos_Emp      ,
-DNI_Emp			=@parNUEVO_DNI_Emp     ,
-Direccion_Emp	=@parNUEVO_Direccion_Emp    ,
-Telefono_Emp	=@parNUEVO_Telefono_Emp   ,
-Genero_Emp		=@parNUEVO_Genero_Emp   ,
-Email_Emp		=@parNUEVO_Email_Emp   ,
-FechaNac_Emp	=@parNUEVO_FechaNac_Emp,
-IdCargo_Emp		=@parNUEVO_IdCargo_Emp,
-Usuario_Emp		=@parNUEVO_Usuario_Emp,
-Password_Emp	=@parNUEVO_Password_Emp
-where IdEmpleado=@parIdEmpleado
-
+if exists
+(
+	select DNI_Emp,IdEmpleado from tblEmpleado where DNI_Emp=@parNUEVO_DNI_Emp and IdEmpleado<>@parIdEmpleado
+)
+	begin
+		raiserror('El DNI ya está registrado.',16,1)
+	end
+else
+	begin
+		UPDATE tblEmpleado
+		set
+		Nombre_Emp		=@parNUEVO_Nombres_Emp,
+		Apellidos_Emp	=@parNUEVO_Apellidos_Emp      ,
+		DNI_Emp			=@parNUEVO_DNI_Emp     ,
+		Direccion_Emp	=@parNUEVO_Direccion_Emp    ,
+		Telefono_Emp	=@parNUEVO_Telefono_Emp   ,
+		Genero_Emp		=@parNUEVO_Genero_Emp   ,
+		Email_Emp		=@parNUEVO_Email_Emp   ,
+		FechaNac_Emp	=@parNUEVO_FechaNac_Emp,
+		IdCargo_Emp		=@parNUEVO_IdCargo_Emp,
+		Usuario_Emp		=@parNUEVO_Usuario_Emp,
+		Password_Emp	=@parNUEVO_Password_Emp
+		where IdEmpleado=@parIdEmpleado
+	end
 --/////////////////////////////////////////////////////////////
 create proc usp_Usuario_Validacion
 @parUsuario_Emp varchar(50), 

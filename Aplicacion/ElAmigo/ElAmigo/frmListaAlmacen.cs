@@ -118,5 +118,10 @@ namespace ElAmigo
         {
             Close();
         }
+
+        private void frmListaAlmacen_Load(object sender, EventArgs e)
+        {
+            btnMostrarTodos.PerformClick();
+        }
     }
 }

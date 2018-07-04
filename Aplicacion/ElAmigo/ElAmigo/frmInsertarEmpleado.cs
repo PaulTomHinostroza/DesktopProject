@@ -68,5 +68,17 @@ namespace ElAmigo
                 LosCargos.Add(elemento);
             }
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtNombres.Clear();
+            txtApellidos.Clear();
+            txtDNI.Clear();
+            txtDireccion.Clear();
+            txtTelefono.Clear();
+            txtEmail.Clear();
+            txtUsuario.Clear();
+            txtPassword.Clear();
+        }
     }
 }

@@ -118,5 +118,24 @@ namespace ElAmigo
                 }
             }
         }
+
+        private void frmListarStock_Load(object sender, EventArgs e)
+        {
+            ProductosEncontrados.Clear();
+            lstvDatos.Items.Clear();
+            int contador = 1;
+            foreach (clsProducto ELEMENTO in clsProducto.ListarProductoTodos())
+            {
+                ProductosEncontrados.Add(ELEMENTO);
+                lstvDatos.Items.Add(ELEMENTO.IdProducto.ToString());
+                lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DescripcionProd);
+
+                if (contador % 2 == 0)
+                {
+                    lstvDatos.Items[contador - 1].BackColor = Color.Khaki;
+                }
+                contador = contador + 1;
+            }
+        }
     }
 }

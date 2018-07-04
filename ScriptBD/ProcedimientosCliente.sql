@@ -32,6 +32,41 @@ values
 	GETDATE()				,
 	@parEmail_Cli 
 )
+
+if exists
+(
+	select DNI_Cli from tblCliente where DNI_Cli=@parDNI_Cli
+)
+	begin
+		raiserror('El DNI ya está registrado.',16,1)
+	end
+else
+	begin
+		insert into	tblCliente
+		(
+			Nombres_Cli          ,
+			Apellidos_Cli        ,
+			DNI_Cli              ,
+			Direccion_Cli        ,
+			Telefono_Cli         ,
+			Genero_Cli            ,
+			RUC_Cli              ,
+			FechaInscrip_Cli	,
+			Email_Cli
+		)
+		values
+		(
+			@parNombres_Cli          ,
+			@parApellidos_Cli        ,
+			@parDNI_Cli              ,
+			@parDireccion_Cli        ,
+			@parTelefono_Cli         ,
+			@parGenero_Cli            ,
+			@parRUC_Cli              ,
+			GETDATE()				,
+			@parEmail_Cli 
+		)
+	end
 --///////////////////////////////////////////////////////////////////
 
 create proc usp_Cliente_Listar_Todos
@@ -97,14 +132,24 @@ create proc usp_Cliente_Actualizar
 @parNUEVO_RUC_Cli              varchar(30),
 @parNUEVO_Email_Cli            varchar(50)
 as
-UPDATE tblCliente
-set
-Nombres_Cli		=@parNUEVO_Nombres_Cli,
-Apellidos_Cli	=@parNUEVO_Apellidos_Cli      ,
-DNI_Cli			=@parNUEVO_DNI_Cli     ,
-Direccion_Cli	=@parNUEVO_Direccion_Cli    ,
-Telefono_Cli	=@parNUEVO_Telefono_Cli   ,
-Genero_Cli		=@parNUEVO_Genero_Cli   ,
-RUC_Cli		=@parNUEVO_RUC_Cli   ,
-Email_Cli	=@parNUEVO_Email_Cli
-where IdCliente=@parIdCliente
+if exists
+(
+	select DNI_Cli,IdCliente from tblCliente where DNI_Cli=@parNUEVO_DNI_Cli and IdCliente<>@parIdCliente
+)
+	begin
+		raiserror('El DNI ya está registrado.',16,1)
+	end
+else
+	begin
+		UPDATE tblCliente
+		set
+		Nombres_Cli		=@parNUEVO_Nombres_Cli,
+		Apellidos_Cli	=@parNUEVO_Apellidos_Cli      ,
+		DNI_Cli			=@parNUEVO_DNI_Cli     ,
+		Direccion_Cli	=@parNUEVO_Direccion_Cli    ,
+		Telefono_Cli	=@parNUEVO_Telefono_Cli   ,
+		Genero_Cli		=@parNUEVO_Genero_Cli   ,
+		RUC_Cli		=@parNUEVO_RUC_Cli   ,
+		Email_Cli	=@parNUEVO_Email_Cli
+		where IdCliente=@parIdCliente
+	end

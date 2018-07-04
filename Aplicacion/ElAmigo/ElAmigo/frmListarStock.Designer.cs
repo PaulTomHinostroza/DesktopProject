@@ -211,6 +211,7 @@
             this.Name = "frmListarStock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmListarStock";
+            this.Load += new System.EventHandler(this.frmListarStock_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

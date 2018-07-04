@@ -40,6 +40,8 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label3 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -59,8 +61,6 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnMostrarTodos = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.txtCelularContacto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -174,6 +174,14 @@
             // 
             this.columnHeader7.Text = "Email";
             this.columnHeader7.Width = 273;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Dirección";
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Nro Cuenta";
             // 
             // label3
             // 
@@ -413,14 +421,6 @@
             this.btnGuardar.Visible = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Dirección";
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Nro Cuenta";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -434,6 +434,7 @@
             // 
             // txtCelularContacto
             // 
+            this.txtCelularContacto.Enabled = false;
             this.txtCelularContacto.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCelularContacto.Location = new System.Drawing.Point(685, 267);
             this.txtCelularContacto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -454,6 +455,7 @@
             // 
             // txtNombreContacto
             // 
+            this.txtNombreContacto.Enabled = false;
             this.txtNombreContacto.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreContacto.Location = new System.Drawing.Point(685, 223);
             this.txtNombreContacto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
