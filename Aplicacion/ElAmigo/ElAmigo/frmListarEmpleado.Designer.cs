@@ -48,6 +48,7 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,7 +97,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(16, 69);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(701, 87);
+            this.groupBox1.Size = new System.Drawing.Size(534, 87);
             this.groupBox1.TabIndex = 118;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar por:";
@@ -110,6 +111,7 @@
             this.rbnCargo.TabIndex = 5;
             this.rbnCargo.Text = "Cargo";
             this.rbnCargo.UseVisualStyleBackColor = true;
+            this.rbnCargo.CheckedChanged += new System.EventHandler(this.rbnCargo_CheckedChanged);
             // 
             // rbnDNI
             // 
@@ -120,6 +122,7 @@
             this.rbnDNI.TabIndex = 4;
             this.rbnDNI.Text = "DNI";
             this.rbnDNI.UseVisualStyleBackColor = true;
+            this.rbnDNI.CheckedChanged += new System.EventHandler(this.rbnDNI_CheckedChanged);
             // 
             // rbnId
             // 
@@ -130,6 +133,7 @@
             this.rbnId.TabIndex = 3;
             this.rbnId.Text = "Id";
             this.rbnId.UseVisualStyleBackColor = true;
+            this.rbnId.CheckedChanged += new System.EventHandler(this.rbnId_CheckedChanged);
             // 
             // rbnApellidos
             // 
@@ -140,6 +144,7 @@
             this.rbnApellidos.TabIndex = 2;
             this.rbnApellidos.Text = "Apellidos";
             this.rbnApellidos.UseVisualStyleBackColor = true;
+            this.rbnApellidos.CheckedChanged += new System.EventHandler(this.rbnApellidos_CheckedChanged);
             // 
             // rbnNombres
             // 
@@ -152,13 +157,14 @@
             this.rbnNombres.TabStop = true;
             this.rbnNombres.Text = "Nombres";
             this.rbnNombres.UseVisualStyleBackColor = true;
+            this.rbnNombres.CheckedChanged += new System.EventHandler(this.rbnNombres_CheckedChanged);
             // 
             // txtTexto
             // 
             this.txtTexto.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTexto.Location = new System.Drawing.Point(17, 53);
             this.txtTexto.Name = "txtTexto";
-            this.txtTexto.Size = new System.Drawing.Size(666, 22);
+            this.txtTexto.Size = new System.Drawing.Size(497, 22);
             this.txtTexto.TabIndex = 0;
             this.txtTexto.TextChanged += new System.EventHandler(this.txtTexto_TextChanged);
             // 
@@ -240,12 +246,31 @@
             this.columnHeader6.Text = "Fecha Inscrip.";
             this.columnHeader6.Width = 94;
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.Location = new System.Drawing.Point(566, 104);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(100, 40);
+            this.btnBuscar.TabIndex = 133;
+            this.btnBuscar.Text = "BUSCAR";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Visible = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // frmListarEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1050, 570);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lstvDatos);
             this.Controls.Add(this.btnMostrarTodos);
             this.Controls.Add(this.btnCancelar);
@@ -285,5 +310,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }

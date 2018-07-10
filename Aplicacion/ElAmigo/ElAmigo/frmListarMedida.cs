@@ -82,9 +82,41 @@ namespace ElAmigo
                     lstvDatos.Items.Clear();
                 }
             }
+            
+        }
+
+        private void frmListarMedida_Load(object sender, EventArgs e)
+        {
+            btnMostrarTodos.PerformClick();
+        }
+
+        private void rbnDescripcion_CheckedChanged(object sender, EventArgs e)
+        {
+            BotonBuscar();
+        }
+
+        private void rbnId_CheckedChanged(object sender, EventArgs e)
+        {
+            BotonBuscar();
+        }
+
+        private void BotonBuscar()
+        {
             if (rbnId.Checked == true)
             {
-                if (txtTexto.Text.Length >= 3)
+                btnBuscar.Visible = true;
+            }
+            else
+            {
+                btnBuscar.Visible = false;
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (rbnId.Checked == true)
                 {
                     MedidaEncontrado.Clear();
                     lstvDatos.Items.Clear();
@@ -103,19 +135,13 @@ namespace ElAmigo
                         }
                         contador = contador + 1;
                     }
-
-                }
-                else
-                {
-                    lstvDatos.Items.Clear();
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ingrese un código correcto.");
+            }
+            
         }
-
-        private void frmListarMedida_Load(object sender, EventArgs e)
-        {
-            btnMostrarTodos.PerformClick();
-        }
-
     }
 }

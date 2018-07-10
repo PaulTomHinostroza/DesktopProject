@@ -78,34 +78,7 @@ namespace ElAmigo
                     lstvDatos.Items.Clear();
                 }
             }
-            if (rbnId.Checked == true)
-            {
-                if (txtTexto.Text.Length >= 3)
-                {
-                    MedidaEncontrado.Clear();
-                    lstvDatos.Items.Clear();
-                    int contador = 1;
-                    foreach (clsMedida ELEMENTO in clsMedida.ListarMedidaPorId(Convert.ToInt32(txtTexto.Text)))
-                    {
-                        MedidaEncontrado.Add(ELEMENTO);
-                        lstvDatos.Items.Add(ELEMENTO.IdMedida.ToString());
-                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DescripcionMed);
-                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.AbreviaturaMed);
-                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.EquivalenteUnidad.ToString());
-
-                        if (contador % 2 == 0)
-                        {
-                            lstvDatos.Items[contador - 1].BackColor = Color.Khaki;
-                        }
-                        contador = contador + 1;
-                    }
-
-                }
-                else
-                {
-                    lstvDatos.Items.Clear();
-                }
-            }
+            
         }
 
         private void lstvDatos_SelectedIndexChanged(object sender, EventArgs e)
@@ -150,6 +123,58 @@ namespace ElAmigo
             txtTexto.Clear();
         }
 
+        private void rbnDescripcion_CheckedChanged(object sender, EventArgs e)
+        {
+            BotonBuscar();
+        }
+
+        private void rbnId_CheckedChanged(object sender, EventArgs e)
+        {
+            BotonBuscar();
+        }
+        private void BotonBuscar()
+        {
+            if (rbnId.Checked == true)
+            {
+                btnBuscar.Visible = true;
+            }
+            else
+            {
+                btnBuscar.Visible = false;
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (rbnId.Checked == true)
+                {
+                    MedidaEncontrado.Clear();
+                    lstvDatos.Items.Clear();
+                    int contador = 1;
+                    foreach (clsMedida ELEMENTO in clsMedida.ListarMedidaPorId(Convert.ToInt32(txtTexto.Text)))
+                    {
+                        MedidaEncontrado.Add(ELEMENTO);
+                        lstvDatos.Items.Add(ELEMENTO.IdMedida.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DescripcionMed);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.AbreviaturaMed);
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.EquivalenteUnidad.ToString());
+
+                        if (contador % 2 == 0)
+                        {
+                            lstvDatos.Items[contador - 1].BackColor = Color.Khaki;
+                        }
+                        contador = contador + 1;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ingrese un código correcto.");
+            }
+            
+        }
 
     }
 }

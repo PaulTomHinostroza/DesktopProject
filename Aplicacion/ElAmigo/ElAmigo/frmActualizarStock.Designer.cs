@@ -58,6 +58,7 @@
             this.lblIdAlmacen = new System.Windows.Forms.Label();
             this.lblEquivalencia = new System.Windows.Forms.Label();
             this.cmbMedida = new System.Windows.Forms.ComboBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -205,7 +206,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(121, 53);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(701, 87);
+            this.groupBox1.Size = new System.Drawing.Size(584, 87);
             this.groupBox1.TabIndex = 130;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar Producto Por:";
@@ -219,6 +220,7 @@
             this.rbnId.TabIndex = 2;
             this.rbnId.Text = "Id";
             this.rbnId.UseVisualStyleBackColor = true;
+            this.rbnId.CheckedChanged += new System.EventHandler(this.rbnId_CheckedChanged);
             // 
             // rbnDescripcion
             // 
@@ -231,13 +233,14 @@
             this.rbnDescripcion.TabStop = true;
             this.rbnDescripcion.Text = "Descripción";
             this.rbnDescripcion.UseVisualStyleBackColor = true;
+            this.rbnDescripcion.CheckedChanged += new System.EventHandler(this.rbnDescripcion_CheckedChanged);
             // 
             // txtTexto
             // 
             this.txtTexto.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTexto.Location = new System.Drawing.Point(17, 53);
             this.txtTexto.Name = "txtTexto";
-            this.txtTexto.Size = new System.Drawing.Size(666, 22);
+            this.txtTexto.Size = new System.Drawing.Size(542, 22);
             this.txtTexto.TabIndex = 0;
             this.txtTexto.TextChanged += new System.EventHandler(this.txtTexto_TextChanged);
             // 
@@ -397,12 +400,31 @@
             this.cmbMedida.TabIndex = 146;
             this.cmbMedida.SelectedValueChanged += new System.EventHandler(this.cmbMedida_SelectedValueChanged);
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.Location = new System.Drawing.Point(722, 88);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(100, 40);
+            this.btnBuscar.TabIndex = 147;
+            this.btnBuscar.Text = "BUSCAR";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Visible = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // frmActualizarStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1050, 570);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.cmbMedida);
             this.Controls.Add(this.lblEquivalencia);
             this.Controls.Add(this.lblIdAlmacen);
@@ -468,5 +490,6 @@
         private System.Windows.Forms.Label lblEquivalencia;
         private System.Windows.Forms.ComboBox cmbMedida;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }

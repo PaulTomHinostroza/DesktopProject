@@ -81,10 +81,46 @@ namespace ElAmigo
                 {
                     lstvDatos.Items.Clear();
                 }
-            }
-            if (rbnId.Checked == true)
+            }     
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void frmListaAlmacen_Load(object sender, EventArgs e)
+        {
+            btnMostrarTodos.PerformClick();
+        }
+
+        private void rbnDireccion_CheckedChanged(object sender, EventArgs e)
+        {
+            BotonBuscar();
+        }
+
+        private void rbnId_CheckedChanged(object sender, EventArgs e)
+        {
+            BotonBuscar();
+        }
+
+        private void BotonBuscar()
+        {
+            if (rbnDireccion.Checked == true)
             {
-                if (txtTexto.Text.Length >= 3)
+                btnBuscar.Visible = false;
+            }
+            else
+            {
+                btnBuscar.Visible = true;
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (rbnId.Checked == true)
                 {
                     AlmacenesEncontrados.Clear();
                     lstvDatos.Items.Clear();
@@ -105,23 +141,13 @@ namespace ElAmigo
                         contador = contador + 1;
 
                     }
-
-                }
-                else
-                {
-                    lstvDatos.Items.Clear();
                 }
             }
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void frmListaAlmacen_Load(object sender, EventArgs e)
-        {
-            btnMostrarTodos.PerformClick();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ingrese un código correcto");
+            }
+            
         }
     }
 }

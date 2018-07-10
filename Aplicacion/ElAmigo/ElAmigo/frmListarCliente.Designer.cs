@@ -31,8 +31,11 @@
             this.btnMostrarTodos = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbnDNI = new System.Windows.Forms.RadioButton();
+            this.rbnId = new System.Windows.Forms.RadioButton();
             this.rbnApellidos = new System.Windows.Forms.RadioButton();
             this.rbnNombres = new System.Windows.Forms.RadioButton();
+            this.txtTexto = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lstvDatos = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -45,9 +48,7 @@
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.txtTexto = new System.Windows.Forms.TextBox();
-            this.rbnId = new System.Windows.Forms.RadioButton();
-            this.rbnDNI = new System.Windows.Forms.RadioButton();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,10 +92,32 @@
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 61);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(701, 87);
+            this.groupBox1.Size = new System.Drawing.Size(544, 87);
             this.groupBox1.TabIndex = 124;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar por:";
+            // 
+            // rbnDNI
+            // 
+            this.rbnDNI.AutoSize = true;
+            this.rbnDNI.Location = new System.Drawing.Point(241, 23);
+            this.rbnDNI.Name = "rbnDNI";
+            this.rbnDNI.Size = new System.Drawing.Size(47, 21);
+            this.rbnDNI.TabIndex = 4;
+            this.rbnDNI.Text = "DNI";
+            this.rbnDNI.UseVisualStyleBackColor = true;
+            this.rbnDNI.CheckedChanged += new System.EventHandler(this.rbnDNI_CheckedChanged);
+            // 
+            // rbnId
+            // 
+            this.rbnId.AutoSize = true;
+            this.rbnId.Location = new System.Drawing.Point(198, 23);
+            this.rbnId.Name = "rbnId";
+            this.rbnId.Size = new System.Drawing.Size(37, 21);
+            this.rbnId.TabIndex = 3;
+            this.rbnId.Text = "Id";
+            this.rbnId.UseVisualStyleBackColor = true;
+            this.rbnId.CheckedChanged += new System.EventHandler(this.rbnId_CheckedChanged);
             // 
             // rbnApellidos
             // 
@@ -105,6 +128,7 @@
             this.rbnApellidos.TabIndex = 2;
             this.rbnApellidos.Text = "Apellidos";
             this.rbnApellidos.UseVisualStyleBackColor = true;
+            this.rbnApellidos.CheckedChanged += new System.EventHandler(this.rbnApellidos_CheckedChanged);
             // 
             // rbnNombres
             // 
@@ -117,6 +141,16 @@
             this.rbnNombres.TabStop = true;
             this.rbnNombres.Text = "Nombres";
             this.rbnNombres.UseVisualStyleBackColor = true;
+            this.rbnNombres.CheckedChanged += new System.EventHandler(this.rbnNombres_CheckedChanged);
+            // 
+            // txtTexto
+            // 
+            this.txtTexto.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTexto.Location = new System.Drawing.Point(17, 53);
+            this.txtTexto.Name = "txtTexto";
+            this.txtTexto.Size = new System.Drawing.Size(488, 22);
+            this.txtTexto.TabIndex = 0;
+            this.txtTexto.TextChanged += new System.EventHandler(this.txtTexto_TextChanged);
             // 
             // label3
             // 
@@ -201,34 +235,23 @@
             // 
             this.columnHeader8.Text = "Fecha Inscripcion";
             // 
-            // txtTexto
+            // btnBuscar
             // 
-            this.txtTexto.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTexto.Location = new System.Drawing.Point(17, 53);
-            this.txtTexto.Name = "txtTexto";
-            this.txtTexto.Size = new System.Drawing.Size(666, 22);
-            this.txtTexto.TabIndex = 0;
-            this.txtTexto.TextChanged += new System.EventHandler(this.txtTexto_TextChanged);
-            // 
-            // rbnId
-            // 
-            this.rbnId.AutoSize = true;
-            this.rbnId.Location = new System.Drawing.Point(198, 23);
-            this.rbnId.Name = "rbnId";
-            this.rbnId.Size = new System.Drawing.Size(37, 21);
-            this.rbnId.TabIndex = 3;
-            this.rbnId.Text = "Id";
-            this.rbnId.UseVisualStyleBackColor = true;
-            // 
-            // rbnDNI
-            // 
-            this.rbnDNI.AutoSize = true;
-            this.rbnDNI.Location = new System.Drawing.Point(241, 23);
-            this.rbnDNI.Name = "rbnDNI";
-            this.rbnDNI.Size = new System.Drawing.Size(47, 21);
-            this.rbnDNI.TabIndex = 4;
-            this.rbnDNI.Text = "DNI";
-            this.rbnDNI.UseVisualStyleBackColor = true;
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.Location = new System.Drawing.Point(587, 96);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(100, 40);
+            this.btnBuscar.TabIndex = 133;
+            this.btnBuscar.Text = "BUSCAR";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Visible = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // frmListarCliente
             // 
@@ -236,6 +259,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1050, 570);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lstvDatos);
             this.Controls.Add(this.btnMostrarTodos);
             this.Controls.Add(this.btnCancelar);
@@ -275,5 +299,6 @@
         private System.Windows.Forms.RadioButton rbnDNI;
         private System.Windows.Forms.RadioButton rbnId;
         private System.Windows.Forms.TextBox txtTexto;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }

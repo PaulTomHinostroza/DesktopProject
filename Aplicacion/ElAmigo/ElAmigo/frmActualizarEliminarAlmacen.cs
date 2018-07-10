@@ -89,36 +89,7 @@ namespace ElAmigo
                     lstvDatos.Items.Clear();
                 }
             }
-            if (rbnId.Checked == true)
-            {
-                if (txtTexto.Text.Length >= 3)
-                {
-                    AlmacenesEncontrados.Clear();
-                    lstvDatos.Items.Clear();
-                    int contador = 1;
-                    foreach (clsAlmacen ELEMENTO in clsAlmacen.ListarAlmacenPorId(Convert.ToInt32(txtTexto.Text)))
-                    {
-                        AlmacenesEncontrados.Add(ELEMENTO);
-                        lstvDatos.Items.Add(ELEMENTO.IdAlmacen.ToString());
-                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DireccionAlm.ToString());
-                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TelefonoAlm.ToString());
-                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TipoAlm.ToString());
-                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DescripcionAlm.ToString());
-
-                        if (contador % 2 == 0)
-                        {
-                            lstvDatos.Items[contador - 1].BackColor = Color.Khaki;
-                        }
-                        contador = contador + 1;
-
-                    }
-
-                }
-                else
-                {
-                    lstvDatos.Items.Clear();
-                }
-            }
+            
         }
 
         private void lstvDatos_SelectedIndexChanged(object sender, EventArgs e)
@@ -228,6 +199,60 @@ namespace ElAmigo
             Close();
         }
 
+        private void rbnDireccion_CheckedChanged(object sender, EventArgs e)
+        {
+            BotonBuscar();
+        }
+
+        private void rbnId_CheckedChanged(object sender, EventArgs e)
+        {
+            BotonBuscar();
+        }
+
+        private void BotonBuscar()
+        {
+            if (rbnDireccion.Checked == true)
+            {
+                btnBuscar.Visible = false;
+            }
+            else
+            {
+                btnBuscar.Visible = true;
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (rbnId.Checked == true)
+                {
+                    AlmacenesEncontrados.Clear();
+                    lstvDatos.Items.Clear();
+                    int contador = 1;
+                    foreach (clsAlmacen ELEMENTO in clsAlmacen.ListarAlmacenPorId(Convert.ToInt32(txtTexto.Text)))
+                    {
+                        AlmacenesEncontrados.Add(ELEMENTO);
+                        lstvDatos.Items.Add(ELEMENTO.IdAlmacen.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DireccionAlm.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TelefonoAlm.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.TipoAlm.ToString());
+                        lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DescripcionAlm.ToString());
+
+                        if (contador % 2 == 0)
+                        {
+                            lstvDatos.Items[contador - 1].BackColor = Color.Khaki;
+                        }
+                        contador = contador + 1;
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ingrese un código correcto");
+            }
+        }
 
 
     }

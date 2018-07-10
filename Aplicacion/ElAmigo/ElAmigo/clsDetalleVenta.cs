@@ -9,24 +9,24 @@ namespace ElAmigo
 {
     public class clsDetalleVenta
     {
-        private int _NroVentaDV;
+        private int _IdVentaDV;
         private int _IdProductoDV;
         private int _IdMedidaDV;
         private decimal _Cantidad;
 
         //constructor insertar
-        public clsDetalleVenta(int parNroVentaDV, int parIdProductoDV, int parIdMedidaDV, decimal parCantidad)
+        public clsDetalleVenta(int parIdVentaDV, int parIdProductoDV, int parIdMedidaDV, decimal parCantidad)
         {
-            NroVentaDV = parNroVentaDV;
+            IdVentaDV = parIdVentaDV;
             IdProductoDV = parIdProductoDV;
             IdMedidaDV = parIdMedidaDV;
             Cantidad = parCantidad;
         }
 
-        public int NroVentaDV
+        public int IdVentaDV
         {
-            get { return _NroVentaDV; }
-            set { _NroVentaDV = value; }
+            get { return _IdVentaDV; }
+            set { _IdVentaDV = value; }
         }
 
         public int IdProductoDV
@@ -52,7 +52,7 @@ namespace ElAmigo
             SqlConnection conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
             SqlCommand cmd = new SqlCommand("usp_DetalleVenta_Insertar", conexion);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@parNroVenta_DV", NroVentaDV);
+            cmd.Parameters.AddWithValue("@parIdVenta_DV", IdVentaDV);
             cmd.Parameters.AddWithValue("@parIdProducto_DV", IdProductoDV);
             cmd.Parameters.AddWithValue("@parIdMedida_DV", IdMedidaDV);
             cmd.Parameters.AddWithValue("@parCantidad", Cantidad);

@@ -39,6 +39,7 @@
             this.rbnNombre = new System.Windows.Forms.RadioButton();
             this.txtTexto = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -130,6 +131,7 @@
             this.rbnId.TabIndex = 2;
             this.rbnId.Text = "Id";
             this.rbnId.UseVisualStyleBackColor = true;
+            this.rbnId.CheckedChanged += new System.EventHandler(this.rbnId_CheckedChanged);
             // 
             // rbnNombre
             // 
@@ -142,6 +144,7 @@
             this.rbnNombre.TabStop = true;
             this.rbnNombre.Text = "Nombre";
             this.rbnNombre.UseVisualStyleBackColor = true;
+            this.rbnNombre.CheckedChanged += new System.EventHandler(this.rbnNombre_CheckedChanged);
             // 
             // txtTexto
             // 
@@ -162,12 +165,31 @@
             this.label3.TabIndex = 126;
             this.label3.Text = "LISTADO DE CARGOS";
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.Location = new System.Drawing.Point(502, 112);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(100, 40);
+            this.btnBuscar.TabIndex = 133;
+            this.btnBuscar.Text = "BUSCAR";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Visible = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // frmListarCargo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1050, 530);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lstvDatos);
             this.Controls.Add(this.btnMostrarTodos);
             this.Controls.Add(this.btnCancelar);
@@ -198,5 +220,6 @@
         private System.Windows.Forms.RadioButton rbnNombre;
         private System.Windows.Forms.TextBox txtTexto;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }
